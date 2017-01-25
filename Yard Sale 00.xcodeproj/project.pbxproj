@@ -1,0 +1,659 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6D19F0CA1DDD124800D3CA10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D19F0C91DDD124800D3CA10 /* Main.storyboard */; };
+		6D3DC70E1DE254CA00714F0B /* BusinessInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DC70D1DE254CA00714F0B /* BusinessInformationViewController.swift */; };
+		6D4812311DD9300F00EAB50D /* ViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4812301DD9300F00EAB50D /* ViewBackground.swift */; };
+		6D48123A1DD93F4A00EAB50D /* GetLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4812391DD93F4A00EAB50D /* GetLocation.swift */; };
+		6D85C6401DF0F4B7009632EE /* AddBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D85C63D1DF0F4B7009632EE /* AddBusiness.swift */; };
+		6D85C6411DF0F4B7009632EE /* AddGeotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D85C63E1DF0F4B7009632EE /* AddGeotification.swift */; };
+		6D85C6421DF0F4B7009632EE /* GeoticationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D85C63F1DF0F4B7009632EE /* GeoticationsViewController.swift */; };
+		6D85C6441DF63C9A009632EE /* LocoHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D85C6431DF63C9A009632EE /* LocoHome.swift */; };
+		6D85C6461DF63F6F009632EE /* loco.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D85C6451DF63F6F009632EE /* loco.json */; };
+		6D8ACC5E1E2EE75100475ED8 /* File.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6D8ACC5D1E2EE75100475ED8 /* File.txt */; };
+		6D8ACC631E38291600475ED8 /* QuickLocoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8ACC621E38291600475ED8 /* QuickLocoViewController.swift */; };
+		6D8F53451DB5A4BD004FA4FD /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F53441DB5A4BD004FA4FD /* Login.swift */; };
+		6D8F534B1DB990B3004FA4FD /* Register00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F534A1DB990B3004FA4FD /* Register00.swift */; };
+		6D9DDE3E1D6E61AB0089C7E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DDE3D1D6E61AB0089C7E8 /* AppDelegate.swift */; };
+		6D9DDE401D6E61AB0089C7E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DDE3F1D6E61AB0089C7E8 /* ViewController.swift */; };
+		6D9DDE461D6E61AB0089C7E8 /* Yard_Sale_00.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DDE441D6E61AB0089C7E8 /* Yard_Sale_00.xcdatamodeld */; };
+		6D9DDE481D6E61AB0089C7E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D9DDE471D6E61AB0089C7E8 /* Assets.xcassets */; };
+		6D9DDE4B1D6E61AB0089C7E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D9DDE491D6E61AB0089C7E8 /* LaunchScreen.storyboard */; };
+		6D9DDE561D6E61AB0089C7E8 /* Yard_Sale_00Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DDE551D6E61AB0089C7E8 /* Yard_Sale_00Tests.swift */; };
+		6D9DDE611D6E61AB0089C7E8 /* Yard_Sale_00UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DDE601D6E61AB0089C7E8 /* Yard_Sale_00UITests.swift */; };
+		9F31DBE41DC025740092BD7A /* DataManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31DBE21DC025730092BD7A /* DataManagerViewController.swift */; };
+		9F31DBE51DC025740092BD7A /* DataManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F31DBE31DC025730092BD7A /* DataManagerViewController.xib */; };
+		9F31DBE81DC02B690092BD7A /* Register01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31DBE71DC02B690092BD7A /* Register01.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6D9DDE521D6E61AB0089C7E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D9DDE321D6E61AA0089C7E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D9DDE391D6E61AA0089C7E8;
+			remoteInfo = "Yard Sale 00";
+		};
+		6D9DDE5D1D6E61AB0089C7E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D9DDE321D6E61AA0089C7E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D9DDE391D6E61AA0089C7E8;
+			remoteInfo = "Yard Sale 00";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6D19F0C91DDD124800D3CA10 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6D3DC70D1DE254CA00714F0B /* BusinessInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessInformationViewController.swift; sourceTree = "<group>"; };
+		6D4812301DD9300F00EAB50D /* ViewBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewBackground.swift; sourceTree = "<group>"; };
+		6D4812391DD93F4A00EAB50D /* GetLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetLocation.swift; path = ../../../GitHub/MapSeach00/MapSeach00/GetLocation.swift; sourceTree = "<group>"; };
+		6D85C63D1DF0F4B7009632EE /* AddBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBusiness.swift; sourceTree = "<group>"; };
+		6D85C63E1DF0F4B7009632EE /* AddGeotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGeotification.swift; sourceTree = "<group>"; };
+		6D85C63F1DF0F4B7009632EE /* GeoticationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoticationsViewController.swift; sourceTree = "<group>"; };
+		6D85C6431DF63C9A009632EE /* LocoHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocoHome.swift; sourceTree = "<group>"; };
+		6D85C6451DF63F6F009632EE /* loco.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loco.json; path = ../../loco.json; sourceTree = "<group>"; };
+		6D8ACC5D1E2EE75100475ED8 /* File.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File.txt; sourceTree = "<group>"; };
+		6D8ACC621E38291600475ED8 /* QuickLocoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickLocoViewController.swift; sourceTree = "<group>"; };
+		6D8F53441DB5A4BD004FA4FD /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		6D8F534A1DB990B3004FA4FD /* Register00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register00.swift; sourceTree = "<group>"; };
+		6D9DDE3A1D6E61AB0089C7E8 /* Yard Sale 00.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yard Sale 00.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D9DDE3D1D6E61AB0089C7E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6D9DDE3F1D6E61AB0089C7E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6D9DDE451D6E61AB0089C7E8 /* Yard_Sale_00.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Yard_Sale_00.xcdatamodel; sourceTree = "<group>"; };
+		6D9DDE471D6E61AB0089C7E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6D9DDE4A1D6E61AB0089C7E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6D9DDE4C1D6E61AB0089C7E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D9DDE511D6E61AB0089C7E8 /* Yard Sale 00Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yard Sale 00Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D9DDE551D6E61AB0089C7E8 /* Yard_Sale_00Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yard_Sale_00Tests.swift; sourceTree = "<group>"; };
+		6D9DDE571D6E61AB0089C7E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D9DDE5C1D6E61AB0089C7E8 /* Yard Sale 00UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yard Sale 00UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D9DDE601D6E61AB0089C7E8 /* Yard_Sale_00UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yard_Sale_00UITests.swift; sourceTree = "<group>"; };
+		6D9DDE621D6E61AB0089C7E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F31DBE21DC025730092BD7A /* DataManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerViewController.swift; sourceTree = "<group>"; };
+		9F31DBE31DC025730092BD7A /* DataManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataManagerViewController.xib; sourceTree = "<group>"; };
+		9F31DBE71DC02B690092BD7A /* Register01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register01.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6D9DDE371D6E61AA0089C7E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D9DDE4E1D6E61AB0089C7E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D9DDE591D6E61AB0089C7E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F7FD92BEABD0C601AA14D77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D19F0C81DDBD59000D3CA10 /* FaceBook */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FaceBook;
+			sourceTree = "<group>";
+		};
+		6D4812321DD93ECF00EAB50D /* Map Folder */ = {
+			isa = PBXGroup;
+			children = (
+				6D85C63D1DF0F4B7009632EE /* AddBusiness.swift */,
+				6D85C63E1DF0F4B7009632EE /* AddGeotification.swift */,
+				6D85C63F1DF0F4B7009632EE /* GeoticationsViewController.swift */,
+				6D4812391DD93F4A00EAB50D /* GetLocation.swift */,
+			);
+			name = "Map Folder";
+			sourceTree = "<group>";
+		};
+		6D85C6471DF63FBA009632EE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6D85C6451DF63F6F009632EE /* loco.json */,
+				6D8ACC5D1E2EE75100475ED8 /* File.txt */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6D8ACC611E3828FE00475ED8 /* LocoHome */ = {
+			isa = PBXGroup;
+			children = (
+				6D85C6431DF63C9A009632EE /* LocoHome.swift */,
+				6D8ACC621E38291600475ED8 /* QuickLocoViewController.swift */,
+			);
+			name = LocoHome;
+			sourceTree = "<group>";
+		};
+		6D9DDE311D6E61AA0089C7E8 = {
+			isa = PBXGroup;
+			children = (
+				6D9DDE3C1D6E61AB0089C7E8 /* Yard Sale 00 */,
+				6D9DDE541D6E61AB0089C7E8 /* Yard Sale 00Tests */,
+				6D9DDE5F1D6E61AB0089C7E8 /* Yard Sale 00UITests */,
+				6D9DDE3B1D6E61AB0089C7E8 /* Products */,
+				2F7FD92BEABD0C601AA14D77 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6D9DDE3B1D6E61AB0089C7E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6D9DDE3A1D6E61AB0089C7E8 /* Yard Sale 00.app */,
+				6D9DDE511D6E61AB0089C7E8 /* Yard Sale 00Tests.xctest */,
+				6D9DDE5C1D6E61AB0089C7E8 /* Yard Sale 00UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6D9DDE3C1D6E61AB0089C7E8 /* Yard Sale 00 */ = {
+			isa = PBXGroup;
+			children = (
+				6D85C6471DF63FBA009632EE /* Resources */,
+				6D19F0C81DDBD59000D3CA10 /* FaceBook */,
+				6D9DDE3D1D6E61AB0089C7E8 /* AppDelegate.swift */,
+				6D9DDE3F1D6E61AB0089C7E8 /* ViewController.swift */,
+				9F31DBE61DC026B50092BD7A /* Login/Registration */,
+				6D9DDE471D6E61AB0089C7E8 /* Assets.xcassets */,
+				6D19F0C91DDD124800D3CA10 /* Main.storyboard */,
+				6D9DDE491D6E61AB0089C7E8 /* LaunchScreen.storyboard */,
+				6D9DDE4C1D6E61AB0089C7E8 /* Info.plist */,
+				6D9DDE441D6E61AB0089C7E8 /* Yard_Sale_00.xcdatamodeld */,
+				9F31DBE31DC025730092BD7A /* DataManagerViewController.xib */,
+			);
+			path = "Yard Sale 00";
+			sourceTree = "<group>";
+		};
+		6D9DDE541D6E61AB0089C7E8 /* Yard Sale 00Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6D9DDE551D6E61AB0089C7E8 /* Yard_Sale_00Tests.swift */,
+				6D9DDE571D6E61AB0089C7E8 /* Info.plist */,
+			);
+			path = "Yard Sale 00Tests";
+			sourceTree = "<group>";
+		};
+		6D9DDE5F1D6E61AB0089C7E8 /* Yard Sale 00UITests */ = {
+			isa = PBXGroup;
+			children = (
+				6D9DDE601D6E61AB0089C7E8 /* Yard_Sale_00UITests.swift */,
+				6D9DDE621D6E61AB0089C7E8 /* Info.plist */,
+			);
+			path = "Yard Sale 00UITests";
+			sourceTree = "<group>";
+		};
+		9F31DBE61DC026B50092BD7A /* Login/Registration */ = {
+			isa = PBXGroup;
+			children = (
+				6D8F534A1DB990B3004FA4FD /* Register00.swift */,
+				6D4812301DD9300F00EAB50D /* ViewBackground.swift */,
+				9F31DBE71DC02B690092BD7A /* Register01.swift */,
+				6D4812321DD93ECF00EAB50D /* Map Folder */,
+				9F31DBE21DC025730092BD7A /* DataManagerViewController.swift */,
+				6D8F53441DB5A4BD004FA4FD /* Login.swift */,
+				6D3DC70D1DE254CA00714F0B /* BusinessInformationViewController.swift */,
+				6D8ACC611E3828FE00475ED8 /* LocoHome */,
+			);
+			name = Login/Registration;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6D9DDE391D6E61AA0089C7E8 /* Yard Sale 00 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D9DDE651D6E61AB0089C7E8 /* Build configuration list for PBXNativeTarget "Yard Sale 00" */;
+			buildPhases = (
+				6D9DDE361D6E61AA0089C7E8 /* Sources */,
+				6D9DDE371D6E61AA0089C7E8 /* Frameworks */,
+				6D9DDE381D6E61AA0089C7E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Yard Sale 00";
+			productName = "Yard Sale 00";
+			productReference = 6D9DDE3A1D6E61AB0089C7E8 /* Yard Sale 00.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6D9DDE501D6E61AB0089C7E8 /* Yard Sale 00Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D9DDE681D6E61AB0089C7E8 /* Build configuration list for PBXNativeTarget "Yard Sale 00Tests" */;
+			buildPhases = (
+				6D9DDE4D1D6E61AB0089C7E8 /* Sources */,
+				6D9DDE4E1D6E61AB0089C7E8 /* Frameworks */,
+				6D9DDE4F1D6E61AB0089C7E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D9DDE531D6E61AB0089C7E8 /* PBXTargetDependency */,
+			);
+			name = "Yard Sale 00Tests";
+			productName = "Yard Sale 00Tests";
+			productReference = 6D9DDE511D6E61AB0089C7E8 /* Yard Sale 00Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6D9DDE5B1D6E61AB0089C7E8 /* Yard Sale 00UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D9DDE6B1D6E61AB0089C7E8 /* Build configuration list for PBXNativeTarget "Yard Sale 00UITests" */;
+			buildPhases = (
+				6D9DDE581D6E61AB0089C7E8 /* Sources */,
+				6D9DDE591D6E61AB0089C7E8 /* Frameworks */,
+				6D9DDE5A1D6E61AB0089C7E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D9DDE5E1D6E61AB0089C7E8 /* PBXTargetDependency */,
+			);
+			name = "Yard Sale 00UITests";
+			productName = "Yard Sale 00UITests";
+			productReference = 6D9DDE5C1D6E61AB0089C7E8 /* Yard Sale 00UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6D9DDE321D6E61AA0089C7E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Nick J Cameron";
+				TargetAttributes = {
+					6D9DDE391D6E61AA0089C7E8 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 6Q83K7TY4C;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+					6D9DDE501D6E61AB0089C7E8 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 37UQG4NBZR;
+						LastSwiftMigration = 0800;
+						TestTargetID = 6D9DDE391D6E61AA0089C7E8;
+					};
+					6D9DDE5B1D6E61AB0089C7E8 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 37UQG4NBZR;
+						LastSwiftMigration = 0800;
+						TestTargetID = 6D9DDE391D6E61AA0089C7E8;
+					};
+				};
+			};
+			buildConfigurationList = 6D9DDE351D6E61AA0089C7E8 /* Build configuration list for PBXProject "Yard Sale 00" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6D9DDE311D6E61AA0089C7E8;
+			productRefGroup = 6D9DDE3B1D6E61AB0089C7E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6D9DDE391D6E61AA0089C7E8 /* Yard Sale 00 */,
+				6D9DDE501D6E61AB0089C7E8 /* Yard Sale 00Tests */,
+				6D9DDE5B1D6E61AB0089C7E8 /* Yard Sale 00UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6D9DDE381D6E61AA0089C7E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D9DDE4B1D6E61AB0089C7E8 /* LaunchScreen.storyboard in Resources */,
+				6D9DDE481D6E61AB0089C7E8 /* Assets.xcassets in Resources */,
+				6D8ACC5E1E2EE75100475ED8 /* File.txt in Resources */,
+				6D85C6461DF63F6F009632EE /* loco.json in Resources */,
+				9F31DBE51DC025740092BD7A /* DataManagerViewController.xib in Resources */,
+				6D19F0CA1DDD124800D3CA10 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D9DDE4F1D6E61AB0089C7E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D9DDE5A1D6E61AB0089C7E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6D9DDE361D6E61AA0089C7E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D85C6411DF0F4B7009632EE /* AddGeotification.swift in Sources */,
+				6D9DDE401D6E61AB0089C7E8 /* ViewController.swift in Sources */,
+				9F31DBE81DC02B690092BD7A /* Register01.swift in Sources */,
+				6D4812311DD9300F00EAB50D /* ViewBackground.swift in Sources */,
+				6D8F534B1DB990B3004FA4FD /* Register00.swift in Sources */,
+				6D85C6401DF0F4B7009632EE /* AddBusiness.swift in Sources */,
+				6D8F53451DB5A4BD004FA4FD /* Login.swift in Sources */,
+				6D9DDE461D6E61AB0089C7E8 /* Yard_Sale_00.xcdatamodeld in Sources */,
+				6D48123A1DD93F4A00EAB50D /* GetLocation.swift in Sources */,
+				6D85C6421DF0F4B7009632EE /* GeoticationsViewController.swift in Sources */,
+				6D85C6441DF63C9A009632EE /* LocoHome.swift in Sources */,
+				9F31DBE41DC025740092BD7A /* DataManagerViewController.swift in Sources */,
+				6D9DDE3E1D6E61AB0089C7E8 /* AppDelegate.swift in Sources */,
+				6D3DC70E1DE254CA00714F0B /* BusinessInformationViewController.swift in Sources */,
+				6D8ACC631E38291600475ED8 /* QuickLocoViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D9DDE4D1D6E61AB0089C7E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D9DDE561D6E61AB0089C7E8 /* Yard_Sale_00Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D9DDE581D6E61AB0089C7E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D9DDE611D6E61AB0089C7E8 /* Yard_Sale_00UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6D9DDE531D6E61AB0089C7E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D9DDE391D6E61AA0089C7E8 /* Yard Sale 00 */;
+			targetProxy = 6D9DDE521D6E61AB0089C7E8 /* PBXContainerItemProxy */;
+		};
+		6D9DDE5E1D6E61AB0089C7E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D9DDE391D6E61AA0089C7E8 /* Yard Sale 00 */;
+			targetProxy = 6D9DDE5D1D6E61AB0089C7E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6D9DDE491D6E61AB0089C7E8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D9DDE4A1D6E61AB0089C7E8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6D9DDE631D6E61AB0089C7E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6D9DDE641D6E61AB0089C7E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6D9DDE661D6E61AB0089C7E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6Q83K7TY4C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = "Yard Sale 00/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RNAPPS.YardSaleN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6D9DDE671D6E61AB0089C7E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6Q83K7TY4C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = "Yard Sale 00/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RNAPPS.YardSaleN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		6D9DDE691D6E61AB0089C7E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Yard Sale 00Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RNAPPS.Yard-Sale-00Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yard Sale 00.app/Yard Sale 00";
+			};
+			name = Debug;
+		};
+		6D9DDE6A1D6E61AB0089C7E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Yard Sale 00Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RNAPPS.Yard-Sale-00Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yard Sale 00.app/Yard Sale 00";
+			};
+			name = Release;
+		};
+		6D9DDE6C1D6E61AB0089C7E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Yard Sale 00UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RNAPPS.Yard-Sale-00UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Yard Sale 00";
+			};
+			name = Debug;
+		};
+		6D9DDE6D1D6E61AB0089C7E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Yard Sale 00UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RNAPPS.Yard-Sale-00UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Yard Sale 00";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6D9DDE351D6E61AA0089C7E8 /* Build configuration list for PBXProject "Yard Sale 00" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D9DDE631D6E61AB0089C7E8 /* Debug */,
+				6D9DDE641D6E61AB0089C7E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D9DDE651D6E61AB0089C7E8 /* Build configuration list for PBXNativeTarget "Yard Sale 00" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D9DDE661D6E61AB0089C7E8 /* Debug */,
+				6D9DDE671D6E61AB0089C7E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D9DDE681D6E61AB0089C7E8 /* Build configuration list for PBXNativeTarget "Yard Sale 00Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D9DDE691D6E61AB0089C7E8 /* Debug */,
+				6D9DDE6A1D6E61AB0089C7E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D9DDE6B1D6E61AB0089C7E8 /* Build configuration list for PBXNativeTarget "Yard Sale 00UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D9DDE6C1D6E61AB0089C7E8 /* Debug */,
+				6D9DDE6D1D6E61AB0089C7E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6D9DDE441D6E61AB0089C7E8 /* Yard_Sale_00.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6D9DDE451D6E61AB0089C7E8 /* Yard_Sale_00.xcdatamodel */,
+			);
+			currentVersion = 6D9DDE451D6E61AB0089C7E8 /* Yard_Sale_00.xcdatamodel */;
+			path = Yard_Sale_00.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6D9DDE321D6E61AA0089C7E8 /* Project object */;
+}

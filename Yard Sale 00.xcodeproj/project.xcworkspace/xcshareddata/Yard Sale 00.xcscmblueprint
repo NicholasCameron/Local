@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9D9C4FA884BDC65EDCDF41A5E8994E1C744BFE44",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7CF7FD07D44AD77744E1D2A4EA9EA65E7A2E5696" : 9223372036854775807,
+    "9D9C4FA884BDC65EDCDF41A5E8994E1C744BFE44" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "06BFC950-BF3E-44C6-9979-0A95C13E8A43",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7CF7FD07D44AD77744E1D2A4EA9EA65E7A2E5696" : "..\/GitHub\/MapSeach00",
+    "9D9C4FA884BDC65EDCDF41A5E8994E1C744BFE44" : "Yard%20Sale%2000\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Yard Sale 00",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Yard Sale 00.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/NicholasJCameron\/MapSeach00.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7CF7FD07D44AD77744E1D2A4EA9EA65E7A2E5696"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/NicholasJCameron\/Yard-Sale-00.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9D9C4FA884BDC65EDCDF41A5E8994E1C744BFE44"
+    }
+  ]
+}
