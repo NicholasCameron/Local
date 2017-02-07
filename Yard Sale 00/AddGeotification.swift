@@ -172,33 +172,12 @@ lblLocation.text = "Place pin on location or search"
 
     @IBAction func AddLocation(_ sender: AnyObject) {
   
-        let coordinate = mapKit.centerCoordinate
-        let businessName = ownerName
-        let businessDescription = businessType
-        let pinColor = pinColorValue
-        delegate?.addGeotificationViewController(controller: self, didAddCoordinate: coordinate, businessName: businessName, businessDescription: businessDescription,pinColor:pinColor)
-        
-        var test = [AddBusiness]();
-       test.append(AddBusiness(coordinate: coordinate, businessName: businessName, businessDescription: businessDescription, pinColor: pinColor))
-        
-                var item = NSKeyedArchiver.archivedData(withRootObject: test)
-                item.append(item)
-            UserDefaults.standard.set(item, forKey: "itemsSaved")
-        
-        
-     var items: [Data] = []
-        for businesses in test {
-           let item = NSKeyedArchiver.archivedData(withRootObject: businesses)
-        items.append(item)
-        }
-        UserDefaults.standard.set(items, forKey:"itemsSaved")
-        
-        
-    
-        
-        
+        latitude = String(mapKit.centerCoordinate.latitude)
+        longitude = String(mapKit.centerCoordinate.longitude)
+         businessDescription = businessType
+         pinColor = pinColorValue
         businessTypeOfficial = businessDescription;
-        businessCoordinates = coordinate;
+        
         ///////////////////////////////////////////////////////////
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "businessInformation") as! BusinessInformationViewController
@@ -369,23 +348,6 @@ lblLocation.text = "Place pin on location or search"
     }
     ///////////////End Table View&&&&&&&&&&&&&&&&&&
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+ 
     
 }

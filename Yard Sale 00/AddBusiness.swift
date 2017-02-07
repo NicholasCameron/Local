@@ -28,6 +28,7 @@ class AddBusiness: NSObject,NSCoding,MKAnnotation {
     var businessDescription : String
     var pinColor : String;
     
+
     
     var title: String? {
         if businessName.isEmpty {

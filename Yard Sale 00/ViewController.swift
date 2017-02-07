@@ -17,7 +17,8 @@ var longitude = String();
 var latitude = String();
 var organizatinType = String();
 var other = String();
-
+var businessDescription = String();
+var pinColor = String();
 
 class ViewController: UIViewController {
 

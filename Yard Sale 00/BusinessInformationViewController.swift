@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import MapKit
+
+
 
 class BusinessInformationViewController: UIViewController {
 
@@ -39,7 +42,9 @@ class BusinessInformationViewController: UIViewController {
     var x10 = CGFloat()
     var x11 = CGFloat()
     
-    
+    var delegate: AddGeotificationDelegate?
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -94,6 +99,8 @@ class BusinessInformationViewController: UIViewController {
         
         
         
+
+        
         // Do any additional setup after loading the view.
     }
 
@@ -129,84 +136,62 @@ class BusinessInformationViewController: UIViewController {
         },completion:(nil))
         
         
-        writeToJson()
+        addToCoreData()
     
     }
-    func writeToJson(){
+    func addToCoreData(){
         
       
-    let documentsDirectoryPathString = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        let documentsDirectoryPath = NSURL(string: documentsDirectoryPathString)!
+   
+    }
+    
+    
+    
+    
+    //BOOM REGISTER
+    
+    @IBAction func Register(_ sender: Any) {
+    
+   // let coordinate = mapKit.centerCoordinate
+    let businessName = ownerName
+        let coordinate = CLLocationCoordinate2D(latitude: Double(latitude)!, longitude: Double(longitude)!)
+  //  let businessDescription = businessType
+   // let pinColor = pinColorValue
+        let t  = AddGeotification()
+    delegate?.addGeotificationViewController(controller: t, didAddCoordinate: coordinate, businessName: businessName, businessDescription: businessDescription,pinColor:pinColor)
+    
+    var test = [AddBusiness]();
+    test.append(AddBusiness(coordinate: coordinate, businessName: businessName, businessDescription: businessDescription, pinColor: pinColor))
+    
+    var item = NSKeyedArchiver.archivedData(withRootObject: test)
+    item.append(item)
+    UserDefaults.standard.set(item, forKey: "itemsSaved")
+    
+    
+    var items: [Data] = []
+    for businesses in test {
+    let item = NSKeyedArchiver.archivedData(withRootObject: businesses)
+    items.append(item)
+    }
+    UserDefaults.standard.set(items, forKey:"itemsSaved")
+    
+    
+    
+    
+    
+    businessTypeOfficial = businessDescription;
+    businessCoordinates = coordinate;
+  
         
-        let jsonFilePath = documentsDirectoryPath.appendingPathComponent("loco.json")
-        let fileManager = FileManager.default
-        var isDirectory: ObjCBool = false
-        
-        // creating a .json file in the Documents folder
-        if !fileManager.fileExists(atPath: (jsonFilePath?.absoluteString)!, isDirectory: &isDirectory) {
-            let created = fileManager.createFile(atPath: (jsonFilePath?.absoluteString)!, contents: nil, attributes: nil)
-            if created {
-                print("File created ")
-            } else {
-                print("Couldn't create file for some reason")
-            }
-        } else {
-            print("File already exists")
-        }
-        
+        ///////////////////////////////////////////////////////////
+    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "home") as! ViewController
+    self.present(nextViewController, animated:true, completion:nil)
 
     
-        
-        
-        let jsonObject: [String:[String:String]] =
-            [
-                ownerName: ([
-                    "OrganizationName": ownerName ,
-                    "EmailAddress": emailAddress ,
-                    "Password": password,
-                    "Longitude": String(businessCoordinates.longitude),
-                    "Latitude": String(businessCoordinates.latitude),
-                    "TypeOfOrganization": businessTypeOfficial,
-                    "Description":"This is a description",
-                    "MondayHours": mondayHours,
-                    "TuesdayHours": tuesdayHours ,
-                    "WednesdayHours":wednesdayHours ,
-                    "ThursdayHours": thrusdayHours,
-                    "FridayHours": fridayHours ,
-                    "SaturdayHours": satudayHours,
-                    "SundayHours":sundayHours ,
-                    "Other":"iO1S"
-                    ]) 
-            ]
-        
-        
-
-        // creating JSON out of the above array
-        var jsonData: NSData!
-
-        do {
-            jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions.prettyPrinted) as NSData!
-           // let jsonString = String(data: jsonData as Data, encoding: String.Encoding.utf8)
-        } catch let error as NSError {
-            print("Array to JSON conversion failed: \(error.localizedDescription)")
-        }
-        
-
-        
-        // Write that JSON to the file created earlier
-      //  let jsonFilePath = documentsDirectoryPath.URLByAppendingPathComponent("test.json")
-        do {
-            
-            let file = try FileHandle(forWritingTo: jsonFilePath!)
-
-            file.seekToEndOfFile()
-            file.write(jsonData as Data)
-            print("JSON data was written to teh file successfully!")
-        } catch let error as NSError {
-            print("Couldn't write to file: \(error.localizedDescription)")
-        
-        }
     }
+    
+    
     
     
   

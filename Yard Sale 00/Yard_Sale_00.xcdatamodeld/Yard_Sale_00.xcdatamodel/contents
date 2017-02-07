@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="15G31" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Users" syncable="YES">
-        <attribute name="business_Description" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="business_Hours" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="business_Name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="business_Type" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emailAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fridayHours" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mondayHours" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="organizationName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pinColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="saturdayHours" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sundayHours" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thursdayHours" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tuesdayHours" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeOfBusiness" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wednesdayHours" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Users" positionX="-45" positionY="0" width="128" height="150"/>
+        <element name="Users" positionX="-45" positionY="0" width="128" height="270"/>
     </elements>
 </model>

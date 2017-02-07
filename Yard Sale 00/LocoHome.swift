@@ -10,14 +10,14 @@ import UIKit
 import Foundation
 
 
-var Businesses = [String:AnyObject]()
+//var Businesses = [String:AnyObject]()
 
 
-struct BusinessDetail{
-    let businessName: String
-    let businessDescription: String
-    let businessType: String
-}
+//struct BusinessDetail{
+//    let businessName: String
+//    let businessDescription: String
+//    let businessType: String
+//}
 
 
 
