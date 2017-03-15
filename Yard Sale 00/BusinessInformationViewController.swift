@@ -49,7 +49,7 @@ class BusinessInformationViewController: UIViewController {
         super.viewDidLoad()
 
         
-       self.view.ViewBackground(image: "confirmationBG")
+       self.view.ViewBackground(image: "ocean")
 
         
         
@@ -155,26 +155,7 @@ class BusinessInformationViewController: UIViewController {
    // let coordinate = mapKit.centerCoordinate
     let businessName = ownerName
         let coordinate = CLLocationCoordinate2D(latitude: Double(latitude)!, longitude: Double(longitude)!)
-  //  let businessDescription = businessType
-   // let pinColor = pinColorValue
-        let t  = AddGeotification()
-    delegate?.addGeotificationViewController(controller: t, didAddCoordinate: coordinate, businessName: businessName, businessDescription: businessDescription,pinColor:pinColor)
-    
-    var test = [AddBusiness]();
-    test.append(AddBusiness(coordinate: coordinate, businessName: businessName, businessDescription: businessDescription, pinColor: pinColor))
-    
-    var item = NSKeyedArchiver.archivedData(withRootObject: test)
-    item.append(item)
-    UserDefaults.standard.set(item, forKey: "itemsSaved")
-    
-    
-    var items: [Data] = []
-    for businesses in test {
-    let item = NSKeyedArchiver.archivedData(withRootObject: businesses)
-    items.append(item)
-    }
-    UserDefaults.standard.set(items, forKey:"itemsSaved")
-    
+  
     
     
     
@@ -182,6 +163,12 @@ class BusinessInformationViewController: UIViewController {
     businessTypeOfficial = businessDescription;
     businessCoordinates = coordinate;
   
+        
+        
+        
+        
+        
+        DataManager.save(organizationName: ownerName, details: businessDescription, emailAddress: emailAddress, hours: businessHours, coordinate: coordinate, password: password,  typeOfBusiness: businessTypeOfficial, pinColor: pinColor)
         
         ///////////////////////////////////////////////////////////
     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import AddressBookUI
 
 var businessCoordinates = CLLocationCoordinate2D();
 var businessTypeOfficial = String();
@@ -17,8 +18,7 @@ var businessStreet = String();
 
 protocol AddGeotificationDelegate {
     
-    func addGeotificationViewController(controller: AddGeotification, didAddCoordinate coordinate: CLLocationCoordinate2D,
-                                        businessName: String, businessDescription: String,pinColor: String)
+    func addGeotificationViewController(controller: AddGeotification, didAddCoordinate coordinate: CLLocationCoordinate2D,businessName: String, businessDescription: String,pinColor: String)
 }
 
 let latDelta:CLLocationDegrees = 5.05
@@ -55,7 +55,7 @@ var StreetFilter = String()
     @IBOutlet weak var lblLocation: UILabel!
     //PICKERVIEW DATA
     let pickerData = ["CoffeeShop","Resturant","GiftShop","Golf","Food","Entertainment","Shop","Fun","Exercise","Gym", "Trail"]
-    let ColorValues = ["brown","purple","orange","green","yellow","black","red","white","yellow","yellow","green"]
+    let ColorValues = ["brown","purple","orange","green","yellow","black","red","black","yellow","yellow","green"]
     var pinColorValue = String();
     //ICON IMAGE
     
@@ -66,16 +66,10 @@ var StreetFilter = String()
     //ADDGEOTIFICATIONDELEGATE
     var delegate: AddGeotificationDelegate?
 
-    
-   
-    
 
-
-    
-    
     override func viewDidLoad() {
         
-        
+        self.view.ViewBackground(image:"trees")
         
         btnAddressFiltered.isHidden = true
         
@@ -90,7 +84,7 @@ var StreetFilter = String()
         let region = MKCoordinateRegionMake(location, span)
         mapKit.setRegion(region, animated: true)
         
-lblLocation.text = "Place pin on location or search"
+        lblLocation.text = "Place pin on location or search"
         typePicker.dataSource = self
         
         addressSearchBar.delegate = self
@@ -129,28 +123,25 @@ lblLocation.text = "Place pin on location or search"
         businessType = pickerData[row]
         pinColorValue = ColorValues[row]
         
-        print(row)
-        print(pinColorValue)
-        print(businessType)
-        switch pinColorValue{
-        
-        case "brown":
+    switch pinColorValue{
+
+    case "brown":
             pin.image = UIImage(named:"brownPin")
-
-        case "green":
+    case "green":
             pin.image = UIImage(named:"greenPin")
-
-        case "purple":
+    case "purple":
             pin.image = UIImage(named:"purplePin")
-
-        case "black":
+    case "black":
             pin.image = UIImage(named:"blackPin")
-
-            
-        default: pin.image = UIImage(named:"AddPin")
+    case "yellow":
+            pin.image = UIImage(named:"yellowPin")
+    case "orange":
+        pin.image = UIImage(named:"orangePin")
+    
+    default: pin.image = UIImage(named:"AddPin")
         }
         
-        
+        pinColor = pinColorValue
         return pickerData[row]
     }
     
@@ -262,13 +253,14 @@ lblLocation.text = "Place pin on location or search"
         center = "Latitude: \(mapLatitude) Longitude: \(mapLongitude)"
         lblLocation.text = (reverseGeocoding(latitude: mapLatitude, longitude: mapLongitude))
         
-        
+     //   print((reverseGeocoding(latitude: mapLatitude, longitude: mapLongitude)))
         ///SET THE STREET AS WHAT IS CHOSEN
         businessStreet = lblLocation.text!;
         
         center = "Latitude: \(mapLatitude) Longitude: \(mapLongitude)"
         lblLocation.text = (reverseGeocoding(latitude: mapLatitude, longitude: mapLongitude))
-        
+      //  print((reverseGeocoding(latitude: mapLatitude, longitude: mapLongitude)))
+
         
         ///SET THE STREET AS WHAT IS CHOSEN
         businessStreet = lblLocation.text!;
@@ -293,6 +285,29 @@ lblLocation.text = "Place pin on location or search"
         
     }
     
+    func reverseGeocoding(latitude: CLLocationDegrees, longitude: CLLocationDegrees)->String {
+        
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
+            
+            
+            if error != nil {
+                print("Error")
+                return
+            }
+            else if (placemarks?.count)! > 0 {
+                let pm = placemarks![0]
+                let address = ABCreateStringWithAddressDictionary(pm.addressDictionary!, false)
+                print("\n\(address)")
+                locations = address;
+                
+                self.lblLocation.text = address
+                
+                
+            }
+        })
+        return locations
+    }
     
     
     

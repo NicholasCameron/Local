@@ -41,6 +41,10 @@ class Register00: UIViewController,UITextFieldDelegate {
     var r = CGRect();
     
     override func viewDidLoad() {
+        
+        
+        
+        
         //WARNING! WARNING! WARNING!
         //Will need to restrict KEY on LAUNCH
         super.viewDidLoad()
@@ -48,7 +52,7 @@ class Register00: UIViewController,UITextFieldDelegate {
         self.smallCloud.frame = r;
 
         //background
-        self.view.ViewBackground(image:"background02");
+        self.view.ViewBackground(image:"waterlight0");
         /////////////
         self.txtData.delegate = self;
         lblError.isHidden = true;
@@ -66,11 +70,11 @@ class Register00: UIViewController,UITextFieldDelegate {
         super.viewDidAppear(animated)
         self.view.layoutIfNeeded()
         
-        UIView.animate(withDuration: 15.0, delay: 0, options: [.repeat, .autoreverse], animations: {
+        UIView.animate(withDuration: 15.0, delay: 0, options: [], animations: {
            
             
             self.view.layoutIfNeeded() // add this
-            self.smallCloud.center = CGPoint(x: self.screenSize.maxX  , y:self.r.origin.y)
+            self.smallCloud.center = CGPoint(x: self.screenSize.maxX + 100 , y:self.r.origin.y)
             self.view.layoutIfNeeded() // add this
 
 }, completion: nil)
@@ -156,15 +160,10 @@ class Register00: UIViewController,UITextFieldDelegate {
 
                 
                 
-                //data in text = var business name
                 password = txtData.text!;
                 
                 
-                
-               // ownerName = businessName;
-                
-                //Take name and welcome them
-                
+                            
                 //slide the business ownser/full name out of there
                 slideLabel(labelOne: lblBusiessName,textForLabel: "Confirm Password",leftOrRight:"right");
                 

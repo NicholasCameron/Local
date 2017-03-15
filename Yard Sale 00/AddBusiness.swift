@@ -17,6 +17,7 @@ struct BusinessDetails {
     static let businessName = "nicks shop"
     static let businessDescription = "cafe"
     static let pinColor = "red";
+    static let type = "type";
 }
 
 
@@ -27,6 +28,7 @@ class AddBusiness: NSObject,NSCoding,MKAnnotation {
     var businessName : String
     var businessDescription : String
     var pinColor : String;
+    var type: String;
     
 
     
@@ -49,12 +51,14 @@ class AddBusiness: NSObject,NSCoding,MKAnnotation {
     
     
     ///Constructor
-    init(coordinate: CLLocationCoordinate2D, businessName: String, businessDescription: String, pinColor:String) {
+    init(coordinate: CLLocationCoordinate2D, businessName: String, businessDescription: String, pinColor:String,type: String) {
         self.coordinate = coordinate
         self.businessName = businessName
         self.businessDescription = businessDescription
         self.pinColor = pinColor
+        self.type = type
     }
+    
  
     
     //NSCoding these are decoder and encoder required functions of the nscoder class
@@ -65,6 +69,8 @@ class AddBusiness: NSObject,NSCoding,MKAnnotation {
         businessDescription = decoder.decodeObject(forKey: BusinessDetails.businessDescription) as! String
         businessName = decoder.decodeObject(forKey: BusinessDetails.businessName) as! String
         pinColor = decoder.decodeObject(forKey: String(describing: BusinessDetails.pinColor)) as! String
+        type = decoder.decodeObject(forKey: String(describing: BusinessDetails.type)) as! String
+
     }
     
     func encode(with coder: NSCoder) {
@@ -73,6 +79,8 @@ class AddBusiness: NSObject,NSCoding,MKAnnotation {
         coder.encode(businessName, forKey: BusinessDetails.businessName)
         coder.encode(businessDescription, forKey: BusinessDetails.businessDescription)
         coder.encode(pinColor, forKey: BusinessDetails.pinColor)
+        coder.encode(type, forKey: BusinessDetails.type)
+
     }
 
 }//End of class

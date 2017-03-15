@@ -12,21 +12,76 @@ import UIKit
 import MapKit
 
 var Users = [NSManagedObject]()
+// set up manager
 
 
 
 class CoreDataManager: NSObject{
     
     
-    func save(organizationName: String,details:String,emailAddress:String,hours: [String],coordinate: CLLocationCoordinate2D,password:String,description:String,typeOfBusiness:String,pinColor:String) {
+    func getUsers()->[AddBusiness]{
+        
+        
+        var businesses = [AddBusiness]()
+        
+        //1
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+
+        return businesses
+        }
+        
+        
+    
+        let managedContext = appDelegate.managedObjectContext
+
+        //2
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "Users")
+        
+        //3
+        do {
+            
+            
+          Users = try managedContext.fetch(fetchRequest)
+            for u in Users{
+
+                var coordinate = CLLocationCoordinate2D()
+              let  n = (u.value(forKey: "organizationName")! as! String)
+                
+                let la = (u.value(forKey: "latitude")! as! String)
+                let lo = (u.value(forKey: "longitude")! as! String)
+                    
+                let type = (u.value(forKey: "typeOfBusiness")! as! String)
+
+                coordinate.latitude =  Double(la)!
+                coordinate.longitude =  Double(lo)!
+              let  businessD = (u.value(forKey: "details")! as! String)
+              let  pinC = (u.value(forKey: "pinColor")! as! String)
+              
+                businesses.append(AddBusiness(coordinate: coordinate, businessName: n, businessDescription: businessD, pinColor: pinC,type:type))
+                
+            }
+    
+            
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+        
+        return businesses
+    
+    }
+    
+    
+    func save(organizationName: String,details:String,emailAddress:String,hours: [String],coordinate: CLLocationCoordinate2D,password:String,typeOfBusiness:String,pinColor:String) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                 return
         }
-        
-        // set up manager
         let managedContext = appDelegate.managedObjectContext
-        
+
+       
         // get the entity/table
         let entity = NSEntityDescription.entity(forEntityName: "Users",in: managedContext)!
         
@@ -35,13 +90,13 @@ class CoreDataManager: NSObject{
         
         // add the values boom shaa!
         users.setValue(organizationName, forKeyPath: "organizationName")
-        users.setValue(organizationName, forKeyPath: "emailAddress")
-        users.setValue(organizationName, forKeyPath: "longitude")
-        users.setValue(organizationName, forKeyPath: "latidude")
-        users.setValue(organizationName, forKeyPath: "typeOfBusiness")
-        users.setValue(organizationName, forKeyPath: "password")
-        users.setValue(organizationName, forKeyPath: "details")
-        users.setValue(organizationName, forKeyPath: "pinColor")
+        users.setValue(emailAddress, forKeyPath: "emailAddress")
+        users.setValue(String(coordinate.longitude), forKeyPath: "longitude")
+        users.setValue(String(coordinate.latitude), forKeyPath: "latitude")
+        users.setValue(typeOfBusiness, forKeyPath: "typeOfBusiness")
+        users.setValue(password, forKeyPath: "password")
+        users.setValue(details, forKeyPath: "details")
+        users.setValue(pinColor, forKeyPath: "pinColor")
         
         
         //loop though hours and put them in 
@@ -53,7 +108,11 @@ class CoreDataManager: NSObject{
             
             switch hour{
                 
-            case "mondayHours": break
+            case "mondayHours":
+                
+                users.setValue(hour, forKeyPath: "mondayHours")
+
+                break
                 
                 
             default:

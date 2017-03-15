@@ -56,11 +56,6 @@ class LocoHome: UIViewController, UISearchBarDelegate,UITableViewDelegate,UITabl
         suggestionTable.dataSource = self;
         suggestionTable.delegate = self;
         
-
-     //   let documentsDirectoryPathString = NSSearchPathForDirectoriesInDomains(.documentDirectory, .//userDomainMask, true).first!
-      //  let documentsDirectoryPath = NSURL(string: documentsDirectoryPathString)!
-      //
-      //  let path = documentsDirectoryPath.appendingPathComponent("loco.json")
         
        let path = Bundle.main.path(forResource: "loco", ofType: "json")
         let jsonData =

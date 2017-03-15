@@ -11,16 +11,17 @@
 		6D3DC70E1DE254CA00714F0B /* BusinessInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DC70D1DE254CA00714F0B /* BusinessInformationViewController.swift */; };
 		6D4812311DD9300F00EAB50D /* ViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4812301DD9300F00EAB50D /* ViewBackground.swift */; };
 		6D48123A1DD93F4A00EAB50D /* GetLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4812391DD93F4A00EAB50D /* GetLocation.swift */; };
+		6D82C99D1E5B5388001ED334 /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D82C99C1E5B5388001ED334 /* MapTableViewCell.swift */; };
+		6D82C99F1E6381BE001ED334 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D82C99E1E6381BE001ED334 /* HomeViewController.swift */; };
 		6D85C6401DF0F4B7009632EE /* AddBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D85C63D1DF0F4B7009632EE /* AddBusiness.swift */; };
 		6D85C6411DF0F4B7009632EE /* AddGeotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D85C63E1DF0F4B7009632EE /* AddGeotification.swift */; };
 		6D85C6421DF0F4B7009632EE /* GeoticationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D85C63F1DF0F4B7009632EE /* GeoticationsViewController.swift */; };
 		6D85C6441DF63C9A009632EE /* LocoHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D85C6431DF63C9A009632EE /* LocoHome.swift */; };
-		6D85C6461DF63F6F009632EE /* loco.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D85C6451DF63F6F009632EE /* loco.json */; };
-		6D8ACC5E1E2EE75100475ED8 /* File.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6D8ACC5D1E2EE75100475ED8 /* File.txt */; };
 		6D8ACC631E38291600475ED8 /* QuickLocoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8ACC621E38291600475ED8 /* QuickLocoViewController.swift */; };
 		6D8ACC661E49435200475ED8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8ACC651E49435200475ED8 /* CoreDataManager.swift */; };
 		6D8F53451DB5A4BD004FA4FD /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F53441DB5A4BD004FA4FD /* Login.swift */; };
 		6D8F534B1DB990B3004FA4FD /* Register00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F534A1DB990B3004FA4FD /* Register00.swift */; };
+		6D9AC13C1E7224D200C749B8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9AC13B1E7224D200C749B8 /* ProfileViewController.swift */; };
 		6D9DDE3E1D6E61AB0089C7E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DDE3D1D6E61AB0089C7E8 /* AppDelegate.swift */; };
 		6D9DDE401D6E61AB0089C7E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DDE3F1D6E61AB0089C7E8 /* ViewController.swift */; };
 		6D9DDE461D6E61AB0089C7E8 /* Yard_Sale_00.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DDE441D6E61AB0089C7E8 /* Yard_Sale_00.xcdatamodeld */; };
@@ -28,6 +29,9 @@
 		6D9DDE4B1D6E61AB0089C7E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D9DDE491D6E61AB0089C7E8 /* LaunchScreen.storyboard */; };
 		6D9DDE561D6E61AB0089C7E8 /* Yard_Sale_00Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DDE551D6E61AB0089C7E8 /* Yard_Sale_00Tests.swift */; };
 		6D9DDE611D6E61AB0089C7E8 /* Yard_Sale_00UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DDE601D6E61AB0089C7E8 /* Yard_Sale_00UITests.swift */; };
+		6DE19F801E51382700A3E815 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE19F7F1E51382700A3E815 /* RecommendationViewController.swift */; };
+		6DE19F821E51383500A3E815 /* RecommendationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE19F811E51383500A3E815 /* RecommendationTableViewCell.swift */; };
+		6DE19F851E53D4B700A3E815 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE19F841E53D4B700A3E815 /* NavigationBar.swift */; };
 		9F31DBE41DC025740092BD7A /* DataManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31DBE21DC025730092BD7A /* DataManagerViewController.swift */; };
 		9F31DBE51DC025740092BD7A /* DataManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F31DBE31DC025730092BD7A /* DataManagerViewController.xib */; };
 		9F31DBE81DC02B690092BD7A /* Register01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31DBE71DC02B690092BD7A /* Register01.swift */; };
@@ -55,16 +59,17 @@
 		6D3DC70D1DE254CA00714F0B /* BusinessInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessInformationViewController.swift; sourceTree = "<group>"; };
 		6D4812301DD9300F00EAB50D /* ViewBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewBackground.swift; sourceTree = "<group>"; };
 		6D4812391DD93F4A00EAB50D /* GetLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetLocation.swift; path = ../../../GitHub/MapSeach00/MapSeach00/GetLocation.swift; sourceTree = "<group>"; };
+		6D82C99C1E5B5388001ED334 /* MapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapTableViewCell.swift; path = ../../../.Trash/MapTableViewCell.swift; sourceTree = "<group>"; };
+		6D82C99E1E6381BE001ED334 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6D85C63D1DF0F4B7009632EE /* AddBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBusiness.swift; sourceTree = "<group>"; };
 		6D85C63E1DF0F4B7009632EE /* AddGeotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGeotification.swift; sourceTree = "<group>"; };
 		6D85C63F1DF0F4B7009632EE /* GeoticationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoticationsViewController.swift; sourceTree = "<group>"; };
 		6D85C6431DF63C9A009632EE /* LocoHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocoHome.swift; sourceTree = "<group>"; };
-		6D85C6451DF63F6F009632EE /* loco.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loco.json; path = ../../loco.json; sourceTree = "<group>"; };
-		6D8ACC5D1E2EE75100475ED8 /* File.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File.txt; sourceTree = "<group>"; };
 		6D8ACC621E38291600475ED8 /* QuickLocoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickLocoViewController.swift; sourceTree = "<group>"; };
 		6D8ACC651E49435200475ED8 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		6D8F53441DB5A4BD004FA4FD /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		6D8F534A1DB990B3004FA4FD /* Register00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register00.swift; sourceTree = "<group>"; };
+		6D9AC13B1E7224D200C749B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6D9DDE3A1D6E61AB0089C7E8 /* Yard Sale 00.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yard Sale 00.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D9DDE3D1D6E61AB0089C7E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D9DDE3F1D6E61AB0089C7E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +83,9 @@
 		6D9DDE5C1D6E61AB0089C7E8 /* Yard Sale 00UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yard Sale 00UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D9DDE601D6E61AB0089C7E8 /* Yard_Sale_00UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yard_Sale_00UITests.swift; sourceTree = "<group>"; };
 		6D9DDE621D6E61AB0089C7E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DE19F7F1E51382700A3E815 /* RecommendationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
+		6DE19F811E51383500A3E815 /* RecommendationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationTableViewCell.swift; sourceTree = "<group>"; };
+		6DE19F841E53D4B700A3E815 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		9F31DBE21DC025730092BD7A /* DataManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerViewController.swift; sourceTree = "<group>"; };
 		9F31DBE31DC025730092BD7A /* DataManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataManagerViewController.xib; sourceTree = "<group>"; };
 		9F31DBE71DC02B690092BD7A /* Register01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register01.swift; sourceTree = "<group>"; };
@@ -127,26 +135,36 @@
 			children = (
 				6D85C63D1DF0F4B7009632EE /* AddBusiness.swift */,
 				6D85C63E1DF0F4B7009632EE /* AddGeotification.swift */,
-				6D85C63F1DF0F4B7009632EE /* GeoticationsViewController.swift */,
 				6D4812391DD93F4A00EAB50D /* GetLocation.swift */,
 			);
 			name = "Map Folder";
 			sourceTree = "<group>";
 		};
-		6D85C6471DF63FBA009632EE /* Resources */ = {
+		6D82C9971E5B515D001ED334 /* MapHomeSearch */ = {
 			isa = PBXGroup;
 			children = (
-				6D85C6451DF63F6F009632EE /* loco.json */,
-				6D8ACC5D1E2EE75100475ED8 /* File.txt */,
+				6D85C63F1DF0F4B7009632EE /* GeoticationsViewController.swift */,
+				6D82C99C1E5B5388001ED334 /* MapTableViewCell.swift */,
 			);
-			name = Resources;
+			name = MapHomeSearch;
+			sourceTree = "<group>";
+		};
+		6D85C6471DF63FBA009632EE /* Resources/Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6D4812301DD9300F00EAB50D /* ViewBackground.swift */,
+			);
+			name = Resources/Helpers;
 			sourceTree = "<group>";
 		};
 		6D8ACC611E3828FE00475ED8 /* LocoHome */ = {
 			isa = PBXGroup;
 			children = (
+				6D82C9971E5B515D001ED334 /* MapHomeSearch */,
 				6D85C6431DF63C9A009632EE /* LocoHome.swift */,
 				6D8ACC621E38291600475ED8 /* QuickLocoViewController.swift */,
+				6D82C99E1E6381BE001ED334 /* HomeViewController.swift */,
+				6D9AC13B1E7224D200C749B8 /* ProfileViewController.swift */,
 			);
 			name = LocoHome;
 			sourceTree = "<group>";
@@ -183,11 +201,14 @@
 		6D9DDE3C1D6E61AB0089C7E8 /* Yard Sale 00 */ = {
 			isa = PBXGroup;
 			children = (
-				6D8ACC641E49434000475ED8 /* CoreDataManager */,
-				6D85C6471DF63FBA009632EE /* Resources */,
-				6D19F0C81DDBD59000D3CA10 /* FaceBook */,
-				6D9DDE3D1D6E61AB0089C7E8 /* AppDelegate.swift */,
 				6D9DDE3F1D6E61AB0089C7E8 /* ViewController.swift */,
+				6D9DDE3D1D6E61AB0089C7E8 /* AppDelegate.swift */,
+				6D8ACC611E3828FE00475ED8 /* LocoHome */,
+				6DE19F831E53D49900A3E815 /* View Items */,
+				6DE19F7E1E5137EB00A3E815 /* Recommendations */,
+				6D8ACC641E49434000475ED8 /* CoreDataManager */,
+				6D85C6471DF63FBA009632EE /* Resources/Helpers */,
+				6D19F0C81DDBD59000D3CA10 /* FaceBook */,
 				9F31DBE61DC026B50092BD7A /* Login/Registration */,
 				6D9DDE471D6E61AB0089C7E8 /* Assets.xcassets */,
 				6D19F0C91DDD124800D3CA10 /* Main.storyboard */,
@@ -217,17 +238,32 @@
 			path = "Yard Sale 00UITests";
 			sourceTree = "<group>";
 		};
+		6DE19F7E1E5137EB00A3E815 /* Recommendations */ = {
+			isa = PBXGroup;
+			children = (
+				6DE19F811E51383500A3E815 /* RecommendationTableViewCell.swift */,
+				6DE19F7F1E51382700A3E815 /* RecommendationViewController.swift */,
+			);
+			name = Recommendations;
+			sourceTree = "<group>";
+		};
+		6DE19F831E53D49900A3E815 /* View Items */ = {
+			isa = PBXGroup;
+			children = (
+				6DE19F841E53D4B700A3E815 /* NavigationBar.swift */,
+			);
+			name = "View Items";
+			sourceTree = "<group>";
+		};
 		9F31DBE61DC026B50092BD7A /* Login/Registration */ = {
 			isa = PBXGroup;
 			children = (
 				6D8F534A1DB990B3004FA4FD /* Register00.swift */,
-				6D4812301DD9300F00EAB50D /* ViewBackground.swift */,
 				9F31DBE71DC02B690092BD7A /* Register01.swift */,
 				6D4812321DD93ECF00EAB50D /* Map Folder */,
 				9F31DBE21DC025730092BD7A /* DataManagerViewController.swift */,
 				6D8F53441DB5A4BD004FA4FD /* Login.swift */,
 				6D3DC70D1DE254CA00714F0B /* BusinessInformationViewController.swift */,
-				6D8ACC611E3828FE00475ED8 /* LocoHome */,
 			);
 			name = Login/Registration;
 			sourceTree = "<group>";
@@ -348,8 +384,6 @@
 			files = (
 				6D9DDE4B1D6E61AB0089C7E8 /* LaunchScreen.storyboard in Resources */,
 				6D9DDE481D6E61AB0089C7E8 /* Assets.xcassets in Resources */,
-				6D8ACC5E1E2EE75100475ED8 /* File.txt in Resources */,
-				6D85C6461DF63F6F009632EE /* loco.json in Resources */,
 				9F31DBE51DC025740092BD7A /* DataManagerViewController.xib in Resources */,
 				6D19F0CA1DDD124800D3CA10 /* Main.storyboard in Resources */,
 			);
@@ -381,7 +415,11 @@
 				9F31DBE81DC02B690092BD7A /* Register01.swift in Sources */,
 				6D4812311DD9300F00EAB50D /* ViewBackground.swift in Sources */,
 				6D8F534B1DB990B3004FA4FD /* Register00.swift in Sources */,
+				6D82C99F1E6381BE001ED334 /* HomeViewController.swift in Sources */,
+				6D9AC13C1E7224D200C749B8 /* ProfileViewController.swift in Sources */,
 				6D85C6401DF0F4B7009632EE /* AddBusiness.swift in Sources */,
+				6D82C99D1E5B5388001ED334 /* MapTableViewCell.swift in Sources */,
+				6DE19F801E51382700A3E815 /* RecommendationViewController.swift in Sources */,
 				6D8F53451DB5A4BD004FA4FD /* Login.swift in Sources */,
 				6D9DDE461D6E61AB0089C7E8 /* Yard_Sale_00.xcdatamodeld in Sources */,
 				6D48123A1DD93F4A00EAB50D /* GetLocation.swift in Sources */,
@@ -389,9 +427,11 @@
 				6D85C6441DF63C9A009632EE /* LocoHome.swift in Sources */,
 				9F31DBE41DC025740092BD7A /* DataManagerViewController.swift in Sources */,
 				6D9DDE3E1D6E61AB0089C7E8 /* AppDelegate.swift in Sources */,
+				6DE19F821E51383500A3E815 /* RecommendationTableViewCell.swift in Sources */,
 				6D3DC70E1DE254CA00714F0B /* BusinessInformationViewController.swift in Sources */,
 				6D8ACC661E49435200475ED8 /* CoreDataManager.swift in Sources */,
 				6D8ACC631E38291600475ED8 /* QuickLocoViewController.swift in Sources */,
+				6DE19F851E53D4B700A3E815 /* NavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,7 +580,7 @@
 				INFOPLIST_FILE = "Yard Sale 00/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-r";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rnapps.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -560,7 +600,7 @@
 				INFOPLIST_FILE = "Yard Sale 00/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-r";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rnapps.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

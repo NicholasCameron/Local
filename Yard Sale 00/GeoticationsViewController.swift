@@ -15,16 +15,37 @@ import CoreLocation
 
 
 struct PreferencesKeys {
-    static let savedItems = "itemsSaved"
+    static let savedItems = "itemsSaved6"
 }
 
 var counter = -1;
 var counter0 = Int();
 
-class GeoticationsViewController: UIViewController {
+class GeoticationsViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource {
+    
+    
+    
     
     @IBOutlet weak var mapKit: MKMapView!
+    /////////////////////////////
+    var bizName = String()
+    var bizDescription = String()
+    var bizType = String()
     
+    var shouldShowSearchResults = Bool();
+    
+    var filteredNameArray = [String]()
+    var filteredTypeArray = [String]()
+    
+    @IBOutlet weak var suggestionTable: UITableView!
+    
+    
+    var businessDetailsArray = [BusinessDetail]()
+    var businessDetailsFilteredArray = [BusinessDetail]()
+    
+    
+
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var BusinessLocations : [AddBusiness] = []
     
@@ -38,16 +59,46 @@ class GeoticationsViewController: UIViewController {
         
         loadAllGeotifications()
         
+        
+        ////////TABLE AND SEARCH//////////////
+        
+        
+        searchBar.backgroundImage = UIImage()        
+        
+        searchBar.delegate = self
+        //TABLE VIEW
+        
+        suggestionTable.dataSource = self
+        suggestionTable.delegate = self
+        
+        
+    
+        
+        
     }
     
+    
+    
+   
+    
+
+    
     func loadAllGeotifications() {
-        BusinessLocations = []
-        guard let savedItems = UserDefaults.standard.array(forKey: PreferencesKeys.savedItems) else { return }
-        for savedItem in savedItems {
-            guard let geotification = NSKeyedUnarchiver.unarchiveObject(with: savedItem as! Data) as? AddBusiness else { continue }
+      
+        let users =  DataManager.getUsers();
+
+        
+        for u in users{
             
-            add(business: geotification)
+            add(business: u)
+
+            let details = BusinessDetail(businessName:u.businessName,businessDescription:u.businessDescription,businessType:u.type)
+            
+            businessDetailsArray.append(details);
+        
+
         }
+
     }
     
     
@@ -67,7 +118,6 @@ class GeoticationsViewController: UIViewController {
         ///SWITCH TO GO TO 
         
         
-        counter -= 1;
         if let indexInArray = BusinessLocations.index(of: geotification) {
             BusinessLocations.remove(at: indexInArray)
         }
@@ -79,18 +129,6 @@ class GeoticationsViewController: UIViewController {
       //  title = "Business Locations (\(BusinessLocations.count))"
     }
     
-    func saveAllGeotifications() {
-        var items: [Data] = []
-        for businesses in BusinessLocations {
-            let item = NSKeyedArchiver.archivedData(withRootObject: businesses)
-            items.append(item)
-        }
-        UserDefaults.standard.set(items, forKey: PreferencesKeys.savedItems)
-    }
-    
-    
-    
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addGeotification" {
@@ -100,6 +138,185 @@ class GeoticationsViewController: UIViewController {
             
         }
     }//end of prepare to transition
+    
+    
+    
+    
+    func filterContentForSearchText(searchController: String) {
+        let searchString = searchController
+        var businessNameArray = [String]();
+        var businessTypeArray = [String]();
+        var businessDescriptionArray = [String]();
+        
+        for name in businessDetailsArray{
+            businessNameArray.append(name.businessName)
+            businessTypeArray.append(name.businessType)
+            businessDescriptionArray.append(name.businessDescription)
+            
+        }
+        
+        // Filter the data array and get only those countries that match the search text.
+        filteredNameArray = businessNameArray.filter({ (names) -> Bool in
+            let namesText: NSString = (names) as NSString;
+            
+            return (namesText.range(of: searchString, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
+        })
+        
+        filteredTypeArray = businessTypeArray.filter({ (type) -> Bool in
+            let typeText: NSString = (type) as NSString;
+            
+            return (typeText.range(of: searchString, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
+        })
+        
+        for bizDetails in businessDetailsArray{
+            for names in filteredNameArray{
+                for types in filteredTypeArray{
+                    for description in businessDescriptionArray{
+                        
+                        if(bizDetails.businessName == names || bizDetails.businessType == types){
+                            
+                            businessDetailsFilteredArray = [BusinessDetail(businessName: names,businessDescription: types,businessType: description)];
+                            
+                        }
+                    }
+                }
+            }
+        }
+        
+        shouldShowSearchResults = true;
+        // Reload the tableview.
+        
+        
+           suggestionTable.reloadData();
+        
+    }
+    
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        shouldShowSearchResults = true
+        
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.suggestionTable.alpha = 1.0
+            
+        })
+        
+        
+        // tableView.reloadData()
+    }
+    
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        shouldShowSearchResults = false
+        // tableView.reloadData()
+        searchBar.resignFirstResponder()
+        UIView.animate(withDuration: 0.5, animations: {
+            self.suggestionTable.alpha = 0
+            
+        })
+        searchBar.text = "";
+        
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if !shouldShowSearchResults {
+            shouldShowSearchResults = true
+            //   tableView.reloadData()
+        }
+        
+        searchBar.resignFirstResponder()
+        
+    }
+    
+    
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){ // called when text changes (including clear)
+        let searchString = searchText
+        UIView.animate(withDuration: 0.5, animations: {
+            self.suggestionTable.alpha = 1.0
+            
+        })
+        
+        if(searchBar.text != ""){
+            // Filter the data array and get only those countries that match the search text.
+            filterContentForSearchText(searchController: searchString)
+            
+            shouldShowSearchResults = true;
+        }else{
+            shouldShowSearchResults = false;
+            
+        }
+        // Reload the tableview.
+        suggestionTable.reloadData()
+       // suggestionTable.beginUpdates()
+    }
+    
+    
+    
+    
+    
+    public func updateSearchResults(for searchController: UISearchController)
+    {
+        
+    }
+    
+    
+    
+    //////////////////  TABLE VIEW   ///////////////////////
+    @available(iOS 2.0, *)
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        if shouldShowSearchResults {
+            return businessDetailsFilteredArray.count
+        }
+        else {
+            
+            return businessDetailsArray.count
+        }
+    }
+    
+    
+    
+    
+    @available(iOS 2.0, *)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = suggestionTable.dequeueReusableCell(withIdentifier: "mapCell")! as! MapTableViewCell
+        cell.sizeToFit();
+        
+        
+
+        
+        if shouldShowSearchResults {
+            cell.businessTitle?.text = businessDetailsFilteredArray[indexPath.row].businessName
+            cell.lblDistance.text = "19 KM"
+
+        }else {
+            
+        
+            cell.businessTitle?.text = businessDetailsArray[indexPath.row].businessName
+         //   cell.detailTextLabel?.text = businessDetailsArray[indexPath.row].businessDescription
+           cell.lblDistance.text = "19 KM"
+        }
+        print(indexPath.row)
+
+        cell.backgroundColor = .clear
+        
+        return cell;
+        
+    }
+    
+    @available(iOS 2.0, *)
+    func numberOfSections(in tableView: UITableView) -> Int // Default is 1 if not implemented
+    {
+        return 1;
+    }
+    
+    
+
+    
+    
+    
 }//END CLASS
 
 
@@ -112,9 +329,8 @@ extension GeoticationsViewController: AddGeotificationDelegate {
         
         CLLocationCoordinate2D, businessName: String, businessDescription: String,pinColor:String) {
         controller.dismiss(animated: true, completion: nil)
-        let geotification = AddBusiness(coordinate: coordinate, businessName: businessName, businessDescription: businessDescription,pinColor: pinColor)
+        let geotification = AddBusiness(coordinate: coordinate, businessName: businessName, businessDescription: businessDescription,pinColor: pinColor,type:businessTypeOfficial)
         add(business: geotification)
-        saveAllGeotifications()
     }
 }
 
@@ -129,13 +345,21 @@ extension GeoticationsViewController: MKMapViewDelegate {
         let identifier = "myGeotifications"
         if annotation is AddBusiness {
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
-            counter += 1;
-            //Figure out how to add different color pins into database
-            //for biz in BusinessLocations {
-            //   annotationView?.pinTintColor = UIColorFromRGB(color: biz.pinColor)
+
             
-            //    }
-            annotationView?.pinTintColor = UIColorFromRGB(color:BusinessLocations[counter].pinColor);
+            for b in BusinessLocations{
+                
+                
+                if b.coordinate.latitude == annotation.coordinate.latitude && b.coordinate.longitude == annotation.coordinate.longitude{
+                 
+                    
+                    annotationView?.pinTintColor = UIColorFromRGB(color: b.pinColor)
+
+                    
+                }
+                
+            }
+            
             
             
             if annotationView == nil {
@@ -143,19 +367,21 @@ extension GeoticationsViewController: MKMapViewDelegate {
                 //set to something
                 annotationView?.canShowCallout = true
                 
+                for b in BusinessLocations{
+                    
+                    
+                    if b.coordinate.latitude == annotation.coordinate.latitude && b.coordinate.longitude == annotation.coordinate.longitude{
+                        
+                        
+                        annotationView?.pinTintColor = UIColorFromRGB(color: b.pinColor)
+                        
+                        
+                    }
+                    
+                }
+
                 
-                
-                //Figure out how to add different color pins into database
-                
-                
-                /// SO THIS IS WHATS HAPPENING
-                //WHEN IT LOADS IT KEEPS ON ASSIGNING ANNOTIATION VIEW THE VALUE
-                //BUT ONLY RETURNS THE LAST ONE.
-                
-                // for biz in BusinessLocations {
-                //     annotationView?.pinTintColor = UIColorFromRGB(color: biz.pinColor)
-                // }
-                annotationView?.pinTintColor = UIColorFromRGB(color:BusinessLocations[counter].pinColor);
+   
                 
                 let removeButton = UIButton(type: .custom)
                 removeButton.frame = CGRect(x: 0, y: 0, width: 23, height: 23)
@@ -170,17 +396,7 @@ extension GeoticationsViewController: MKMapViewDelegate {
     }
     
     
-    //        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-    //            if overlay is MKCircle {
-    //                let circleRenderer = MKCircleRenderer(overlay: overlay)
-    //                circleRenderer.lineWidth = 1.0
-    //                circleRenderer.strokeColor = .purple
-    //                circleRenderer.fillColor = UIColor.purple.withAlphaComponent(0.4)
-    //                return circleRenderer
-    //            }
-    //            return MKOverlayRenderer(overlay: overlay)
-    //        }
-    //
+
     
     func UIColorFromRGB(color: String) -> UIColor {
         
@@ -191,8 +407,6 @@ extension GeoticationsViewController: MKMapViewDelegate {
             return UIColor.green
         }else if (color == "purple"){
             return UIColor.purple
-        }else if(color == "white"){
-            return UIColor.white
         }else if(color == "black"){
             return UIColor.black
         }else if(color == "orange"){
@@ -214,8 +428,12 @@ extension GeoticationsViewController: MKMapViewDelegate {
         // Delete geotification
         let geotification = view.annotation as! AddBusiness
         remove(geotification: geotification)
-        saveAllGeotifications()
     }
+    
+    
+    
+    
+    
     
 }
 

@@ -74,7 +74,7 @@ openTime = "1:00AM";
 closeTime = "1:00AM";
 
         
-        
+        self.view.ViewBackground(image: "halfWater0")
         
         
         
@@ -97,8 +97,7 @@ closeTime = "1:00AM";
         }
     }
     
-    
-    @IBAction func tuDatePicked(_ sender: Any) {
+       @IBAction func tuDatePicked(_ sender: Any) {
         if(btnTu.backgroundColor != UIColor.green){
             btnTu.backgroundColor = UIColor.green;
         }else{
@@ -162,7 +161,14 @@ closeTime = "1:00AM";
         satudayHours = lblSaturday.text!;
         sundayHours = lblSunday.text!;
         
-        
+        businessHours.append(mondayHours)
+        businessHours.append(tuesdayHours)
+        businessHours.append(wednesdayHours)
+        businessHours.append(thrusdayHours)
+        businessHours.append(fridayHours)
+        businessHours.append(satudayHours)
+        businessHours.append(sundayHours)
+
         
     }
     @IBAction func sDatePicked(_ sender: Any) {
