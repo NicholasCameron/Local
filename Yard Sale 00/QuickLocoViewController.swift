@@ -22,34 +22,47 @@ struct BusinessDetail{
 
 
 
-class QuickLocoViewController: UIViewController {
+class QuickLocoViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    var imageNames = ["coffee","yoga","restaurant","pizza","hiking","beer"]
 
-    
-    var bizName = String()
-    var bizDescription = String()
-    var bizType = String()
-    
-    var shouldShowSearchResults = Bool();
-    
-    var filteredNameArray = [String]()
-    var filteredTypeArray = [String]()
-    
-    
-    
-    var businessDetailsArray = [BusinessDetail]()
-    var businessDetailsFilteredArray = [BusinessDetail]()
-    
+    @IBOutlet weak var collectionImage: UIImageView!
 
-    
+
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Define Layout here
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        
+        //Get device width
+        let width = UIScreen.main.bounds.width
+        
+        //set section inset as per your requirement.
+     //   layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+    //
+        //set cell item size here
+       layout.itemSize = CGSize(width: width / 2, height: width / 2)
+        
+        //set Minimum spacing between 2 items
+        layout.minimumInteritemSpacing = 0
+        
+        //set minimum vertical line spacing here between two lines in collectionview
+        layout.minimumLineSpacing = 0
+        
+        //apply defined layout to collectionview
+        collectionView!.collectionViewLayout = layout
+
+        var nib = UINib(nibName: "collectionViewCellRecommendation", bundle: nil)
+        
+        collectionView.register(nib, forCellWithReuseIdentifier: "collectionViewCellRecommendation")
         
              self.view.ViewBackground(image: "quickLocoBG")
 
-    
-    
+        collectionView.delegate = self
+        collectionView.dataSource = self
     //TABLE VIEW
         
     
@@ -62,32 +75,34 @@ class QuickLocoViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
       
-        
-        
-        
-        
-        for button in view.subviews{
-        if button is UIButton {
-            UIView.animate(withDuration: 0.5, delay: 0.0,options: [.autoreverse, .allowUserInteraction],
-            animations:{
-                button.transform = CGAffineTransform(scaleX: 1.1, y:1.1)
-                
-            }, completion: { (t) -> Void in
-                button.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-            })
-            
-            
-            
-            
-            }
-            
         }
+
+    
+    @available(iOS 6.0, *)
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imageNames.count
+    }
+    
+    // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+    @available(iOS 6.0, *)
+     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+    let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCellRecommendation", for: indexPath) as! RecommendCollectionViewCell
+    
+        
+        cell.recommendImage.image = UIImage(named:imageNames[indexPath.row])
+        
+        
+        return cell
         
     }
-
-
     
     
- 
+    @available(iOS 6.0, *)
+    public func numberOfSections(in collectionView: UICollectionView) -> Int
+    {
+        return 2
+    }
+
 
 }

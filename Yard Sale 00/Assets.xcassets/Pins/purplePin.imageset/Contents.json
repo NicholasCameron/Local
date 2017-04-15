@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "purplePin.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "purplePin.png",
       "scale" : "2x"
     },
     {

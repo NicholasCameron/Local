@@ -54,12 +54,12 @@ class GeoticationsViewController: UIViewController,UISearchBarDelegate,UITableVi
         //MAPP LOAD LOCATION
         let span = MKCoordinateSpanMake(latDelta, lonDelta)
         let region = MKCoordinateRegionMake(location, span)
-        mapKit.setRegion(region, animated: false)
+        mapKit.setRegion(region, animated: true)
         
         
         loadAllGeotifications()
         
-        
+        mapKit.delegate = self
         ////////TABLE AND SEARCH//////////////
         
         
@@ -134,7 +134,7 @@ class GeoticationsViewController: UIViewController,UISearchBarDelegate,UITableVi
         if segue.identifier == "addGeotification" {
             let navigationController = segue.destination as! UINavigationController
             let vc = navigationController.viewControllers.first as! AddGeotification
-            vc.delegate = self
+           // vc.delegate = self
             
         }
     }//end of prepare to transition
@@ -322,17 +322,17 @@ class GeoticationsViewController: UIViewController,UISearchBarDelegate,UITableVi
 
 
 
-// This is initializing the protocol so that self can be assigned to the protocol.
-extension GeoticationsViewController: AddGeotificationDelegate {
-    
-    func addGeotificationViewController(controller: AddGeotification, didAddCoordinate coordinate:
-        
-        CLLocationCoordinate2D, businessName: String, businessDescription: String,pinColor:String) {
-        controller.dismiss(animated: true, completion: nil)
-        let geotification = AddBusiness(coordinate: coordinate, businessName: businessName, businessDescription: businessDescription,pinColor: pinColor,type:businessTypeOfficial)
-        add(business: geotification)
-    }
-}
+//// This is initializing the protocol so that self can be assigned to the protocol.
+//extension GeoticationsViewController: AddGeotificationDelegate {
+//    
+//    func addGeotificationViewController(controller: AddGeotification, didAddCoordinate coordinate:
+//        
+//        CLLocationCoordinate2D, businessName: String, businessDescription: String,pinColor:String) {
+//        controller.dismiss(animated: true, completion: nil)
+//        let geotification = AddBusiness(coordinate: coordinate, businessName: businessName, businessDescription: businessDescription,pinColor: pinColor,type:businessTypeOfficial)
+//        add(business: geotification)
+//    }
+//}
 
 //___________________________________________________________________________________________
 //MAPKIT CODE }
@@ -345,7 +345,6 @@ extension GeoticationsViewController: MKMapViewDelegate {
         let identifier = "myGeotifications"
         if annotation is AddBusiness {
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
-
             
             for b in BusinessLocations{
                 
@@ -365,7 +364,6 @@ extension GeoticationsViewController: MKMapViewDelegate {
             if annotationView == nil {
                 annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 //set to something
-                annotationView?.canShowCallout = true
                 
                 for b in BusinessLocations{
                     
@@ -379,14 +377,13 @@ extension GeoticationsViewController: MKMapViewDelegate {
                     }
                     
                 }
+                annotationView?.canShowCallout = true
 
-                
-   
-                
                 let removeButton = UIButton(type: .custom)
                 removeButton.frame = CGRect(x: 0, y: 0, width: 23, height: 23)
-                removeButton.setImage(UIImage(named: "home")!, for: .normal)
-                annotationView?.leftCalloutAccessoryView = removeButton
+                removeButton.setImage(UIImage(named: "profileIcon")!, for: .normal)
+                annotationView?.leftCalloutAccessoryView = removeButton as UIView
+               
             } else {
                 annotationView?.annotation = annotation
             }
@@ -415,6 +412,11 @@ extension GeoticationsViewController: MKMapViewDelegate {
             return UIColor.yellow
         }else if(color == "brown"){
             return UIColor.brown
+        }else if(color == "pink"){
+            return UIColor.magenta
+        }else if(color == "grey"){
+            return UIColor.gray
+
         }else{
             return UIColor(
                 red: CGFloat((235)) / 255.0,
@@ -426,11 +428,130 @@ extension GeoticationsViewController: MKMapViewDelegate {
     }
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         // Delete geotification
-        let geotification = view.annotation as! AddBusiness
-        remove(geotification: geotification)
+        let business = view.annotation as! AddBusiness
+        
+        
+        ProfilePage.profileName = business.businessName
+        ProfilePage.profileType = business.businessDescription
+   
+        let color = business.pinColor
+        if(color == "red"){
+
+            ProfilePage.bgColor = UIColor(
+                red: CGFloat((242)) / 255.0,
+                green: CGFloat((181)) / 255.0,
+                blue: CGFloat(180) / 255.0,
+                alpha: CGFloat(1.0)
+            )
+        
+        
+        }else if(color == "green"){
+
+            ProfilePage.bgColor
+= UIColor(
+                red: CGFloat((195)) / 255.0,
+                green: CGFloat((250)) / 255.0,
+                blue: CGFloat(182) / 255.0,
+                alpha: CGFloat(1.0)
+            )
+        
+        }else if (color == "purple"){
+            
+            ProfilePage.bgColor = UIColor(
+                red: CGFloat((187)) / 255.0,
+                green: CGFloat((181)) / 255.0,
+                blue: CGFloat(250) / 255.0,
+                alpha: CGFloat(1.0)
+            )
+        
+        
+        }else if(color == "black"){
+
+            ProfilePage.bgColor = UIColor(
+                red: CGFloat((55)) / 255.0,
+                green: CGFloat((56)) / 255.0,
+                blue: CGFloat(54) / 255.0,
+                alpha: CGFloat(1.0)
+            )
+        
+        }else if(color == "orange"){
+
+        
+            ProfilePage.bgColor = UIColor(
+                red: CGFloat((248)) / 255.0,
+                green: CGFloat((218)) / 255.0,
+                blue: CGFloat(182) / 255.0,
+                alpha: CGFloat(1.0)
+            )
+        
+        
+        }else if(color == "yellow"){
+
+            ProfilePage.bgColor = UIColor(
+                red: CGFloat((253)) / 255.0,
+                green: CGFloat((247)) / 255.0,
+                blue: CGFloat(183) / 255.0,
+                alpha: CGFloat(1.0)
+            )
+        
+        }else if(color == "brown"){
+            
+            ProfilePage.bgColor = UIColor(
+                red: CGFloat((201)) / 255.0,
+                green: CGFloat((173)) / 255.0,
+                blue: CGFloat(140) / 255.0,
+                alpha: CGFloat(1.0)
+            )
+        
+        }else if(color == "pink"){
+
+        
+            ProfilePage.bgColor = UIColor(
+                red: CGFloat((239)) / 255.0,
+                green: CGFloat((170)) / 255.0,
+                blue: CGFloat(251) / 255.0,
+                alpha: CGFloat(1.0)
+            )
+        
+        
+        }else if(color == "grey"){
+
+            ProfilePage.bgColor = UIColor(
+                red: CGFloat((224)) / 255.0,
+                green: CGFloat((224)) / 255.0,
+                blue: CGFloat(224) / 255.0,
+                alpha: CGFloat(1.0)
+            )
+            
+            
+        }else{
+        ProfilePage.bgColor = UIColor(
+                red: CGFloat((235)) / 255.0,
+                green: CGFloat((192)) / 255.0,
+                blue: CGFloat(73) / 255.0,
+                alpha: CGFloat(1.0)
+            )
+        }
+
+        
+        
+        //  ProfilePage.profileHours = business.
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
+        self.present(nextViewController, animated:true, completion:nil)
+        
+    
+        
+
+    
     }
     
     
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+       print("click")
+    
+    }
     
     
     

@@ -4,6 +4,7 @@
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="emailAddress" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fridayHours" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="headerImage" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mondayHours" optional="YES" attributeType="String" syncable="YES"/>
@@ -18,6 +19,6 @@
         <attribute name="wednesdayHours" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Users" positionX="-45" positionY="0" width="128" height="270"/>
+        <element name="Users" positionX="-45" positionY="0" width="128" height="285"/>
     </elements>
 </model>

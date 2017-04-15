@@ -21,7 +21,6 @@ class CoreDataManager: NSObject{
     
     func getUsers()->[AddBusiness]{
         
-        
         var businesses = [AddBusiness]()
         
         //1
@@ -31,8 +30,6 @@ class CoreDataManager: NSObject{
         return businesses
         }
         
-        
-    
         let managedContext = appDelegate.managedObjectContext
 
         //2
@@ -45,21 +42,23 @@ class CoreDataManager: NSObject{
             
           Users = try managedContext.fetch(fetchRequest)
             for u in Users{
-
                 var coordinate = CLLocationCoordinate2D()
               let  n = (u.value(forKey: "organizationName")! as! String)
-                
-                let la = (u.value(forKey: "latitude")! as! String)
-                let lo = (u.value(forKey: "longitude")! as! String)
-                    
-                let type = (u.value(forKey: "typeOfBusiness")! as! String)
-
-                coordinate.latitude =  Double(la)!
-                coordinate.longitude =  Double(lo)!
+              let la = (u.value(forKey: "latitude")! as! String)
+              let lo = (u.value(forKey: "longitude")! as! String)
+              let type = (u.value(forKey: "typeOfBusiness")! as! String)
+              coordinate.latitude =  Double(la)!
+              coordinate.longitude =  Double(lo)!
               let  businessD = (u.value(forKey: "details")! as! String)
               let  pinC = (u.value(forKey: "pinColor")! as! String)
-              
-                businesses.append(AddBusiness(coordinate: coordinate, businessName: n, businessDescription: businessD, pinColor: pinC,type:type))
+        
+                let  image = (u.value(forKey: "headerImage")! as! NSData)
+
+                
+                
+                
+                
+                businesses.append(AddBusiness(coordinate: coordinate, businessName: n, businessDescription: businessD, pinColor: pinC,type:type,image:image))
                 
             }
     
@@ -74,7 +73,7 @@ class CoreDataManager: NSObject{
     }
     
     
-    func save(organizationName: String,details:String,emailAddress:String,hours: [String],coordinate: CLLocationCoordinate2D,password:String,typeOfBusiness:String,pinColor:String) {
+    func save(organizationName: String,details:String,emailAddress:String,hours: [String],coordinate: CLLocationCoordinate2D,password:String,typeOfBusiness:String,pinColor:String,image: NSData) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                 return
@@ -87,7 +86,7 @@ class CoreDataManager: NSObject{
         
         let users = NSManagedObject(entity: entity, insertInto: managedContext)
         
-        
+       
         // add the values boom shaa!
         users.setValue(organizationName, forKeyPath: "organizationName")
         users.setValue(emailAddress, forKeyPath: "emailAddress")
@@ -97,7 +96,8 @@ class CoreDataManager: NSObject{
         users.setValue(password, forKeyPath: "password")
         users.setValue(details, forKeyPath: "details")
         users.setValue(pinColor, forKeyPath: "pinColor")
-        
+        users.setValue(image, forKeyPath: "headerImage")
+
         
         //loop though hours and put them in 
         

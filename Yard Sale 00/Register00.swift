@@ -68,8 +68,7 @@ class Register00: UIViewController,UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
         //FOOL AROUND TO MAKE SMALL CLOUD DO COOL JAZZ
         super.viewDidAppear(animated)
-        self.view.layoutIfNeeded()
-        
+
         UIView.animate(withDuration: 15.0, delay: 0, options: [], animations: {
            
             
@@ -190,7 +189,7 @@ class Register00: UIViewController,UITextFieldDelegate {
                 
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Register01") as! Register01
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "description") as! DescriptionViewController
                 self.present(nextViewController, animated:true, completion:nil)
                 
 

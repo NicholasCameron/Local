@@ -11,8 +11,9 @@ import MapKit
 
 
 
-class BusinessInformationViewController: UIViewController {
+class BusinessInformationViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
 
+    @IBOutlet weak var imageHeader: UIImageView!
     
     @IBOutlet weak var lblBusinessType: UILabel!
     @IBOutlet weak var lblOwnersName: UILabel!
@@ -43,15 +44,19 @@ class BusinessInformationViewController: UIViewController {
     var x11 = CGFloat()
     
     var delegate: AddGeotificationDelegate?
+    let imagePicker = UIImagePickerController()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewInfo.alpha = 0
+        
+        
+        imagePicker.delegate = self
         
        self.view.ViewBackground(image: "ocean")
 
-        
         
         lblBusinessType.text = businessTypeOfficial;
         lblOwnersName.text = ownerName;
@@ -104,6 +109,32 @@ class BusinessInformationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBOutlet weak var btnUploadImage: UIButton!
+    @IBAction func btnUploadImageClicked(_ sender: Any) {
+      
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            var imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        
+}
+    
+    
+    
+    @available(iOS 2.0, *)
+     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageHeader.image = pickedImage
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -120,7 +151,7 @@ class BusinessInformationViewController: UIViewController {
          self.lblEmail.center.y = self.x3
             self.lblAddress.center.y = self.x4
 
-            },completion:(nil))
+        },completion:nil)
         
         UIView.animate(withDuration: 2.0, delay:0.5,usingSpringWithDamping:0.3,initialSpringVelocity:0.0,options:.curveEaseIn, animations: {
             
@@ -145,9 +176,32 @@ class BusinessInformationViewController: UIViewController {
    
     }
     
+    @IBOutlet weak var viewInfo: UIView!
     
     
+    @IBAction func headerInfoBtnClicked(_ sender: Any) {
+        
+        UIView.animate(withDuration: 2, delay: 0,options: [], animations: {
+            
+            
+            self.viewInfo.alpha = 1
+            
+        }, completion: nil)
+        
+        
+    }
     
+    @IBAction func btnCloseInfo(_ sender: Any) {
+        
+        UIView.animate(withDuration: 2, delay: 0,options: [], animations: {
+            
+            
+            self.viewInfo.alpha = 0
+            
+        }, completion: nil)
+        
+        
+    }
     //BOOM REGISTER
     
     @IBAction func Register(_ sender: Any) {
@@ -165,10 +219,12 @@ class BusinessInformationViewController: UIViewController {
   
         
         
+        let imageData = NSData(data: UIImageJPEGRepresentation(imageHeader.image!, 1.0)!)
         
         
         
-        DataManager.save(organizationName: ownerName, details: businessDescription, emailAddress: emailAddress, hours: businessHours, coordinate: coordinate, password: password,  typeOfBusiness: businessTypeOfficial, pinColor: pinColor)
+        DataManager.save(organizationName: ownerName, details: businessDescription, emailAddress: emailAddress, hours: businessHours, coordinate: coordinate, password: password,  typeOfBusiness: businessTypeOfficial, pinColor: pinColor,image:imageData)
+        
         
         ///////////////////////////////////////////////////////////
     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

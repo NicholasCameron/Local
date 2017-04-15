@@ -89,8 +89,8 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
         
         let cellIdentifier = "recommendationCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RecommendationTableViewCell
-        
-        
+        var headerImage = UIImage(data: Users[indexPath.row].image as Data)
+        cell.imageInCell.image = headerImage
         cell.lblBuinessTitle.text = Users[indexPath.row].businessName
         cell.lblBusinessDescription.text = "this is dummy text is all that the whole point of writing this text out like a dummy when i could have just copy pasted intread of wasting all my dog funk time to copy paste"
         cell.lblBusinessDescription.sizeToFit()

@@ -15,7 +15,6 @@ var businessCoordinates = CLLocationCoordinate2D();
 var businessTypeOfficial = String();
 var businessStreet = String();
 
-
 protocol AddGeotificationDelegate {
     
     func addGeotificationViewController(controller: AddGeotification, didAddCoordinate coordinate: CLLocationCoordinate2D,businessName: String, businessDescription: String,pinColor: String)
@@ -32,7 +31,6 @@ var center = "";
 class AddGeotification: UITableViewController,UIPickerViewDataSource,UIPickerViewDelegate,UITextFieldDelegate,MKMapViewDelegate,UISearchBarDelegate,CLLocationManagerDelegate {
   
     
-    
     var matchingItems:[MKMapItem] = []
     var selectedLocation = CLLocationCoordinate2D();
     var usersLocation = CLLocationCoordinate2D();
@@ -40,6 +38,7 @@ class AddGeotification: UITableViewController,UIPickerViewDataSource,UIPickerVie
     var zoomLongitude = Double()
 var StreetFilter = String()
     
+    @IBOutlet weak var addPin: UIImageView!
     @IBOutlet weak var btnAddressFiltered: UIButton!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var addressSearchBar: UISearchBar!
@@ -54,8 +53,8 @@ var StreetFilter = String()
     
     @IBOutlet weak var lblLocation: UILabel!
     //PICKERVIEW DATA
-    let pickerData = ["CoffeeShop","Resturant","GiftShop","Golf","Food","Entertainment","Shop","Fun","Exercise","Gym", "Trail"]
-    let ColorValues = ["brown","purple","orange","green","yellow","black","red","black","yellow","yellow","green"]
+    let pickerData = ["CoffeeShop","Resturant","GiftShop","Golf","Food","Entertainment","Shop","Fun","Exercise", "Trail"]
+    let ColorValues = ["brown","purple","white","green","red","black","pink","orange","grey","green"]
     var pinColorValue = String();
     //ICON IMAGE
     
@@ -66,23 +65,37 @@ var StreetFilter = String()
     //ADDGEOTIFICATIONDELEGATE
     var delegate: AddGeotificationDelegate?
 
-
+//location manager
+    var locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         
+        super.viewDidLoad()
+
+        if CLLocationManager.locationServicesEnabled(){
+            
+          //  locationManager.requestAlwaysAuthorization()
+            locationManager.delegate = self
+            locationManager.requestLocation()
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+            mapKit.showsUserLocation = true
+        }
+        
         self.view.ViewBackground(image:"trees")
-        
         btnAddressFiltered.isHidden = true
-        
-       
         mapKit.delegate = self;
         
-        super.viewDidLoad()
         
         
         //zoom in on an initial location
         let span = MKCoordinateSpanMake(latDelta, lonDelta)
         let region = MKCoordinateRegionMake(location, span)
         mapKit.setRegion(region, animated: true)
+        
+       
+        
         
         lblLocation.text = "Place pin on location or search"
         typePicker.dataSource = self
@@ -120,30 +133,74 @@ var StreetFilter = String()
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
         businessType = pickerData[row]
+        return pickerData[row]
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
         pinColorValue = ColorValues[row]
         
-    switch pinColorValue{
+        switch pinColorValue{
+          //  let ColorValues = ["brown","purple","white","green","red","black","pink","blue","grey","green"]
 
-    case "brown":
+        case "brown":
             pin.image = UIImage(named:"brownPin")
-    case "green":
+            addPin.image = UIImage(named:"brownPin")
+
+        case "green":
             pin.image = UIImage(named:"greenPin")
-    case "purple":
+            addPin.image = UIImage(named:"greenPin")
+
+        case "pink":
+            pin.image = UIImage(named:"pinkPin")
+            addPin.image = UIImage(named:"pinkPin")
+
+
+        case "grey":
+            pin.image = UIImage(named:"greyPin")
+            addPin.image =  UIImage(named:"greyPin")
+
+
+        case "purple":
             pin.image = UIImage(named:"purplePin")
-    case "black":
+            addPin.image = UIImage(named:"purplePin")
+
+        case "black":
             pin.image = UIImage(named:"blackPin")
-    case "yellow":
+            addPin.image = UIImage(named:"blackPin")
+
+        case "white":
+            pin.image = UIImage(named:"whitePin")
+            addPin.image = UIImage(named:"whitePin")
+
+        case "yellow":
             pin.image = UIImage(named:"yellowPin")
-    case "orange":
-        pin.image = UIImage(named:"orangePin")
-    
-    default: pin.image = UIImage(named:"AddPin")
+            addPin.image = UIImage(named:"yellowPin")
+
+        case "orange":
+            pin.image = UIImage(named:"orangePin")
+            addPin.image = UIImage(named:"orangePin")
+
+            
+        default: pin.image = UIImage(named:"AddPin")
+        addPin.image = UIImage(named:"AddPin")
+
         }
         
         pinColor = pinColorValue
-        return pickerData[row]
+
+        
+        
+        
+        
+        
+        
     }
+    
+    
     
     
     //END OF PICKER VIEW
@@ -185,11 +242,6 @@ var StreetFilter = String()
         dismiss(animated: true, completion: nil)
 
     }
-    
-    
-    @IBAction func didChange(_ sender: UITextField) {
-    }
-    
     
     
     
@@ -324,14 +376,19 @@ var StreetFilter = String()
     //LOCATION MANAGER
      private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+            print("location:: (location)")
+
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if locations.first != nil {
-            print("location:: (location)")
-        }
+       
+        
     }
+    
+
+    
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("location manager failing")
