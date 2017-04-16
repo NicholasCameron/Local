@@ -36,8 +36,8 @@ class LocoHome: UIViewController, UISearchBarDelegate,UITableViewDelegate,UITabl
   
     var shouldShowSearchResults = Bool();
     
-    var filteredNameArray = [String]()
-    var filteredTypeArray = [String]()
+    var filteredNameArray : [String]?
+    var filteredTypeArray : [String]?
 
     
     
@@ -101,7 +101,7 @@ class LocoHome: UIViewController, UISearchBarDelegate,UITableViewDelegate,UITabl
             }
                
             }
-            let details =  BusinessDetail(businessName:bizName,businessDescription:bizDescription,businessType:bizType)
+            let details =  BusinessDetail(businessName:bizName,businessDescription:bizDescription,businessType:bizType,location: BusinessProperties.properties.businessCoordinates)
             
             businessDetailsArray.append(details);
         }
@@ -152,13 +152,13 @@ class LocoHome: UIViewController, UISearchBarDelegate,UITableViewDelegate,UITabl
         })
         
         for bizDetails in businessDetailsArray{
-            for names in filteredNameArray{
-                for types in filteredTypeArray{
+            for names in filteredNameArray!{
+                for types in filteredTypeArray!{
                     for description in businessDescriptionArray{
 
                     if(bizDetails.businessName == names || bizDetails.businessType == types){
                         
-                        businessDetailsFilteredArray = [BusinessDetail(businessName: names,businessDescription: types,businessType: description)];
+                        businessDetailsFilteredArray = [BusinessDetail(businessName: names,businessDescription: types,businessType: description,location: BusinessProperties.properties.businessCoordinates)];
 
                         }
                     }

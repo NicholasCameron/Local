@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 import CoreData
-
+import CoreLocation
 var Businesses = [String:AnyObject]()
 
 
@@ -17,6 +17,7 @@ struct BusinessDetail{
     let businessName: String
     let businessDescription: String
     let businessType: String
+    let location :  CLLocationCoordinate2D
 }
 
 
@@ -55,7 +56,7 @@ class QuickLocoViewController: UIViewController,UICollectionViewDelegate, UIColl
         //apply defined layout to collectionview
         collectionView!.collectionViewLayout = layout
 
-        var nib = UINib(nibName: "collectionViewCellRecommendation", bundle: nil)
+        let nib = UINib(nibName: "collectionViewCellRecommendation", bundle: nil)
         
         collectionView.register(nib, forCellWithReuseIdentifier: "collectionViewCellRecommendation")
         

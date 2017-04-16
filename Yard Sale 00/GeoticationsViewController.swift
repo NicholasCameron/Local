@@ -21,7 +21,7 @@ struct PreferencesKeys {
 var counter = -1;
 var counter0 = Int();
 
-class GeoticationsViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource {
+class GeoticationsViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource,CLLocationManagerDelegate {
     
     
     
@@ -44,17 +44,29 @@ class GeoticationsViewController: UIViewController,UISearchBarDelegate,UITableVi
     var businessDetailsFilteredArray = [BusinessDetail]()
     
     
-
+var locationManager = CLLocationManager()
     @IBOutlet weak var searchBar: UISearchBar!
     
     var BusinessLocations : [AddBusiness] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //MAPP LOAD LOCATION
-        let span = MKCoordinateSpanMake(latDelta, lonDelta)
-        let region = MKCoordinateRegionMake(location, span)
-        mapKit.setRegion(region, animated: true)
+        
+        
+        
+        // Ask for Authorisation from the User.
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        
+        
         
         
         loadAllGeotifications()
@@ -79,20 +91,22 @@ class GeoticationsViewController: UIViewController,UISearchBarDelegate,UITableVi
     
     
     
-   
+    override func viewDidAppear(_ animated: Bool) {
+        
+      
+    }
     
 
     
     func loadAllGeotifications() {
       
-        let users =  DataManager.getUsers();
+         let users =  BusinessProperties.properties.DataManager.getUsers();
 
         
         for u in users{
             
             add(business: u)
-
-            let details = BusinessDetail(businessName:u.businessName,businessDescription:u.businessDescription,businessType:u.type)
+            let details = BusinessDetail(businessName:u.businessName,businessDescription:u.businessDescription,businessType:u.type,location: u.coordinate)
             
             businessDetailsArray.append(details);
         
@@ -152,7 +166,7 @@ class GeoticationsViewController: UIViewController,UISearchBarDelegate,UITableVi
             businessNameArray.append(name.businessName)
             businessTypeArray.append(name.businessType)
             businessDescriptionArray.append(name.businessDescription)
-            
+    
         }
         
         // Filter the data array and get only those countries that match the search text.
@@ -175,7 +189,7 @@ class GeoticationsViewController: UIViewController,UISearchBarDelegate,UITableVi
                         
                         if(bizDetails.businessName == names || bizDetails.businessType == types){
                             
-                            businessDetailsFilteredArray = [BusinessDetail(businessName: names,businessDescription: types,businessType: description)];
+                            businessDetailsFilteredArray = [BusinessDetail(businessName: names,businessDescription: types,businessType: description,location: BusinessProperties.properties.businessCoordinates)];
                             
                         }
                     }
@@ -289,16 +303,38 @@ class GeoticationsViewController: UIViewController,UISearchBarDelegate,UITableVi
         
         if shouldShowSearchResults {
             cell.businessTitle?.text = businessDetailsFilteredArray[indexPath.row].businessName
-            cell.lblDistance.text = "19 KM"
+
+            
+            let yourPoint = CLLocation(latitude: BusinessProperties.properties.usersLocation.latitude, longitude: BusinessProperties.properties.usersLocation.longitude)
+            
+            let bizPoint = CLLocation(latitude: businessDetailsFilteredArray[indexPath.row].location.latitude, longitude: businessDetailsFilteredArray[indexPath.row].location.longitude)
+            
+            
+            var distanceInMeters = yourPoint.distance(from:bizPoint) // result is in meters
+
+        distanceInMeters = distanceInMeters / 1000
+            let d = Int(distanceInMeters)
+
+            cell.lblDistance.text = String(d) + " KM"
 
         }else {
             
         
             cell.businessTitle?.text = businessDetailsArray[indexPath.row].businessName
          //   cell.detailTextLabel?.text = businessDetailsArray[indexPath.row].businessDescription
-           cell.lblDistance.text = "19 KM"
+            
+            let yourPoint = CLLocation(latitude: BusinessProperties.properties.usersLocation.latitude, longitude: BusinessProperties.properties.usersLocation.longitude)
+            
+            let bizPoint = CLLocation(latitude: businessDetailsArray[indexPath.row].location.latitude, longitude: businessDetailsArray[indexPath.row].location.longitude)
+            
+            
+            var distanceInMeters = yourPoint.distance(from:bizPoint) // result is in meters
+
+            distanceInMeters = distanceInMeters / 1000
+            let d = Int(distanceInMeters)
+
+            cell.lblDistance.text = String(d) + " KM"
         }
-        print(indexPath.row)
 
         cell.backgroundColor = .clear
         
@@ -315,6 +351,10 @@ class GeoticationsViewController: UIViewController,UISearchBarDelegate,UITableVi
     
 
     
+    deinit {
+print("asdfa")
+    
+    }
     
     
 }//END CLASS
@@ -431,13 +471,13 @@ extension GeoticationsViewController: MKMapViewDelegate {
         let business = view.annotation as! AddBusiness
         
         
-        ProfilePage.profileName = business.businessName
-        ProfilePage.profileType = business.businessDescription
+        Profile.ProfilePage.profileName = business.businessName
+        Profile.ProfilePage.profileType = business.businessDescription
    
         let color = business.pinColor
         if(color == "red"){
 
-            ProfilePage.bgColor = UIColor(
+            Profile.ProfilePage.bgColor = UIColor(
                 red: CGFloat((242)) / 255.0,
                 green: CGFloat((181)) / 255.0,
                 blue: CGFloat(180) / 255.0,
@@ -447,7 +487,7 @@ extension GeoticationsViewController: MKMapViewDelegate {
         
         }else if(color == "green"){
 
-            ProfilePage.bgColor
+            Profile.ProfilePage.bgColor
 = UIColor(
                 red: CGFloat((195)) / 255.0,
                 green: CGFloat((250)) / 255.0,
@@ -457,7 +497,7 @@ extension GeoticationsViewController: MKMapViewDelegate {
         
         }else if (color == "purple"){
             
-            ProfilePage.bgColor = UIColor(
+            Profile.ProfilePage.bgColor = UIColor(
                 red: CGFloat((187)) / 255.0,
                 green: CGFloat((181)) / 255.0,
                 blue: CGFloat(250) / 255.0,
@@ -467,7 +507,7 @@ extension GeoticationsViewController: MKMapViewDelegate {
         
         }else if(color == "black"){
 
-            ProfilePage.bgColor = UIColor(
+            Profile.ProfilePage.bgColor = UIColor(
                 red: CGFloat((55)) / 255.0,
                 green: CGFloat((56)) / 255.0,
                 blue: CGFloat(54) / 255.0,
@@ -477,7 +517,7 @@ extension GeoticationsViewController: MKMapViewDelegate {
         }else if(color == "orange"){
 
         
-            ProfilePage.bgColor = UIColor(
+            Profile.ProfilePage.bgColor = UIColor(
                 red: CGFloat((248)) / 255.0,
                 green: CGFloat((218)) / 255.0,
                 blue: CGFloat(182) / 255.0,
@@ -487,7 +527,7 @@ extension GeoticationsViewController: MKMapViewDelegate {
         
         }else if(color == "yellow"){
 
-            ProfilePage.bgColor = UIColor(
+            Profile.ProfilePage.bgColor = UIColor(
                 red: CGFloat((253)) / 255.0,
                 green: CGFloat((247)) / 255.0,
                 blue: CGFloat(183) / 255.0,
@@ -496,7 +536,7 @@ extension GeoticationsViewController: MKMapViewDelegate {
         
         }else if(color == "brown"){
             
-            ProfilePage.bgColor = UIColor(
+            Profile.ProfilePage.bgColor = UIColor(
                 red: CGFloat((201)) / 255.0,
                 green: CGFloat((173)) / 255.0,
                 blue: CGFloat(140) / 255.0,
@@ -506,7 +546,7 @@ extension GeoticationsViewController: MKMapViewDelegate {
         }else if(color == "pink"){
 
         
-            ProfilePage.bgColor = UIColor(
+            Profile.ProfilePage.bgColor = UIColor(
                 red: CGFloat((239)) / 255.0,
                 green: CGFloat((170)) / 255.0,
                 blue: CGFloat(251) / 255.0,
@@ -516,7 +556,7 @@ extension GeoticationsViewController: MKMapViewDelegate {
         
         }else if(color == "grey"){
 
-            ProfilePage.bgColor = UIColor(
+            Profile.ProfilePage.bgColor = UIColor(
                 red: CGFloat((224)) / 255.0,
                 green: CGFloat((224)) / 255.0,
                 blue: CGFloat(224) / 255.0,
@@ -525,7 +565,7 @@ extension GeoticationsViewController: MKMapViewDelegate {
             
             
         }else{
-        ProfilePage.bgColor = UIColor(
+        Profile.ProfilePage.bgColor = UIColor(
                 red: CGFloat((235)) / 255.0,
                 green: CGFloat((192)) / 255.0,
                 blue: CGFloat(73) / 255.0,
@@ -549,11 +589,30 @@ extension GeoticationsViewController: MKMapViewDelegate {
     
     
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
-       print("click")
     
     }
     
     
+    //LOCATION MANAGER
+    private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+            BusinessProperties.properties.usersLocation = (manager.location?.coordinate)!
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        BusinessProperties.properties.usersLocation = locations[0].coordinate
+        //MAPP LOAD LOCATION
+        let span = MKCoordinateSpanMake(BusinessProperties.properties.latDelta, BusinessProperties.properties.lonDelta)
+        let region = MKCoordinateRegionMake(BusinessProperties.properties.usersLocation, span)
+        mapKit.setRegion(region, animated: true)
+        
+        suggestionTable.reloadData()
+
+    }
+
     
     
 }

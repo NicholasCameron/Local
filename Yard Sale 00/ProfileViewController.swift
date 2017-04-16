@@ -28,14 +28,14 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-    businessTitle.text = ProfilePage.profileName
         
-        businessType.text = ProfilePage.profileType
-
-        //    let ColorValues = ["brown","purple","white","green","red","black","pink","orange","grey","green"]
-
-        self.view.backgroundColor = ProfilePage.bgColor
+        if Profile.ProfilePage.profileName != ""{
+        businessTitle.text = Profile.ProfilePage.profileName
         
+        businessType.text = Profile.ProfilePage.profileType
+
+        self.view.backgroundColor = Profile.ProfilePage.bgColor
+        }
         
         
     }

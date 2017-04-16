@@ -20,9 +20,15 @@ class DescriptionViewController: UIViewController,UITextViewDelegate {
         self.view.ViewBackground(image: "descriptionBG")
         descriptionTextField.delegate = self
         // Do any additional setup after loading the view.
-        descriptionTextField.isFirstResponder = true
     }
 
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        descriptionTextField.becomeFirstResponder()
+
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -43,13 +49,36 @@ class DescriptionViewController: UIViewController,UITextViewDelegate {
         lblText.text = "Please explain your organization in " + String(numbersLeft) + " characters!"
         
         
-        if newLength == 100{
+        if newLength == 150{
             descriptionTextField.deleteBackward()
-            
+            descriptionTextField.resignFirstResponder()
+
+        }
+        if(text == "\n") {
+            descriptionTextField.resignFirstResponder()
+            return false
         }
         
         return true
     }
+    
+    
+    @available(iOS 2.0, *)
+     public func textViewShouldEndEditing(_ textView: UITextView) -> Bool
+    {
+        descriptionTextField.resignFirstResponder()
+
+        return true
+       
+    }
+    
+    @available(iOS 2.0, *)
+     public func textViewDidEndEditing(_ textView: UITextView)
+    {
+        descriptionTextField.resignFirstResponder()
+
+    }
+    
 
 }
 

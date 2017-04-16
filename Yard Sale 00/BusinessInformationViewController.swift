@@ -57,11 +57,10 @@ class BusinessInformationViewController: UIViewController,UIImagePickerControlle
         
        self.view.ViewBackground(image: "ocean")
 
-        
-        lblBusinessType.text = businessTypeOfficial;
-        lblOwnersName.text = ownerName;
-        lblEmail.text = emailAddress;
-        lblAddress.text = businessStreet;
+        lblBusinessType.text = BusinessProperties.properties.businessTypeOfficial;
+        lblOwnersName.text = BusinessProperties.properties.ownerName;
+        lblEmail.text = BusinessProperties.properties.emailAddress;
+        lblAddress.text = BusinessProperties.properties.businessStreet;
         
         x1 = lblBusinessType.center.y;
         x2 = lblOwnersName.center.y;
@@ -113,7 +112,7 @@ class BusinessInformationViewController: UIViewController,UIImagePickerControlle
     @IBAction func btnUploadImageClicked(_ sender: Any) {
       
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-            var imagePicker = UIImagePickerController()
+            let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
             imagePicker.allowsEditing = true
@@ -207,15 +206,15 @@ class BusinessInformationViewController: UIViewController,UIImagePickerControlle
     @IBAction func Register(_ sender: Any) {
     
    // let coordinate = mapKit.centerCoordinate
-    let businessName = ownerName
-        let coordinate = CLLocationCoordinate2D(latitude: Double(latitude)!, longitude: Double(longitude)!)
+    let businessName = BusinessProperties.properties.ownerName
+        let coordinate = CLLocationCoordinate2D(latitude: Double(BusinessProperties.properties.latitude)!, longitude: Double(BusinessProperties.properties.longitude)!)
   
     
     
     
     
-    businessTypeOfficial = businessDescription;
-    businessCoordinates = coordinate;
+    BusinessProperties.properties.businessTypeOfficial = BusinessProperties.properties.businessDescription;
+    BusinessProperties.properties.businessCoordinates = coordinate;
   
         
         
@@ -223,7 +222,7 @@ class BusinessInformationViewController: UIViewController,UIImagePickerControlle
         
         
         
-        DataManager.save(organizationName: ownerName, details: businessDescription, emailAddress: emailAddress, hours: businessHours, coordinate: coordinate, password: password,  typeOfBusiness: businessTypeOfficial, pinColor: pinColor,image:imageData)
+        BusinessProperties.properties.DataManager.save(organizationName: BusinessProperties.properties.ownerName, details:  BusinessProperties.properties.businessDescription, emailAddress: BusinessProperties.properties.emailAddress, hours:  BusinessProperties.properties.businessHours, coordinate: coordinate, password: BusinessProperties.properties.password,  typeOfBusiness: BusinessProperties.properties.businessTypeOfficial,pinColor:  BusinessProperties.properties.pinColor,image:imageData)
         
         
         ///////////////////////////////////////////////////////////

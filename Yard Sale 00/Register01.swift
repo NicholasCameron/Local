@@ -161,13 +161,13 @@ closeTime = "1:00AM";
         satudayHours = lblSaturday.text!;
         sundayHours = lblSunday.text!;
         
-        businessHours.append(mondayHours)
-        businessHours.append(tuesdayHours)
-        businessHours.append(wednesdayHours)
-        businessHours.append(thrusdayHours)
-        businessHours.append(fridayHours)
-        businessHours.append(satudayHours)
-        businessHours.append(sundayHours)
+        BusinessProperties.properties.businessHours.append(mondayHours)
+        BusinessProperties.properties.businessHours.append(tuesdayHours)
+        BusinessProperties.properties.businessHours.append(wednesdayHours)
+        BusinessProperties.properties.businessHours.append(thrusdayHours)
+        BusinessProperties.properties.businessHours.append(fridayHours)
+        BusinessProperties.properties.businessHours.append(satudayHours)
+        BusinessProperties.properties.businessHours.append(sundayHours)
 
         
     }

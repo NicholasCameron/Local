@@ -54,11 +54,34 @@ class CoreDataManager: NSObject{
         
                 let  image = (u.value(forKey: "headerImage")! as! NSData)
 
+                let  emailAddress = (u.value(forKey: "emailAddress")! as! String)
+
+          //      let  monday = (u.value(forKey: "mondayHours")! as! String)
+          //      let  tuesday = (u.value(forKey: "tuesdayHours")! as! String)
+          //      let  wednesday = (u.value(forKey: "wednesdayHours")! as! String)
+           //     let  thursday = (u.value(forKey: "thursdayHours")! as! String)
+           //     let  friday = (u.value(forKey: "fridayHours")! as! String)
+           //     let  saturday = (u.value(forKey: "saturdayHours")! as! String)
+           //     let  sunday = (u.value(forKey: "sundayHours")! as! String)
+
+                let  monday = "1:00 to 2:00"
+                let  tuesday = "1:00 to 2:00"
+                let  wednesday = "1:00 to 2:00"
+                let  thursday = "1:00 to 2:00"
+                let  friday = "1:00 to 2:00"
+                let  saturday = "1:00 to 2:00"
+                let  sunday = "1:00 to 2:00"
+                
+
+                let hours = [monday,tuesday,wednesday,thursday,friday,saturday,sunday]
                 
                 
                 
                 
-                businesses.append(AddBusiness(coordinate: coordinate, businessName: n, businessDescription: businessD, pinColor: pinC,type:type,image:image))
+                
+                
+                
+                businesses.append(AddBusiness(coordinate: coordinate, businessName: n, businessDescription: businessD, pinColor: pinC,type:type,image:image,emailAddress: emailAddress, hours: hours))
                 
             }
     

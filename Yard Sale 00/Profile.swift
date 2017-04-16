@@ -8,15 +8,17 @@
 
 import Foundation
 import UIKit
-var ProfilePage = Profile()
 
 class Profile{
     
-var profileName = String()
-var profileDescription = String()
-var profileHours = [String]()
-var profileType = String()
-var bgColor = UIColor()
+    
+static let ProfilePage = Profile()
+ 
+    var profileName : String?
+    var profileDescription : String?
+    var profileHours : [String]?
+    var profileType : String?
+    var bgColor : UIColor?
     
     init() {
         self.profileName = String()

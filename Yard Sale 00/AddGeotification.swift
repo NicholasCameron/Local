@@ -11,38 +11,25 @@ import MapKit
 import CoreLocation
 import AddressBookUI
 
-var businessCoordinates = CLLocationCoordinate2D();
-var businessTypeOfficial = String();
-var businessStreet = String();
-
-protocol AddGeotificationDelegate {
+protocol AddGeotificationDelegate: class {
     
     func addGeotificationViewController(controller: AddGeotification, didAddCoordinate coordinate: CLLocationCoordinate2D,businessName: String, businessDescription: String,pinColor: String)
 }
-
-let latDelta:CLLocationDegrees = 5.05
-
-let lonDelta:CLLocationDegrees = 5.05
-let location = CLLocationCoordinate2DMake(46.43, -63.44)
-
-var onOrOff = Bool()
-var center = "";
 
 class AddGeotification: UITableViewController,UIPickerViewDataSource,UIPickerViewDelegate,UITextFieldDelegate,MKMapViewDelegate,UISearchBarDelegate,CLLocationManagerDelegate {
   
     
     var matchingItems:[MKMapItem] = []
     var selectedLocation = CLLocationCoordinate2D();
-    var usersLocation = CLLocationCoordinate2D();
     var zoomLatitude = Double()
     var zoomLongitude = Double()
-var StreetFilter = String()
+    var StreetFilter = String()
     
     @IBOutlet weak var addPin: UIImageView!
     @IBOutlet weak var btnAddressFiltered: UIButton!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var addressSearchBar: UISearchBar!
-    @IBOutlet  var pin: UIImageView!
+    @IBOutlet weak var pin: UIImageView!
     
     //This is description
     var businessType = String();
@@ -63,7 +50,7 @@ var StreetFilter = String()
     
     
     //ADDGEOTIFICATIONDELEGATE
-    var delegate: AddGeotificationDelegate?
+   weak var delegate: AddGeotificationDelegate?
 
 //location manager
     var locationManager = CLLocationManager()
@@ -90,8 +77,8 @@ var StreetFilter = String()
         
         
         //zoom in on an initial location
-        let span = MKCoordinateSpanMake(latDelta, lonDelta)
-        let region = MKCoordinateRegionMake(location, span)
+        let span = MKCoordinateSpanMake(BusinessProperties.properties.latDelta, BusinessProperties.properties.lonDelta)
+        let region = MKCoordinateRegionMake(BusinessProperties.properties.location, span)
         mapKit.setRegion(region, animated: true)
         
        
@@ -190,7 +177,7 @@ var StreetFilter = String()
 
         }
         
-        pinColor = pinColorValue
+       BusinessProperties.properties.pinColor = pinColorValue
 
         
         
@@ -208,24 +195,24 @@ var StreetFilter = String()
      func mapView(_ mapView: MKMapView,regionDidChangeAnimated animated: Bool){
             let mapLatitude = mapKit.centerCoordinate.latitude
             let mapLongitude = mapKit.centerCoordinate.longitude
-            center = "Latitude: \(mapLatitude) Longitude: \(mapLongitude)"
+            BusinessProperties.properties.center = "Latitude: \(mapLatitude) Longitude: \(mapLongitude)"
         lblLocation.text = (reverseGeocoding(latitude: mapLatitude, longitude: mapLongitude))
 
     
     ///SET THE STREET AS WHAT IS CHOSEN
-        businessStreet = lblLocation.text!;
+        BusinessProperties.properties.businessStreet = lblLocation.text!;
     
     }
     
 
     @IBAction func AddLocation(_ sender: AnyObject) {
   
-        latitude = String(mapKit.centerCoordinate.latitude)
-        longitude = String(mapKit.centerCoordinate.longitude)
-         businessDescription = businessType
-         pinColor = pinColorValue
-        businessTypeOfficial = businessDescription;
-        
+     BusinessProperties.properties.latitude = String(mapKit.centerCoordinate.latitude)
+        BusinessProperties.properties.longitude = String(mapKit.centerCoordinate.longitude)
+         BusinessProperties.properties.businessDescription = businessType
+         BusinessProperties.properties.pinColor = pinColorValue
+        BusinessProperties.properties.businessTypeOfficial = BusinessProperties.properties.businessDescription;
+       
         ///////////////////////////////////////////////////////////
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "businessInformation") as! BusinessInformationViewController
@@ -269,7 +256,7 @@ var StreetFilter = String()
     {
         let request = MKLocalSearchRequest()
         var cityToSearch = MKCoordinateRegion();
-        cityToSearch.center = usersLocation;
+        cityToSearch.center = BusinessProperties.properties.usersLocation;
         request.naturalLanguageQuery = searchBar.text
         request.region = cityToSearch;
         let search = MKLocalSearch(request: request)
@@ -302,20 +289,20 @@ var StreetFilter = String()
         let mapLatitude = zoomLatitude
         let mapLongitude = zoomLongitude
     
-        center = "Latitude: \(mapLatitude) Longitude: \(mapLongitude)"
+        BusinessProperties.properties.center = "Latitude: \(mapLatitude) Longitude: \(mapLongitude)"
         lblLocation.text = (reverseGeocoding(latitude: mapLatitude, longitude: mapLongitude))
         
      //   print((reverseGeocoding(latitude: mapLatitude, longitude: mapLongitude)))
         ///SET THE STREET AS WHAT IS CHOSEN
-        businessStreet = lblLocation.text!;
+        BusinessProperties.properties.businessStreet = lblLocation.text!;
         
-        center = "Latitude: \(mapLatitude) Longitude: \(mapLongitude)"
+        BusinessProperties.properties.center = "Latitude: \(mapLatitude) Longitude: \(mapLongitude)"
         lblLocation.text = (reverseGeocoding(latitude: mapLatitude, longitude: mapLongitude))
       //  print((reverseGeocoding(latitude: mapLatitude, longitude: mapLongitude)))
 
         
         ///SET THE STREET AS WHAT IS CHOSEN
-        businessStreet = lblLocation.text!;
+        BusinessProperties.properties.businessStreet = lblLocation.text!;
 
         
         
@@ -384,6 +371,11 @@ var StreetFilter = String()
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
        
+        BusinessProperties.properties.usersLocation = locations[0].coordinate
+        //MAPP LOAD LOCATION
+        let span = MKCoordinateSpanMake(BusinessProperties.properties.latDelta, BusinessProperties.properties.lonDelta)
+        let region = MKCoordinateRegionMake(BusinessProperties.properties.usersLocation, span)
+        mapKit.setRegion(region, animated: true)
         
     }
     
@@ -419,7 +411,10 @@ var StreetFilter = String()
         return addressLine
     }
     ///////////////End Table View&&&&&&&&&&&&&&&&&&
-    
+    deinit {
+        
+        print("end of this view")
+    }
  
     
 }

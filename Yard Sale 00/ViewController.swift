@@ -7,30 +7,19 @@
 //
 
 import UIKit
-import CoreLocation
 
-var ownerName = String();
-var emailAddress = String();
-var password = String();
-var longitude = String();
-var latitude = String();
-var organizatinType = String();
-var other = String();
-var businessDescription = String();
-var pinColor = String();
-var businessHours = [String]();
-
-var DataManager = CoreDataManager()
 
 class ViewController: UIViewController {
 
+
     
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.ViewBackground(image:"waterlight")
+        
+
         
         
     }
@@ -49,9 +38,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+   
+    deinit {
+        print("tet")
+    }
+
+
+
     
-
-
 }
 @IBDesignable extension UIView {
     @IBInspectable var borderColor:UIColor? {

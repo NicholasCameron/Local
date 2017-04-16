@@ -11,16 +11,6 @@ import MapKit
 import CoreLocation
 
 
-struct BusinessDetails {
-    static let latitude = "latitude"
-    static let longitude = "longitude"
-    static let businessName = "nicks shop"
-    static let businessDescription = "cafe"
-    static let pinColor = "red";
-    static let type = "type";
-}
-
-
 
 class AddBusiness: NSObject,MKAnnotation {
    
@@ -35,7 +25,12 @@ class AddBusiness: NSObject,MKAnnotation {
     var pinColor : String
     var type: String
     var image : NSData
-
+    var emailAddress : String
+    var hours : [String]
+    
+    
+    
+    
     
     var title: String? {
         if businessName.isEmpty {
@@ -54,37 +49,19 @@ class AddBusiness: NSObject,MKAnnotation {
 
     
     ///Constructor
-    init(coordinate: CLLocationCoordinate2D, businessName: String, businessDescription: String, pinColor:String,type: String,image: NSData) {
+    init(coordinate: CLLocationCoordinate2D, businessName: String, businessDescription: String, pinColor:String,type: String,image: NSData, emailAddress: String, hours : [String]) {
         self.coordinate = coordinate
         self.businessName = businessName
         self.businessDescription = businessDescription
         self.pinColor = pinColor
         self.type = type
         self.image = image
+        self.emailAddress = emailAddress
+        self.hours = hours
+    }
+    deinit {
+        print("ere")
     }
     
-// 
-//
-//    //NSCoding these are decoder and encoder required functions of the nscoder class
-//    required init?(coder decoder: NSCoder) {
-//        let latitude = decoder.decodeDouble(forKey: BusinessDetails.latitude)
-//        let longitude = decoder.decodeDouble(forKey: BusinessDetails.longitude)
-//        coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-//        businessDescription = decoder.decodeObject(forKey: BusinessDetails.businessDescription) as! String
-//        businessName = decoder.decodeObject(forKey: BusinessDetails.businessName) as! String
-//        pinColor = decoder.decodeObject(forKey: String(describing: BusinessDetails.pinColor)) as! String
-//        type = decoder.decodeObject(forKey: String(describing: BusinessDetails.type)) as! String
-//
-//    }
-//    
-//    func encode(with coder: NSCoder) {
-//        coder.encode(coordinate.latitude, forKey: BusinessDetails.latitude)
-//        coder.encode(coordinate.longitude, forKey: BusinessDetails.longitude)
-//        coder.encode(businessName, forKey: BusinessDetails.businessName)
-//        coder.encode(businessDescription, forKey: BusinessDetails.businessDescription)
-//        coder.encode(pinColor, forKey: BusinessDetails.pinColor)
-//        coder.encode(type, forKey: BusinessDetails.type)
-//
-//    }
 
 }//End of class

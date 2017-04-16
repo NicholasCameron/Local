@@ -14,7 +14,7 @@ import UIKit
 class Register00: UIViewController,UITextFieldDelegate {
   
     
-    var Registration = DataManagerViewController();
+   weak var Registration = DataManagerViewController();
     
     @IBOutlet weak var lblBusiessName: UILabel!
     @IBOutlet weak var lblError: UILabel!
@@ -105,7 +105,7 @@ class Register00: UIViewController,UITextFieldDelegate {
               
                 //data in text = var business name
                 businessName = txtData.text!;
-                ownerName = businessName;
+                BusinessProperties.properties.ownerName = businessName;
                 
                 //Take name and welcome them
                 lblWelcome.text = "Welcome " + businessName
@@ -133,7 +133,7 @@ class Register00: UIViewController,UITextFieldDelegate {
                 
                 //data in text = var business name
                 businessEmail = txtData.text!;
-                emailAddress = businessEmail;
+                 BusinessProperties.properties.emailAddress = businessEmail;
                 
                 //Take name and welcome them
                 lblWelcome.text = "Welcome " + businessName
@@ -184,8 +184,8 @@ class Register00: UIViewController,UITextFieldDelegate {
             
             if(password.isEqual(txtData.text)){
 
-                Registration.registrationData.append(businessName);
-                Registration.registrationData.append(businessEmail);
+                Registration?.registrationData.append(businessName);
+                Registration?.registrationData.append(businessEmail);
                 
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 
@@ -271,7 +271,9 @@ class Register00: UIViewController,UITextFieldDelegate {
         
     }//end second func
     //////////////////End of animation functions they are combined functions.///////////////
-    
+    deinit {
+        print("called")
+    }
 }
 
 
