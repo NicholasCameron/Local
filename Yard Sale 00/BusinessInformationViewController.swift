@@ -226,13 +226,18 @@ class BusinessInformationViewController: UIViewController,UIImagePickerControlle
         
         
         ///////////////////////////////////////////////////////////
-    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "home") as! ViewController
-    self.present(nextViewController, animated:true, completion:nil)
-
+   
     
     }
-    
+    @IBAction func unwindToMenu(segue: UIStoryboardSegue) {
+       /* let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "home") as! ViewController
+        self.present(nextViewController, animated:true, completion:nil)
+      */
+        self.performSegue(withIdentifier: "unwind", sender: self)
+
+    }
+
     
     
     

@@ -8,13 +8,7 @@
 
 import UIKit
 
-var mondayHours = String();
-var tuesdayHours = String();
-var wednesdayHours = String();
-var thrusdayHours = String();
-var fridayHours = String();
-var satudayHours = String();
-var sundayHours = String();
+
 
 class Register01: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate  {
 

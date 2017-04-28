@@ -8,6 +8,13 @@
 
 import UIKit
 
+var mondayHours = String();
+var tuesdayHours = String();
+var wednesdayHours = String();
+var thrusdayHours = String();
+var fridayHours = String();
+var satudayHours = String();
+var sundayHours = String();
 
 class ViewController: UIViewController {
 
@@ -21,7 +28,16 @@ class ViewController: UIViewController {
         
 
         
+        print(CFGetRetainCount(AddGeotification.self))
+        if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
+            if let viewControllers = window.rootViewController?.childViewControllers {
+                for viewController in viewControllers{
+                    print(viewController.debugDescription)
+                }
+            }
+        }
         
+
     }
 
     

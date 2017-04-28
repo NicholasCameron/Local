@@ -187,11 +187,8 @@ class Register00: UIViewController,UITextFieldDelegate {
                 Registration?.registrationData.append(businessName);
                 Registration?.registrationData.append(businessEmail);
                 
-                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "description") as! DescriptionViewController
-                self.present(nextViewController, animated:true, completion:nil)
-                
+                self.performSegue(withIdentifier: "description", sender: self)
+                self.removeFromParentViewController()
 
             }else{
                 

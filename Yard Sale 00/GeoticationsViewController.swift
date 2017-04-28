@@ -25,6 +25,7 @@ class GeoticationsViewController: UIViewController,UISearchBarDelegate,UITableVi
     
     
     
+    @IBOutlet weak var searchBtn: UIButton!
     
     @IBOutlet weak var mapKit: MKMapView!
     /////////////////////////////
@@ -52,7 +53,8 @@ var locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        searchBar.isHidden = true
+         self.suggestionTable.alpha = 0
         
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
@@ -66,7 +68,10 @@ var locationManager = CLLocationManager()
             locationManager.startUpdatingLocation()
         }
         
-        
+        let span = MKCoordinateSpanMake(BusinessProperties.properties.latDelta, BusinessProperties.properties.lonDelta)
+        let region = MKCoordinateRegionMake(BusinessProperties.properties.usersLocation, span)
+        mapKit.setRegion(region, animated: true)
+
         
         
         loadAllGeotifications()
@@ -156,18 +161,50 @@ var locationManager = CLLocationManager()
     
     
     
+    
+    //////// SEARCH FUNCTIONALITY /////////
+    
+    func checkIfSearchIsActive(){
+        
+        
+        if searchBar.isHidden == true{
+            searchBar.isHidden = false
+        }else{
+            searchBar.isHidden = true
+            
+            
+        }
+        if searchBtn.isHidden == true{
+            searchBtn.isHidden = false
+        }else{
+            searchBtn.isHidden = true
+            
+        }
+
+    }
+    @IBAction func searchBtnClicked(_ sender: Any) {
+      checkIfSearchIsActive()
+        
+        
+    }
+    
+    
+    
     func filterContentForSearchText(searchController: String) {
         let searchString = searchController
         var businessNameArray = [String]();
         var businessTypeArray = [String]();
         var businessDescriptionArray = [String]();
-        
+        var location =  [CLLocationCoordinate2D]()
+
+        businessDetailsFilteredArray = [BusinessDetail]()
         for name in businessDetailsArray{
             businessNameArray.append(name.businessName)
             businessTypeArray.append(name.businessType)
             businessDescriptionArray.append(name.businessDescription)
-    
+            location.append(name.location)
         }
+        
         
         // Filter the data array and get only those countries that match the search text.
         filteredNameArray = businessNameArray.filter({ (names) -> Bool in
@@ -176,11 +213,33 @@ var locationManager = CLLocationManager()
             return (namesText.range(of: searchString, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
         })
         
-        filteredTypeArray = businessTypeArray.filter({ (type) -> Bool in
-            let typeText: NSString = (type) as NSString;
+      //  filteredTypeArray = businessTypeArray.filter({ (type) -> Bool in
+       //     let typeText: NSString = (type) as NSString;
+       //
+       //     return (typeText.range(of: searchString, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
+       // })
+        
+        print(filteredNameArray)
+        
+        for n in businessDetailsArray{
+            for innerN in filteredNameArray{
+                
+                if n.businessName == innerN{
+                   // BusinessDetail(businessName: <#T##String#>, businessDescription: <#T##String#>, businessType: <#T##String#>, location: //)
+                    businessDetailsFilteredArray.append(BusinessDetail(businessName: n.businessName,businessDescription: n.businessType,businessType: n.businessDescription,location: n.location))
+                    
+                }
+
             
-            return (typeText.range(of: searchString, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
-        })
+            }
+        
+
+            
+            
+            
+            
+        }
+        
         
         for bizDetails in businessDetailsArray{
             for names in filteredNameArray{
@@ -189,8 +248,8 @@ var locationManager = CLLocationManager()
                         
                         if(bizDetails.businessName == names || bizDetails.businessType == types){
                             
-                            businessDetailsFilteredArray = [BusinessDetail(businessName: names,businessDescription: types,businessType: description,location: BusinessProperties.properties.businessCoordinates)];
-                            
+                            var t = [BusinessDetail(businessName: names,businessDescription: types,businessType: description,location: BusinessProperties.properties.businessCoordinates)];
+                            businessDetailsFilteredArray.append(t[0])
                         }
                     }
                 }
@@ -229,7 +288,7 @@ var locationManager = CLLocationManager()
             
         })
         searchBar.text = "";
-        
+        checkIfSearchIsActive()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -605,9 +664,6 @@ extension GeoticationsViewController: MKMapViewDelegate {
         
         BusinessProperties.properties.usersLocation = locations[0].coordinate
         //MAPP LOAD LOCATION
-        let span = MKCoordinateSpanMake(BusinessProperties.properties.latDelta, BusinessProperties.properties.lonDelta)
-        let region = MKCoordinateRegionMake(BusinessProperties.properties.usersLocation, span)
-        mapKit.setRegion(region, animated: true)
         
         suggestionTable.reloadData()
 

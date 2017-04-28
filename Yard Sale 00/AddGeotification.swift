@@ -16,9 +16,10 @@ protocol AddGeotificationDelegate: class {
     func addGeotificationViewController(controller: AddGeotification, didAddCoordinate coordinate: CLLocationCoordinate2D,businessName: String, businessDescription: String,pinColor: String)
 }
 
-class AddGeotification: UITableViewController,UIPickerViewDataSource,UIPickerViewDelegate,UITextFieldDelegate,MKMapViewDelegate,UISearchBarDelegate,CLLocationManagerDelegate {
+class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate,UITextFieldDelegate,MKMapViewDelegate,UISearchBarDelegate,CLLocationManagerDelegate {
   
-    
+    var iszoomed = Bool()
+      
     var matchingItems:[MKMapItem] = []
     var selectedLocation = CLLocationCoordinate2D();
     var zoomLatitude = Double()
@@ -69,6 +70,14 @@ class AddGeotification: UITableViewController,UIPickerViewDataSource,UIPickerVie
             locationManager.startUpdatingLocation()
             mapKit.showsUserLocation = true
         }
+
+        
+        //zoom in on an initial location
+
+        let span = MKCoordinateSpanMake(BusinessProperties.properties.latDelta, BusinessProperties.properties.lonDelta)
+        let region = MKCoordinateRegionMake(BusinessProperties.properties.usersLocation, span)
+        mapKit.setRegion(region, animated: true)
+
         
         self.view.ViewBackground(image:"trees")
         btnAddressFiltered.isHidden = true
@@ -76,10 +85,7 @@ class AddGeotification: UITableViewController,UIPickerViewDataSource,UIPickerVie
         
         
         
-        //zoom in on an initial location
-        let span = MKCoordinateSpanMake(BusinessProperties.properties.latDelta, BusinessProperties.properties.lonDelta)
-        let region = MKCoordinateRegionMake(BusinessProperties.properties.location, span)
-        mapKit.setRegion(region, animated: true)
+      
         
        
         
@@ -214,12 +220,16 @@ class AddGeotification: UITableViewController,UIPickerViewDataSource,UIPickerVie
         BusinessProperties.properties.businessTypeOfficial = BusinessProperties.properties.businessDescription;
        
         ///////////////////////////////////////////////////////////
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "businessInformation") as! BusinessInformationViewController
-        self.present(nextViewController, animated:true, completion:nil)
 
+      //  let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+       // let nextViewController = storyBoard.instantiateViewController(withIdentifier: "businessInformation") as! BusinessInformationViewController
         
-
+        //self.present(nextViewController, animated:true, completion:nil)
+    //  self.dismissViewController(AddLocation)
+       // self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "businessInformation", sender: nil)
+   
+        self.removeFromParentViewController()
     }
     
     
@@ -280,9 +290,8 @@ class AddGeotification: UITableViewController,UIPickerViewDataSource,UIPickerVie
         
     }
     
-    
-    @IBAction func btnZoomToSearch(_ sender: Any) {
-        
+    @IBAction func btnZoomLocationClicked(_ sender: Any) {
+  
     
         
         
@@ -373,10 +382,13 @@ class AddGeotification: UITableViewController,UIPickerViewDataSource,UIPickerVie
        
         BusinessProperties.properties.usersLocation = locations[0].coordinate
         //MAPP LOAD LOCATION
-        let span = MKCoordinateSpanMake(BusinessProperties.properties.latDelta, BusinessProperties.properties.lonDelta)
-        let region = MKCoordinateRegionMake(BusinessProperties.properties.usersLocation, span)
-        mapKit.setRegion(region, animated: true)
-        
+        if iszoomed == false{
+            let span = MKCoordinateSpanMake(BusinessProperties.properties.latDelta, BusinessProperties.properties.lonDelta)
+            let region = MKCoordinateRegionMake(BusinessProperties.properties.usersLocation, span)
+            mapKit.setRegion(region, animated: true)
+
+        }
+        iszoomed = true
     }
     
 
@@ -411,6 +423,9 @@ class AddGeotification: UITableViewController,UIPickerViewDataSource,UIPickerVie
         return addressLine
     }
     ///////////////End Table View&&&&&&&&&&&&&&&&&&
+    
+   
+    
     deinit {
         
         print("end of this view")

@@ -59,6 +59,9 @@ class AddBusiness: NSObject,MKAnnotation {
         self.emailAddress = emailAddress
         self.hours = hours
     }
+    
+  
+    
     deinit {
         print("ere")
     }
