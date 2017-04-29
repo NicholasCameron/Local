@@ -227,9 +227,9 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
         //self.present(nextViewController, animated:true, completion:nil)
     //  self.dismissViewController(AddLocation)
        // self.dismiss(animated: true, completion: nil)
-        performSegue(withIdentifier: "businessInformation", sender: nil)
+     //   performSegue(withIdentifier: "businessInformation", sender: nil)
    
-        self.removeFromParentViewController()
+      //  self.removeFromParentViewController()
     }
     
     
@@ -281,8 +281,8 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
                  self.StreetFilter = self.parseAddress(selectedItem: match.placemark)
                 
                 self.btnAddressFiltered.setTitle(self.StreetFilter, for: .normal)
-                self.zoomLatitude = (selectedItem: match.placemark.coordinate.latitude)
-                 self.zoomLongitude = (selectedItem: match.placemark.coordinate.longitude)
+                self.zoomLatitude = (selectedItem: match.placemark.coordinate.latitude) as! Double
+                 self.zoomLongitude = (selectedItem: match.placemark.coordinate.longitude) as! Double
 
             }
 
