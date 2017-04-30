@@ -188,7 +188,7 @@
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.12370739132165909" green="0.41627460718154907" blue="0.99966222047805786" alpha="0.72474315068493156" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.44539847510484654" blue="0.57465498096446699" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="EvB-Q0-1eu" secondAttribute="trailing" constant="17" id="0HE-cy-40M"/>
                                     <constraint firstAttribute="trailing" secondItem="Q4d-nR-kjp" secondAttribute="trailing" constant="20" id="3AN-5x-gKx"/>
@@ -243,7 +243,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.00087242102017626166" green="0.44524592161178589" blue="0.57462519407272339" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vVf-fo-Ha4" firstAttribute="bottom" secondItem="HOP-eM-oqI" secondAttribute="top" id="4mg-gb-csU"/>
                             <constraint firstItem="986-jP-5Ri" firstAttribute="leading" secondItem="vVf-fo-Ha4" secondAttribute="leading" id="Ce4-0N-3eV"/>
