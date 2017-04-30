@@ -73,6 +73,13 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
 
         
         //zoom in on an initial location
+        if BusinessProperties.properties.usersLocation.longitude == 0{
+            
+            
+            BusinessProperties.properties.usersLocation.latitude = 40.759211000000001
+            BusinessProperties.properties.usersLocation.longitude = -73.984638000000003
+        }
+       
 
         let span = MKCoordinateSpanMake(BusinessProperties.properties.latDelta, BusinessProperties.properties.lonDelta)
         let region = MKCoordinateRegionMake(BusinessProperties.properties.usersLocation, span)

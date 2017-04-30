@@ -67,7 +67,11 @@ var locationManager = CLLocationManager()
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
-        
+        if BusinessProperties.properties.usersLocation.longitude == 0{
+            
+           BusinessProperties.properties.usersLocation.latitude = 40.759211000000001
+            BusinessProperties.properties.usersLocation.longitude = -73.984638000000003
+        }
         let span = MKCoordinateSpanMake(BusinessProperties.properties.latDelta, BusinessProperties.properties.lonDelta)
         let region = MKCoordinateRegionMake(BusinessProperties.properties.usersLocation, span)
         mapKit.setRegion(region, animated: true)
@@ -363,7 +367,6 @@ var locationManager = CLLocationManager()
         if shouldShowSearchResults {
             cell.businessTitle?.text = businessDetailsFilteredArray[indexPath.row].businessName
 
-            
             let yourPoint = CLLocation(latitude: BusinessProperties.properties.usersLocation.latitude, longitude: BusinessProperties.properties.usersLocation.longitude)
             
             let bizPoint = CLLocation(latitude: businessDetailsFilteredArray[indexPath.row].location.latitude, longitude: businessDetailsFilteredArray[indexPath.row].location.longitude)
@@ -640,10 +643,6 @@ extension GeoticationsViewController: MKMapViewDelegate {
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
         self.present(nextViewController, animated:true, completion:nil)
         
-    
-        
-
-    
     }
     
     
@@ -653,6 +652,9 @@ extension GeoticationsViewController: MKMapViewDelegate {
     
     
     //LOCATION MANAGER
+  
+    
+    
     private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
             locationManager.startUpdatingLocation()
