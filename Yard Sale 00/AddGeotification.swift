@@ -86,7 +86,6 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
         mapKit.setRegion(region, animated: true)
 
         
-        self.view.ViewBackground(image:"trees")
         btnAddressFiltered.isHidden = true
         mapKit.delegate = self;
         
