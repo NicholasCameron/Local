@@ -12,6 +12,7 @@
 		6D3B63131EA97ADD006C53B0 /* ReplaceOverSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B63121EA97ADD006C53B0 /* ReplaceOverSegue.swift */; };
 		6D3DC70E1DE254CA00714F0B /* BusinessInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DC70D1DE254CA00714F0B /* BusinessInformationViewController.swift */; };
 		6D4812311DD9300F00EAB50D /* ViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4812301DD9300F00EAB50D /* ViewBackground.swift */; };
+		6D5296DA1F3A81C4006FF803 /* AppStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D5296D91F3A81C4006FF803 /* AppStoryBoard.storyboard */; };
 		6D82C99F1E6381BE001ED334 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D82C99E1E6381BE001ED334 /* HomeViewController.swift */; };
 		6D85C6401DF0F4B7009632EE /* AddBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D85C63D1DF0F4B7009632EE /* AddBusiness.swift */; };
 		6D85C6411DF0F4B7009632EE /* AddGeotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D85C63E1DF0F4B7009632EE /* AddGeotification.swift */; };
@@ -68,6 +69,7 @@
 		6D3B63121EA97ADD006C53B0 /* ReplaceOverSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceOverSegue.swift; sourceTree = "<group>"; };
 		6D3DC70D1DE254CA00714F0B /* BusinessInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessInformationViewController.swift; sourceTree = "<group>"; };
 		6D4812301DD9300F00EAB50D /* ViewBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewBackground.swift; sourceTree = "<group>"; };
+		6D5296D91F3A81C4006FF803 /* AppStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppStoryBoard.storyboard; sourceTree = "<group>"; };
 		6D82C99E1E6381BE001ED334 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6D85C63D1DF0F4B7009632EE /* AddBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBusiness.swift; sourceTree = "<group>"; };
 		6D85C63E1DF0F4B7009632EE /* AddGeotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGeotification.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				6D9DDE4C1D6E61AB0089C7E8 /* Info.plist */,
 				6D9DDE441D6E61AB0089C7E8 /* Yard_Sale_00.xcdatamodeld */,
 				9F31DBE31DC025730092BD7A /* DataManagerViewController.xib */,
+				6D5296D91F3A81C4006FF803 /* AppStoryBoard.storyboard */,
 			);
 			path = "Yard Sale 00";
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				6DDD8BD01E95BC0F0039844B /* collectionViewCellRecommendation.xib in Resources */,
 				6D9DDE481D6E61AB0089C7E8 /* Assets.xcassets in Resources */,
 				9F4614741EB68855009949C3 /* LoadingView.xib in Resources */,
+				6D5296DA1F3A81C4006FF803 /* AppStoryBoard.storyboard in Resources */,
 				9F31DBE51DC025740092BD7A /* DataManagerViewController.xib in Resources */,
 				6D19F0CA1DDD124800D3CA10 /* Main.storyboard in Resources */,
 			);

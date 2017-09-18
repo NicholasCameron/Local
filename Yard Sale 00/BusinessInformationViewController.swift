@@ -50,12 +50,10 @@ class BusinessInformationViewController: UIViewController,UIImagePickerControlle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewInfo.alpha = 0
         
         
         imagePicker.delegate = self
         
-       self.view.ViewBackground(image: "ocean")
 
         lblBusinessType.text = BusinessProperties.properties.businessTypeOfficial;
         lblOwnersName.text = BusinessProperties.properties.ownerName;
@@ -175,38 +173,12 @@ class BusinessInformationViewController: UIViewController,UIImagePickerControlle
    
     }
     
-    @IBOutlet weak var viewInfo: UIView!
-    
-    
-    @IBAction func headerInfoBtnClicked(_ sender: Any) {
-        
-        UIView.animate(withDuration: 2, delay: 0,options: [], animations: {
-            
-            
-            self.viewInfo.alpha = 1
-            
-        }, completion: nil)
-        
-        
-    }
-    
-    @IBAction func btnCloseInfo(_ sender: Any) {
-        
-        UIView.animate(withDuration: 2, delay: 0,options: [], animations: {
-            
-            
-            self.viewInfo.alpha = 0
-            
-        }, completion: nil)
-        
-        
-    }
     //BOOM REGISTER
     
     @IBAction func Register(_ sender: Any) {
     
    // let coordinate = mapKit.centerCoordinate
-    let businessName = BusinessProperties.properties.ownerName
+    _ = BusinessProperties.properties.ownerName
         let coordinate = CLLocationCoordinate2D(latitude: Double(BusinessProperties.properties.latitude)!, longitude: Double(BusinessProperties.properties.longitude)!)
   
     
