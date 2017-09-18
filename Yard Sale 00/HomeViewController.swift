@@ -12,7 +12,6 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-self.view.ViewBackground(image: "field")
         // Do any additional setup after loading the view.
     }
 
