@@ -20,10 +20,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var saturdayHours: UILabel!
     @IBOutlet weak var sundayHours: UILabel!
     @IBOutlet weak var businessDescription: UILabel!
-    @IBOutlet weak var businessType: UILabel!
     
     
-    @IBOutlet weak var viewContact: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -31,8 +29,8 @@ class ProfileViewController: UIViewController {
         
         if Profile.ProfilePage.profileName != ""{
         businessTitle.text = Profile.ProfilePage.profileName
+        self.navigationController?.title = Profile.ProfilePage.profileType
         
-        businessType.text = Profile.ProfilePage.profileType
 
         self.view.backgroundColor = Profile.ProfilePage.bgColor
         }
@@ -50,20 +48,13 @@ class ProfileViewController: UIViewController {
         UIView.animate(withDuration: 0.7, delay: 0.0, options: [], animations: {
           
             
-            self.viewContact.alpha = 1
+           // self.viewContact.alpha = 1
    
         }, completion: nil)
     
     }
     
 
-    @IBAction func btnCloseViewContact(_ sender: Any) {
-        UIView.animate(withDuration: 0.7, delay: 0.0, options: [], animations: {
-            self.viewContact.alpha = 0
-        }, completion: nil)
-        
-
-    }
     @IBOutlet weak var btnCall: UIButton!
     @IBAction func btnCallClicked(_ sender: Any) {
         let url = NSURL(string: "tel://19024324631")!

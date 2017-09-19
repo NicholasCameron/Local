@@ -22,8 +22,8 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
       
     var matchingItems:[MKMapItem] = []
     var selectedLocation = CLLocationCoordinate2D();
-    var zoomLatitude = Double()
-    var zoomLongitude = Double()
+    var zoomLatitude = Float()
+    var zoomLongitude = Float()
     var StreetFilter = String()
     
     @IBOutlet weak var addPin: UIImageView!
@@ -287,8 +287,8 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
                  self.StreetFilter = self.parseAddress(selectedItem: match.placemark)
                 
                 self.btnAddressFiltered.setTitle(self.StreetFilter, for: .normal)
-                self.zoomLatitude = (selectedItem: match.placemark.coordinate.latitude) as! Double
-                 self.zoomLongitude = (selectedItem: match.placemark.coordinate.longitude) as! Double
+                self.zoomLatitude = (selectedItem: match.placemark.coordinate.latitude) as! Float
+                 self.zoomLongitude = (selectedItem: match.placemark.coordinate.longitude) as! Float
 
             }
 
@@ -305,14 +305,14 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
         let mapLongitude = zoomLongitude
     
         BusinessProperties.properties.center = "Latitude: \(mapLatitude) Longitude: \(mapLongitude)"
-        lblLocation.text = (reverseGeocoding(latitude: mapLatitude, longitude: mapLongitude))
+        lblLocation.text = (reverseGeocoding(latitude: CLLocationDegrees(mapLatitude), longitude: CLLocationDegrees(mapLongitude)))
         
      //   print((reverseGeocoding(latitude: mapLatitude, longitude: mapLongitude)))
         ///SET THE STREET AS WHAT IS CHOSEN
         BusinessProperties.properties.businessStreet = lblLocation.text!;
         
         BusinessProperties.properties.center = "Latitude: \(mapLatitude) Longitude: \(mapLongitude)"
-        lblLocation.text = (reverseGeocoding(latitude: mapLatitude, longitude: mapLongitude))
+        lblLocation.text = (reverseGeocoding(latitude: CLLocationDegrees(mapLatitude), longitude: CLLocationDegrees(mapLongitude)))
       //  print((reverseGeocoding(latitude: mapLatitude, longitude: mapLongitude)))
 
         
@@ -321,9 +321,9 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
 
         
         
-        let latitude:CLLocationDegrees = zoomLatitude//insert latitutde
+        let latitude:CLLocationDegrees = CLLocationDegrees(zoomLatitude)//insert latitutde
         
-        let longitude:CLLocationDegrees = zoomLongitude//insert longitude
+        let longitude:CLLocationDegrees = CLLocationDegrees(zoomLongitude)//insert longitude
         
         let latDelta:CLLocationDegrees = 0.01
         

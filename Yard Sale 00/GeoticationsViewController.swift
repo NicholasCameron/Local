@@ -52,7 +52,6 @@ var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         searchBar.isHidden = true
          self.suggestionTable.alpha = 0
         
@@ -364,7 +363,7 @@ var locationManager = CLLocationManager()
         
 
         
-        if shouldShowSearchResults {
+        if shouldShowSearchResults && businessDetailsFilteredArray.count > 0 {
             cell.businessTitle?.text = businessDetailsFilteredArray[indexPath.row].businessName
 
             let yourPoint = CLLocation(latitude: BusinessProperties.properties.usersLocation.latitude, longitude: BusinessProperties.properties.usersLocation.longitude)
@@ -637,12 +636,7 @@ extension GeoticationsViewController: MKMapViewDelegate {
 
         
         
-        //  ProfilePage.profileHours = business.
-        
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
-        self.present(nextViewController, animated:true, completion:nil)
-        
+        self.performSegue(withIdentifier: "profile", sender: nil)
     }
     
     

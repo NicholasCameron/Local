@@ -41,7 +41,7 @@
                                         <attributedString key="attributedText">
                                             <fragment content="Login">
                                                 <attributes>
-                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="NSColor" red="0.0" green="0.11076081941033866" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" metaFont="system" size="24"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -49,28 +49,8 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GoLo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhv-YD-Wez">
-                                        <rect key="frame" x="0.0" y="30" width="375" height="20"/>
-                                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cutFrog" translatesAutoresizingMaskIntoConstraints="NO" id="3wD-Ty-SVf">
-                                        <rect key="frame" x="129" y="235" width="159" height="94"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="159" id="dcI-Be-wnT"/>
-                                            <constraint firstAttribute="height" constant="94" id="x0B-bu-iWX"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.031372549019607843" green="0.074509803921568626" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="Lhv-YD-Wez" firstAttribute="top" secondItem="986-jP-5Ri" secondAttribute="top" constant="30" id="3pf-rM-Nlo"/>
-                                    <constraint firstItem="Lhv-YD-Wez" firstAttribute="leading" secondItem="986-jP-5Ri" secondAttribute="leading" id="8Nh-Ls-8yI"/>
-                                    <constraint firstAttribute="bottom" secondItem="3wD-Ty-SVf" secondAttribute="bottom" constant="-10" id="H6S-kK-yRd"/>
-                                    <constraint firstItem="3wD-Ty-SVf" firstAttribute="trailing" secondItem="Lhv-YD-Wez" secondAttribute="trailing" constant="-87" id="fm0-9Q-buL"/>
-                                    <constraint firstAttribute="trailing" secondItem="Lhv-YD-Wez" secondAttribute="trailing" id="izJ-nA-TSJ"/>
-                                </constraints>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVf-fo-Ha4">
                                 <rect key="frame" x="0.0" y="327" width="375" height="340"/>
@@ -87,6 +67,9 @@
                                                 <integer key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="XvM-Qd-j1W" kind="custom" customClass="PushSegueWithRootReplacement" customModule="Yard_Sale_00" customModuleProvider="target" id="4PI-3o-8OI"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rnP-1q-AJE">
                                         <rect key="frame" x="32" y="126" width="288" height="24"/>
@@ -108,24 +91,24 @@
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.72000002861022949" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYH-0n-giJ">
                                         <rect key="frame" x="32" y="126" width="323" height="24"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.1107608194" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bky-2y-dgK">
                                         <rect key="frame" x="31" y="58" width="324" height="20"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.1107608194" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWT-6f-tUk">
                                         <rect key="frame" x="38" y="242" width="311" height="44"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.78960376977920532" green="1" blue="0.99789315462112427" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="LH4-Fu-Jx3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                         <state key="normal" title="SIGN IN">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.011061565950512886" green="0.092873789370059967" blue="0.80208194255828857" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -139,7 +122,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.72000002861022949" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4D-ao-gUI">
                                         <rect key="frame" x="32" y="56" width="323" height="19"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.1107608194" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email address required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cT6-HU-RsR">
@@ -160,13 +143,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ri5-kR-qTm">
                                         <rect key="frame" x="32" y="32" width="196" height="21"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
-                                        <color key="textColor" red="0.72148895260000001" green="0.72161453959999999" blue="0.72148102520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.0" green="0.1107608194" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOB-aH-LLb">
                                         <rect key="frame" x="32" y="102" width="101" height="21"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
-                                        <color key="textColor" red="0.72148895260000001" green="0.72161453959999999" blue="0.72148102520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.0" green="0.1107608194" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvB-Q0-1eu">
@@ -185,7 +168,7 @@
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.78804202314934813" green="1" blue="0.99506248887146054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="EvB-Q0-1eu" secondAttribute="trailing" constant="17" id="0HE-cy-40M"/>
                                     <constraint firstAttribute="trailing" secondItem="Q4d-nR-kjp" secondAttribute="trailing" constant="20" id="3AN-5x-gKx"/>
@@ -240,7 +223,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.031372549019607843" green="0.074509803921568626" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vVf-fo-Ha4" firstAttribute="bottom" secondItem="HOP-eM-oqI" secondAttribute="top" id="4mg-gb-csU"/>
                             <constraint firstItem="986-jP-5Ri" firstAttribute="leading" secondItem="vVf-fo-Ha4" secondAttribute="leading" id="Ce4-0N-3eV"/>
@@ -257,7 +240,6 @@
                         <outlet property="lblEmailHeading" destination="ri5-kR-qTm" id="od9-6V-gQq"/>
                         <outlet property="lblEmailPlaceHolder" destination="H4D-ao-gUI" id="zHe-wo-KmU"/>
                         <outlet property="lblEmailRequired" destination="cT6-HU-RsR" id="Wed-uw-iaO"/>
-                        <outlet property="lblGoCanadaHeading" destination="Lhv-YD-Wez" id="Sxf-hE-blw"/>
                         <outlet property="lblPasswordHeading" destination="rOB-aH-LLb" id="wtt-Ag-jq5"/>
                         <outlet property="lblPasswordPlaceholder" destination="EYH-0n-giJ" id="2eI-5N-adq"/>
                         <outlet property="lblPasswordRequired" destination="Zwj-ts-WmX" id="lRw-Zy-hkF"/>
@@ -1639,7 +1621,7 @@
                                     <outlet property="delegate" destination="RQz-dl-0pL" id="sWq-yB-jVP"/>
                                 </connections>
                             </pickerView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddPin" translatesAutoresizingMaskIntoConstraints="NO" id="AEg-oo-slL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brownPin" translatesAutoresizingMaskIntoConstraints="NO" id="AEg-oo-slL">
                                 <rect key="frame" x="298" y="522" width="61" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="56Z-MU-XCo"/>
@@ -1822,7 +1804,7 @@
     </scenes>
     <resources>
         <image name="AddPin" width="75" height="75"/>
-        <image name="cutFrog" width="960" height="638"/>
+        <image name="brownPin" width="75" height="75"/>
         <image name="field" width="960" height="539"/>
         <image name="fish" width="960" height="480"/>
         <image name="loadingIcon" width="16" height="16"/>
@@ -1833,7 +1815,7 @@
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="U9c-LS-fFy"/>
+        <segue reference="4PI-3o-8OI"/>
         <segue reference="D57-iK-Jpd"/>
         <segue reference="rOL-08-lbO"/>
         <segue reference="Tbd-k1-aFY"/>
