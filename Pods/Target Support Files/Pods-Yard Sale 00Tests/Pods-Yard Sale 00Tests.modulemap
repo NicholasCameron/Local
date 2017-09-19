@@ -1,0 +1,6 @@
+framework module Pods_Yard_Sale_00Tests {
+  umbrella header "Pods-Yard Sale 00Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,15 @@
+PODS:
+  - AWSAuthCore (2.6.1):
+    - AWSCore (= 2.6.1)
+  - AWSCore (2.6.1)
+
+DEPENDENCIES:
+  - AWSAuthCore (~> 2.6.1)
+
+SPEC CHECKSUMS:
+  AWSAuthCore: b7102940a777cb5bf974d65f7dbfc460df49611c
+  AWSCore: e7d37fa0715def975acf1b0d75556576780088b8
+
+PODFILE CHECKSUM: 5f5ee12184e6d91bdcd6f09c8c2485f28d661cc5
+
+COCOAPODS: 1.2.0
