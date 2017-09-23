@@ -46,5 +46,57 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>AWS</key>
+    <dict>
+        <key>PinpointAnalytics</key>
+        <dict>
+            <key>Default</key>
+            <dict>
+                <key>AppId</key>
+                <string>4eedb8d0cac24e1890f24e00609a2f96</string>
+                <key>Region</key>
+                <string>us-east-1</string>
+            </dict>
+        </dict>
+        <key>PinpointTargeting</key>
+        <dict>
+            <key>Default</key>
+            <dict>
+                <key>Region</key>
+                <string>us-east-1</string>
+            </dict>
+        </dict>
+        <key>IdentityManager</key>
+        <dict>
+            <key>Default</key>
+            <dict/>
+        </dict>
+        <key>DynamoDBObjectMapper</key>
+        <dict>
+            <key>Default</key>
+            <dict>
+                <key>Region</key>
+                <string>us-east-1</string>
+            </dict>
+        </dict>
+        <key>CredentialsProvider</key>
+        <dict>
+            <key>CognitoIdentity</key>
+            <dict>
+                <key>Default</key>
+                <dict>
+                    <key>PoolId</key>
+                    <string>us-east-1:e715b226-5551-4825-8f09-01dce7c4b27c</string>
+                    <key>Region</key>
+                    <string>us-east-1</string>
+                </dict>
+            </dict>
+        </dict>
+        <key>MobileHub</key>
+        <dict>
+            <key>ProjectClientId</key>
+            <string>MobileHub 5ebfd081-862e-42cd-867c-a1e7e4c47519 aws-my-sample-app-ios-swift-v0.19</string>
+        </dict>
+    </dict>
 </dict>
 </plist>

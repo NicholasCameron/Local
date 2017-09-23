@@ -15,38 +15,32 @@ class BusinessProperties: NSObject {
     
     static let properties = BusinessProperties()
     
-    
+    var externalBusinesses = [AddBusiness]()
     var businessCoordinates = CLLocationCoordinate2D();
-    var businessTypeOfficial = String();
-    var businessStreet = String();
+    var businessAddress = String();
     var usersLocation = CLLocationCoordinate2D();
     let location = CLLocationCoordinate2D()
-    
     let latDelta:CLLocationDegrees = 5.05
-    
     let lonDelta:CLLocationDegrees = 5.05
-    
     var onOrOff = Bool()
     var center = "";
-    
-    
-    
     var DataManager = CoreDataManager()
     
 
-    var ownerName = String()
-    var emailAddress = String()
+    var businessName = String()
+    var businessEmail = "NA"
     var password = String()
-    var longitude = String()
-    var latitude = String()
-    var organizatinType = String()
+    var businessLongitude = String()
+    var businessLatitude = String()
+    var businessCategory = String()
+    var businessImage = Data()
+    var businessPhone = "NA"
+    var businessWebsite = "NA"
     var other = String()
     var businessDescription = String()
-    var pinColor = String()
     var businessHours = [String]()
     
     
-  
     
     
     

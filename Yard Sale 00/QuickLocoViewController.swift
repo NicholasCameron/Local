@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import CoreData
 import CoreLocation
-var Businesses = [String:AnyObject]()
+//var Businesses = [String:AnyObject]()
 
 
 struct BusinessDetail{

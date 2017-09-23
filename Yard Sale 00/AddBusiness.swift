@@ -24,7 +24,7 @@ class AddBusiness: NSObject,MKAnnotation {
     var businessDescription : String
     var pinColor : String
     var type: String
-    var image : NSData
+    var image : Data
     var emailAddress : String
     var hours : [String]
     
@@ -49,7 +49,7 @@ class AddBusiness: NSObject,MKAnnotation {
 
     
     ///Constructor
-    init(coordinate: CLLocationCoordinate2D, businessName: String, businessDescription: String, pinColor:String,type: String,image: NSData, emailAddress: String, hours : [String]) {
+    init(coordinate: CLLocationCoordinate2D, businessName: String, businessDescription: String, pinColor:String,type: String,image: Data, emailAddress: String, hours : [String]) {
         self.coordinate = coordinate
         self.businessName = businessName
         self.businessDescription = businessDescription

@@ -9,7 +9,6 @@
 import UIKit
 
 
-
 class Register01: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate  {
 
     

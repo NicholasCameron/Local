@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 var mondayHours = String();
 var tuesdayHours = String();
 var wednesdayHours = String();
@@ -20,13 +21,12 @@ class ViewController: UIViewController {
 
 
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.ViewBackground(image:"waterlight")
-        
-
+       // NoSqlManager.saveBusiness()
         
         print(CFGetRetainCount(AddGeotification.self))
         if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {

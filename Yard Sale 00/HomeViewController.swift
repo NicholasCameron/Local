@@ -13,6 +13,16 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //Get all the external data needed
+        
+        NoSqlManager.getAllBusinesses { (status,  externalBusinesses) in
+            
+            if status == 200 && externalBusinesses != nil{
+            BusinessProperties.properties.externalBusinesses = externalBusinesses!
+            }
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

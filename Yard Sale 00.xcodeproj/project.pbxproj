@@ -44,6 +44,12 @@
 		9F31DBE81DC02B690092BD7A /* Register01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31DBE71DC02B690092BD7A /* Register01.swift */; };
 		9F4614741EB68855009949C3 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F4614731EB68855009949C3 /* LoadingView.xib */; };
 		9F4614761EB68862009949C3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4614751EB68862009949C3 /* LoadingView.swift */; };
+		9F844D661F76BB0500B20DEE /* UIView+LockScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F844D651F76BB0500B20DEE /* UIView+LockScreen.swift */; };
+		9F844D691F76BB4900B20DEE /* LoadingGearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F844D681F76BB4900B20DEE /* LoadingGearView.swift */; };
+		9F844D6B1F76BB5800B20DEE /* LoadingGearView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F844D6A1F76BB5800B20DEE /* LoadingGearView.xib */; };
+		9F85193D1F71D2C0004E14B0 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F85193C1F71D2C0004E14B0 /* awsconfiguration.json */; };
+		9F8519421F7476B0004E14B0 /* NoSqlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8519411F7476B0004E14B0 /* NoSqlManager.swift */; };
+		9F8519441F74797A004E14B0 /* Businesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8519431F74797A004E14B0 /* Businesses.swift */; };
 		B7BDF9E8C89DC8160BC48B39 /* Pods_Yard_Sale_00.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDBEB7C1DE9A0AFCB3A26E6 /* Pods_Yard_Sale_00.framework */; };
 		C082F1DDA8B32C7604BCB18D /* Pods_Yard_Sale_00Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8D6D66C8259729720689D6 /* Pods_Yard_Sale_00Tests.framework */; };
 		D1BFFBCDD6A3929CD4463A90 /* Pods_Yard_Sale_00UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733B50F5EFF00FB0ADEE7CA7 /* Pods_Yard_Sale_00UITests.framework */; };
@@ -65,6 +71,19 @@
 			remoteInfo = "Yard Sale 00";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9FD108C61F70A37E0076F3A7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		32D5E7BE7D6B0B588839F96A /* Pods-Yard Sale 00Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yard Sale 00Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yard Sale 00Tests/Pods-Yard Sale 00Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +136,12 @@
 		9F31DBE71DC02B690092BD7A /* Register01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register01.swift; sourceTree = "<group>"; };
 		9F4614731EB68855009949C3 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		9F4614751EB68862009949C3 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = ../LoadingView.swift; sourceTree = "<group>"; };
+		9F844D651F76BB0500B20DEE /* UIView+LockScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LockScreen.swift"; sourceTree = "<group>"; };
+		9F844D681F76BB4900B20DEE /* LoadingGearView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingGearView.swift; sourceTree = "<group>"; };
+		9F844D6A1F76BB5800B20DEE /* LoadingGearView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingGearView.xib; sourceTree = "<group>"; };
+		9F85193C1F71D2C0004E14B0 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = awsconfiguration.json; path = ../../../Downloads/awsconfiguration.json; sourceTree = "<group>"; };
+		9F8519411F7476B0004E14B0 /* NoSqlManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSqlManager.swift; sourceTree = "<group>"; };
+		9F8519431F74797A004E14B0 /* Businesses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Businesses.swift; path = "../../../Downloads/RNApps-integration-lib-aws-my-sample-app-ios-swift-2/AmazonAws/Models/NoSQL/Businesses.swift"; sourceTree = "<group>"; };
 		9F8D6D66C8259729720689D6 /* Pods_Yard_Sale_00Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yard_Sale_00Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA51ED14BF35366F42310635 /* Pods-Yard Sale 00.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yard Sale 00.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yard Sale 00/Pods-Yard Sale 00.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,6 +207,7 @@
 		6D2C0BF81E8F400700FA0FA2 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				9F8519431F74797A004E14B0 /* Businesses.swift */,
 				6D2C0BF91E8F401C00FA0FA2 /* Profile.swift */,
 				6DC722891EA41F8C00D05CCD /* BusinessProperties.swift */,
 				6D3B63121EA97ADD006C53B0 /* ReplaceOverSegue.swift */,
@@ -260,8 +286,11 @@
 		6D9DDE3C1D6E61AB0089C7E8 /* Yard Sale 00 */ = {
 			isa = PBXGroup;
 			children = (
+				9F844D641F76BAB800B20DEE /* Utils */,
+				9F844D631F76BAAE00B20DEE /* Extensions */,
+				9F8519401F747691004E14B0 /* AWSNoSQLManager */,
+				9F85193E1F71D37B004E14B0 /* Login */,
 				9F4614721EB68845009949C3 /* CustomViews */,
-				9F4614711EB685AB009949C3 /* Login */,
 				6D2C0BF81E8F400700FA0FA2 /* Commons */,
 				6D9DDE3F1D6E61AB0089C7E8 /* ViewController.swift */,
 				6D9DDE3D1D6E61AB0089C7E8 /* AppDelegate.swift */,
@@ -276,6 +305,7 @@
 				6D19F0C91DDD124800D3CA10 /* Main.storyboard */,
 				6D9DDE491D6E61AB0089C7E8 /* LaunchScreen.storyboard */,
 				6D9DDE4C1D6E61AB0089C7E8 /* Info.plist */,
+				9F85193C1F71D2C0004E14B0 /* awsconfiguration.json */,
 				6D9DDE441D6E61AB0089C7E8 /* Yard_Sale_00.xcdatamodeld */,
 				9F31DBE31DC025730092BD7A /* DataManagerViewController.xib */,
 				6D5296D91F3A81C4006FF803 /* AppStoryBoard.storyboard */,
@@ -367,6 +397,47 @@
 			name = CustomViews;
 			sourceTree = "<group>";
 		};
+		9F844D631F76BAAE00B20DEE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9F844D671F76BB3500B20DEE /* LockView */,
+				9F844D651F76BB0500B20DEE /* UIView+LockScreen.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		9F844D641F76BAB800B20DEE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		9F844D671F76BB3500B20DEE /* LockView */ = {
+			isa = PBXGroup;
+			children = (
+				9F844D681F76BB4900B20DEE /* LoadingGearView.swift */,
+				9F844D6A1F76BB5800B20DEE /* LoadingGearView.xib */,
+			);
+			name = LockView;
+			sourceTree = "<group>";
+		};
+		9F85193E1F71D37B004E14B0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9F4614711EB685AB009949C3 /* Login */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		9F8519401F747691004E14B0 /* AWSNoSQLManager */ = {
+			isa = PBXGroup;
+			children = (
+				9F8519411F7476B0004E14B0 /* NoSqlManager.swift */,
+			);
+			name = AWSNoSQLManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -380,6 +451,7 @@
 				6D9DDE381D6E61AA0089C7E8 /* Resources */,
 				ABC8CB3E866DD94050AA73EC /* [CP] Embed Pods Frameworks */,
 				CA09A61516C1F266DA961DC7 /* [CP] Copy Pods Resources */,
+				9FD108C61F70A37E0076F3A7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -490,8 +562,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F85193D1F71D2C0004E14B0 /* awsconfiguration.json in Resources */,
 				6D9DDE4B1D6E61AB0089C7E8 /* LaunchScreen.storyboard in Resources */,
 				6DDD8BD01E95BC0F0039844B /* collectionViewCellRecommendation.xib in Resources */,
+				9F844D6B1F76BB5800B20DEE /* LoadingGearView.xib in Resources */,
 				6D9DDE481D6E61AB0089C7E8 /* Assets.xcassets in Resources */,
 				9F4614741EB68855009949C3 /* LoadingView.xib in Resources */,
 				6D5296DA1F3A81C4006FF803 /* AppStoryBoard.storyboard in Resources */,
@@ -667,20 +741,24 @@
 				9F4614761EB68862009949C3 /* LoadingView.swift in Sources */,
 				6D2C0BFA1E8F401C00FA0FA2 /* Profile.swift in Sources */,
 				6D4812311DD9300F00EAB50D /* ViewBackground.swift in Sources */,
+				9F844D691F76BB4900B20DEE /* LoadingGearView.swift in Sources */,
 				6D8F534B1DB990B3004FA4FD /* Register00.swift in Sources */,
 				6D82C99F1E6381BE001ED334 /* HomeViewController.swift in Sources */,
 				6D9AC13C1E7224D200C749B8 /* ProfileViewController.swift in Sources */,
 				6DDD8BD41E991BDA0039844B /* DescriptionViewController.swift in Sources */,
 				6D3B63131EA97ADD006C53B0 /* ReplaceOverSegue.swift in Sources */,
+				9F844D661F76BB0500B20DEE /* UIView+LockScreen.swift in Sources */,
 				6D85C6401DF0F4B7009632EE /* AddBusiness.swift in Sources */,
 				6DE19F801E51382700A3E815 /* RecommendationViewController.swift in Sources */,
 				6D8F53451DB5A4BD004FA4FD /* Login.swift in Sources */,
+				9F8519421F7476B0004E14B0 /* NoSqlManager.swift in Sources */,
 				6D9DDE461D6E61AB0089C7E8 /* Yard_Sale_00.xcdatamodeld in Sources */,
 				6D85C6421DF0F4B7009632EE /* GeoticationsViewController.swift in Sources */,
 				6D85C6441DF63C9A009632EE /* LocoHome.swift in Sources */,
 				9F31DBE41DC025740092BD7A /* DataManagerViewController.swift in Sources */,
 				6D9DDE3E1D6E61AB0089C7E8 /* AppDelegate.swift in Sources */,
 				6DB4148D1EB4EFF700067EE7 /* MapTableViewCell.swift in Sources */,
+				9F8519441F74797A004E14B0 /* Businesses.swift in Sources */,
 				6DE19F821E51383500A3E815 /* RecommendationTableViewCell.swift in Sources */,
 				6D3DC70E1DE254CA00714F0B /* BusinessInformationViewController.swift in Sources */,
 				6D8ACC661E49435200475ED8 /* CoreDataManager.swift in Sources */,

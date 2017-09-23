@@ -105,7 +105,7 @@ class Register00: UIViewController,UITextFieldDelegate {
               
                 //data in text = var business name
                 businessName = txtData.text!;
-                BusinessProperties.properties.ownerName = businessName;
+                BusinessProperties.properties.businessName = businessName;
                 
                 //Take name and welcome them
                 lblWelcome.text = "Welcome " + businessName
@@ -133,7 +133,7 @@ class Register00: UIViewController,UITextFieldDelegate {
                 
                 //data in text = var business name
                 businessEmail = txtData.text!;
-                 BusinessProperties.properties.emailAddress = businessEmail;
+                 BusinessProperties.properties.businessEmail = businessEmail;
                 
                 //Take name and welcome them
                 lblWelcome.text = "Welcome " + businessName

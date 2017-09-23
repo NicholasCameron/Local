@@ -22,8 +22,8 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
       
     var matchingItems:[MKMapItem] = []
     var selectedLocation = CLLocationCoordinate2D();
-    var zoomLatitude = Float()
-    var zoomLongitude = Float()
+    var zoomLatitude = CLLocationDegrees()
+    var zoomLongitude = CLLocationDegrees()
     var StreetFilter = String()
     
     @IBOutlet weak var addPin: UIImageView!
@@ -189,7 +189,7 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
 
         }
         
-       BusinessProperties.properties.pinColor = pinColorValue
+     //  BusinessProperties.properties.pinColor = pinColorValue
 
         
         
@@ -212,18 +212,19 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
 
     
     ///SET THE STREET AS WHAT IS CHOSEN
-        BusinessProperties.properties.businessStreet = lblLocation.text!;
+       // BusinessProperties.properties.businessAddress = lblLocation.text!;
     
     }
     
 
     @IBAction func AddLocation(_ sender: AnyObject) {
   
-     BusinessProperties.properties.latitude = String(mapKit.centerCoordinate.latitude)
-        BusinessProperties.properties.longitude = String(mapKit.centerCoordinate.longitude)
-         BusinessProperties.properties.businessDescription = businessType
-         BusinessProperties.properties.pinColor = pinColorValue
-        BusinessProperties.properties.businessTypeOfficial = BusinessProperties.properties.businessDescription;
+     BusinessProperties.properties.businessLatitude = String(mapKit.centerCoordinate.latitude)
+        BusinessProperties.properties.businessLongitude = String(mapKit.centerCoordinate.longitude)
+         BusinessProperties.properties.businessCategory = businessType
+          BusinessProperties.properties.businessAddress = lblLocation.text!
+      //   BusinessProperties.properties.pinColor = pinColorValue
+     //   BusinessProperties.properties.businessTypeOfficial = BusinessProperties.properties.businessDescription;
        
         ///////////////////////////////////////////////////////////
 
@@ -285,11 +286,18 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
             for match in self.matchingItems{
                 
                  self.StreetFilter = self.parseAddress(selectedItem: match.placemark)
-                
                 self.btnAddressFiltered.setTitle(self.StreetFilter, for: .normal)
-                self.zoomLatitude = (selectedItem: match.placemark.coordinate.latitude) as! Float
-                 self.zoomLongitude = (selectedItem: match.placemark.coordinate.longitude) as! Float
+//                self.zoomLatitude = (selectedItem: match.placemark.coordinate.latitude) as! Dobule
+//                 self.zoomLongitude = (selectedItem: match.placemark.coordinate.longitude) as! Double
 
+                if let lat =  match.placemark.coordinate.latitude as? CLLocationDegrees,
+                    let long = match.placemark.coordinate.longitude as? CLLocationDegrees {
+                    self.zoomLatitude = lat
+                    self.zoomLongitude = long
+
+                }
+                
+                
             }
 
         }
@@ -309,7 +317,7 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
         
      //   print((reverseGeocoding(latitude: mapLatitude, longitude: mapLongitude)))
         ///SET THE STREET AS WHAT IS CHOSEN
-        BusinessProperties.properties.businessStreet = lblLocation.text!;
+        BusinessProperties.properties.businessAddress = lblLocation.text!;
         
         BusinessProperties.properties.center = "Latitude: \(mapLatitude) Longitude: \(mapLongitude)"
         lblLocation.text = (reverseGeocoding(latitude: CLLocationDegrees(mapLatitude), longitude: CLLocationDegrees(mapLongitude)))
@@ -317,7 +325,7 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
 
         
         ///SET THE STREET AS WHAT IS CHOSEN
-        BusinessProperties.properties.businessStreet = lblLocation.text!;
+        BusinessProperties.properties.businessAddress = lblLocation.text!;
 
         
         

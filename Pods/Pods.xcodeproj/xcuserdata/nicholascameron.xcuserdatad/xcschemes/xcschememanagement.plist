@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AWSDynamoDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Yard Sale 00.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -31,6 +36,37 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>1646CBD253AEDE4D9D17CE05B758F781</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5E6853E3C31446BD93DD9D1D8A0DA306</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6AC741B8F56A6C5819D0D45F3DFD5D4E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>764BF5F8A7793010994AF3D12E8FB7BF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A902B905D2952D2F8606491806240B1F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E0A83D46224AC43876B6DF530B27AED7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

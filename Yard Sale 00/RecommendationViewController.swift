@@ -19,7 +19,6 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
     var previousCell = RecommendationTableViewCell()
 
     
-     var Users = [AddBusiness]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,12 +36,9 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
 //        self.navigationItem.titleView = titleView
 //        
         
-        let manageData = CoreDataManager();
-     
-        Users = manageData.getUsers()
+
         
-        
-        
+
         
         // Do any additional setup after loading the view.
         
@@ -77,7 +73,7 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
         
-        return Users.count
+        return BusinessProperties.properties.externalBusinesses.count
     }
     
     
@@ -89,10 +85,10 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
         
         let cellIdentifier = "recommendationCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RecommendationTableViewCell
-        var headerImage = UIImage(data: Users[indexPath.row].image as Data)
+        let headerImage = UIImage(data: BusinessProperties.properties.externalBusinesses[indexPath.row].image as Data)
         cell.imageInCell.image = headerImage
-        cell.lblBuinessTitle.text = Users[indexPath.row].businessName
-        cell.lblBusinessDescription.text = "this is dummy text is all that the whole point of writing this text out like a dummy when i could have just copy pasted intread of wasting all my dog funk time to copy paste"
+        cell.lblBuinessTitle.text = BusinessProperties.properties.externalBusinesses[indexPath.row].businessName.capitalized
+        cell.lblBusinessDescription.text = BusinessProperties.properties.externalBusinesses[indexPath.row].businessDescription
         cell.lblBusinessDescription.sizeToFit()
         
         //  configureCell(cell, indexPath: indexPath)

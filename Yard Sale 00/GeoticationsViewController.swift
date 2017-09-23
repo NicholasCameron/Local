@@ -52,6 +52,8 @@ var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadAllGeotifications()
+
         searchBar.isHidden = true
          self.suggestionTable.alpha = 0
         
@@ -77,7 +79,6 @@ var locationManager = CLLocationManager()
 
         
         
-        loadAllGeotifications()
         
         mapKit.delegate = self
         ////////TABLE AND SEARCH//////////////
@@ -108,18 +109,33 @@ var locationManager = CLLocationManager()
     
     func loadAllGeotifications() {
       
-         let users =  BusinessProperties.properties.DataManager.getUsers();
-
-        
-        for u in users{
-            
-            add(business: u)
-            let details = BusinessDetail(businessName:u.businessName,businessDescription:u.businessDescription,businessType:u.type,location: u.coordinate)
-            
-            businessDetailsArray.append(details);
-        
-
+        NoSqlManager.getAllBusinesses { (status, businesses) in
+            if status == 200{
+                
+                for u in businesses!{
+                    self.add(business: u)
+                  self.businessDetailsArray.append(BusinessDetail(businessName: u.businessName, businessDescription: u.description, businessType:u.type, location: u.coordinate))
+                }
+                
+            }else{
+                
+            }
         }
+        
+        
+        
+//         let users =  BusinessProperties.properties.DataManager.getUsers();
+//
+//        
+//        for u in users{
+//            
+//            add(business: u)
+//            let details = BusinessDetail(businessName:u.businessName,businessDescription:u.businessDescription,businessType:u.type,location: u.coordinate)
+//            
+//            businessDetailsArray.append(details);
+//        
+//
+//        }
 
     }
     

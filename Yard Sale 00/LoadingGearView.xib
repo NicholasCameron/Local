@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="9sv-hq-ivs" customClass="LoadingGearView" customModule="Yard_Sale_00" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Mehieddie, Aeroplan Login" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36W-gK-eVW">
+                    <rect key="frame" x="32" y="51" width="257" height="94"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="94" id="fIy-Hu-ZA6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="24"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IJd-Fh-1pR">
+                    <rect key="frame" x="32" y="152" width="34" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="34" id="Vcm-JY-DzR"/>
+                        <constraint firstAttribute="height" constant="1" id="Wlz-8v-KRZ"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quickLocoBG" highlightedImage="loadingIcon" translatesAutoresizingMaskIntoConstraints="NO" id="m93-av-fZ1">
+                    <rect key="frame" x="168" y="314" width="47" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="47" id="WR9-dD-DuY"/>
+                        <constraint firstAttribute="height" constant="47" id="uAa-qW-Zx1"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signing in..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLs-zr-Xw0">
+                    <rect key="frame" x="0.0" y="289" width="375" height="15.5"/>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking your Trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpE-D9-UmN">
+                    <rect key="frame" x="90" y="371" width="199" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="pHX-yo-Ghu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <constraints>
+                <constraint firstItem="FLs-zr-Xw0" firstAttribute="centerY" secondItem="9sv-hq-ivs" secondAttribute="centerY" constant="-37" id="16g-sa-SIg"/>
+                <constraint firstItem="FLs-zr-Xw0" firstAttribute="leading" secondItem="9sv-hq-ivs" secondAttribute="leading" id="8RR-WV-Dzd"/>
+                <constraint firstItem="IJd-Fh-1pR" firstAttribute="top" secondItem="36W-gK-eVW" secondAttribute="bottom" constant="7" id="KQY-NW-yY0"/>
+                <constraint firstItem="HpE-D9-UmN" firstAttribute="leading" secondItem="9sv-hq-ivs" secondAttribute="leading" constant="90" id="NFF-j6-XWu"/>
+                <constraint firstItem="36W-gK-eVW" firstAttribute="top" secondItem="9sv-hq-ivs" secondAttribute="top" constant="51" id="UrL-JZ-4f1"/>
+                <constraint firstItem="m93-av-fZ1" firstAttribute="centerX" secondItem="9sv-hq-ivs" secondAttribute="centerX" constant="3.5" id="WlI-VA-mkB"/>
+                <constraint firstItem="36W-gK-eVW" firstAttribute="leading" secondItem="9sv-hq-ivs" secondAttribute="leading" constant="32" id="buf-aE-rbr"/>
+                <constraint firstItem="FLs-zr-Xw0" firstAttribute="centerX" secondItem="9sv-hq-ivs" secondAttribute="centerX" id="gmQ-Yy-tq8"/>
+                <constraint firstItem="m93-av-fZ1" firstAttribute="centerY" secondItem="9sv-hq-ivs" secondAttribute="centerY" constant="3.5" id="hC2-vi-S0l"/>
+                <constraint firstItem="HpE-D9-UmN" firstAttribute="trailing" secondItem="36W-gK-eVW" secondAttribute="trailing" id="i0a-fm-SA7"/>
+                <constraint firstAttribute="trailing" secondItem="FLs-zr-Xw0" secondAttribute="trailing" id="lBj-71-0eh"/>
+                <constraint firstItem="36W-gK-eVW" firstAttribute="leading" secondItem="IJd-Fh-1pR" secondAttribute="leading" id="mKI-23-7ks"/>
+                <constraint firstItem="HpE-D9-UmN" firstAttribute="top" secondItem="m93-av-fZ1" secondAttribute="bottom" constant="10" id="tng-hM-8lQ"/>
+                <constraint firstAttribute="trailing" secondItem="36W-gK-eVW" secondAttribute="trailing" constant="86" id="uYn-qz-w0U"/>
+            </constraints>
+            <connections>
+                <outlet property="lblLoadingMessage" destination="FLs-zr-Xw0" id="a19-2T-0pc"/>
+                <outlet property="lblLowerMessage" destination="HpE-D9-UmN" id="RZn-AO-oGy"/>
+                <outlet property="lblheadingMessage" destination="36W-gK-eVW" id="ATv-Ce-cQu"/>
+                <outlet property="loadingImageView" destination="m93-av-fZ1" id="D9m-j8-r0q"/>
+                <outlet property="viewBelowHeader" destination="IJd-Fh-1pR" id="EXk-Q0-O4c"/>
+            </connections>
+            <point key="canvasLocation" x="31.5" y="52.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="loadingIcon" width="16" height="16"/>
+        <image name="quickLocoBG" width="300" height="300"/>
+    </resources>
+</document>

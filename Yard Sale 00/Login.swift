@@ -10,8 +10,6 @@ import UIKit
 import CoreData
 class Login: UIViewController{
     
-    @IBOutlet weak var lblGoCanadaHeading: UILabel!
-    @IBOutlet weak var lblSignInMessage: UILabel!
     @IBOutlet weak var btnSignUp: UIButton!
     @IBOutlet weak var lblEmailRequired: UILabel!
     @IBOutlet weak var lblPasswordRequired: UILabel!
@@ -33,7 +31,6 @@ class Login: UIViewController{
         
         
         //Dont show the heading unless the keyboard is up
-        lblGoCanadaHeading.isHidden = true
         
         //Hide the error messages and the heading placeholders
         lblEmailRequired.isHidden = true
@@ -116,11 +113,6 @@ class Login: UIViewController{
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0{
                 self.view.frame.origin.y -= keyboardSize.height - btnSignUp.frame.height
-                lblSignInMessage.isHidden = true
-                
-                lblGoCanadaHeading.isHidden = false
-                lblGoCanadaHeading.frame.origin.y += keyboardSize.height
-                
                 
                 
             }
@@ -128,13 +120,9 @@ class Login: UIViewController{
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
             if self.view.frame.origin.y != 0{
                 self.view.frame.origin.y = 0
-                lblSignInMessage.isHidden = false
-                
-                lblGoCanadaHeading.isHidden = true
-                lblGoCanadaHeading.frame.origin.y -= keyboardSize.height
                 
                 
             }

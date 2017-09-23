@@ -55,10 +55,10 @@ class BusinessInformationViewController: UIViewController,UIImagePickerControlle
         imagePicker.delegate = self
         
 
-        lblBusinessType.text = BusinessProperties.properties.businessTypeOfficial;
-        lblOwnersName.text = BusinessProperties.properties.ownerName;
-        lblEmail.text = BusinessProperties.properties.emailAddress;
-        lblAddress.text = BusinessProperties.properties.businessStreet;
+        lblBusinessType.text = BusinessProperties.properties.businessCategory;
+        lblOwnersName.text = BusinessProperties.properties.businessName;
+        lblEmail.text = BusinessProperties.properties.businessEmail;
+        lblAddress.text = BusinessProperties.properties.businessAddress;
         
         x1 = lblBusinessType.center.y;
         x2 = lblOwnersName.center.y;
@@ -178,23 +178,32 @@ class BusinessInformationViewController: UIViewController,UIImagePickerControlle
     @IBAction func Register(_ sender: Any) {
     
    // let coordinate = mapKit.centerCoordinate
-    _ = BusinessProperties.properties.ownerName
-        let coordinate = CLLocationCoordinate2D(latitude: Double(BusinessProperties.properties.latitude)!, longitude: Double(BusinessProperties.properties.longitude)!)
+    _ = BusinessProperties.properties.businessName
+        let coordinate = CLLocationCoordinate2D(latitude: Double(BusinessProperties.properties.businessLatitude)!, longitude: Double(BusinessProperties.properties.businessLongitude)!)
   
     
     
     
     
-    BusinessProperties.properties.businessTypeOfficial = BusinessProperties.properties.businessDescription;
     BusinessProperties.properties.businessCoordinates = coordinate;
   
         
         
-        let imageData = NSData(data: UIImageJPEGRepresentation(imageHeader.image!, 1.0)!)
+        let i = UIImageJPEGRepresentation(imageHeader.image!, 0.1)
+       // let imageData = UIImagePNGRepresentation(imageHeader.image!) as Data?
+        BusinessProperties.properties.businessImage = i!
+
         
         
+        NoSqlManager.saveBusiness(businessName: BusinessProperties.properties.businessName, businessCategory: BusinessProperties.properties.businessCategory, businessDescription: BusinessProperties.properties.businessDescription, businessEmail: BusinessProperties.properties.businessEmail, businessImage: BusinessProperties.properties.businessImage, businessLatidude: BusinessProperties.properties.businessLatitude, businessLongitude: BusinessProperties.properties.businessLongitude, businessPhone: BusinessProperties.properties.businessPhone, businessWebsite: BusinessProperties.properties.businessWebsite, mondayHours: BusinessProperties.properties.businessHours[0], tuesdayHours: BusinessProperties.properties.businessHours[1], wednesdayHours: BusinessProperties.properties.businessHours[2], thusdayHours: BusinessProperties.properties.businessHours[3], fridayHours: BusinessProperties.properties.businessHours[4], saturdayHours: BusinessProperties.properties.businessHours[5], sundayHours: BusinessProperties.properties.businessHours[6]) { (status) in
+            if status == 200{
+                
+                self.performSegue(withIdentifier: "registeredSegue", sender: self)
+
+            }
+        }
         
-        BusinessProperties.properties.DataManager.save(organizationName: BusinessProperties.properties.ownerName, details:  BusinessProperties.properties.businessDescription, emailAddress: BusinessProperties.properties.emailAddress, hours:  BusinessProperties.properties.businessHours, coordinate: coordinate, password: BusinessProperties.properties.password,  typeOfBusiness: BusinessProperties.properties.businessTypeOfficial,pinColor:  BusinessProperties.properties.pinColor,image:imageData)
+       // BusinessProperties.properties.DataManager.save(organizationName: BusinessProperties.properties.ownerName, details:  BusinessProperties.properties.businessDescription, emailAddress: BusinessProperties.properties.emailAddress, hours:  BusinessProperties.properties.businessHours, coordinate: coordinate, password: BusinessProperties.properties.password,  typeOfBusiness: BusinessProperties.properties.businessTypeOfficial,pinColor:  BusinessProperties.properties.pinColor,image:imageData)
         
         
         ///////////////////////////////////////////////////////////
