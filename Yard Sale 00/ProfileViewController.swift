@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AWSDynamoDB
+import AWSAuthCore
 
 class ProfileViewController: UIViewController {
 
@@ -20,7 +22,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var saturdayHours: UILabel!
     @IBOutlet weak var sundayHours: UILabel!
     @IBOutlet weak var businessDescription: UILabel!
-    
+   var business = Businesses()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,9 @@ class ProfileViewController: UIViewController {
         self.view.backgroundColor = Profile.ProfilePage.bgColor
         }
         
+        loadData()
+        
+        
         
     }
 
@@ -42,6 +47,61 @@ class ProfileViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func loadData(){
+        
+        
+        let queryExpression = AWSDynamoDBQueryExpression()
+        queryExpression.indexName = business?._businessId
+        
+     //   queryExpression.keyConditionExpression = ("BusinessName = :\(business?._businessName ?? "")");
+       // queryExpression.indexName = businessID
+    //queryExpression.expressionAttributeValues = ["BusinessName":business?._businessName ?? ""]
+
+        queryExpression.indexName = business?._businessId
+        
+      //  queryExpression.keyConditionExpression = ("BusinessId = \(business?._businessId ?? "")")
+     
+        
+      
+        let objectMapper = AWSDynamoDBObjectMapper.default()
+        let scanExpression = AWSDynamoDBScanExpression()
+        
+        scanExpression.filterExpression = "#BusinessName < :BusinessName"
+        scanExpression.expressionAttributeNames = ["#BusinessName": "BusinessName" ,]
+        scanExpression.expressionAttributeValues = [":BusinessName": business?._businessName! ?? ""]
+        
+        objectMapper.scan(Businesses.self, expression: scanExpression) { (response: AWSDynamoDBPaginatedOutput?, error: Error?) in
+            if let error = error as NSError? {
+                print(error)
+            }else{
+                for item in (response?.items)!{
+                    print(item)
+                }
+            }
+        }
+
+        
+//        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+//
+//        let t = AWSDynamoDBObjectMapperConfiguration()
+//
+//        
+//        
+//        dynamoDbObjectMapper.query(Businesses.self, expression: queryExpression, configuration: t) { (businessPager, error) in
+//            if businessPager?.items != nil{
+//
+//                
+//            }
+//        }
+        
+     
+        
+        
+        
+    }
+    
     
     @IBAction func btnContactClicked(_ sender: Any) {
    

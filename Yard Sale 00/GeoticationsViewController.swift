@@ -48,7 +48,7 @@ class GeoticationsViewController: UIViewController,UISearchBarDelegate,UITableVi
 var locationManager = CLLocationManager()
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var BusinessLocations : [AddBusiness] = []
+    var BusinessLocations : [LocalBusinessMapObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -140,7 +140,7 @@ var locationManager = CLLocationManager()
     }
     
     
-    func add(business: AddBusiness) {
+    func add(business: LocalBusinessMapObject) {
         BusinessLocations.append(business)
         
         mapKit.addAnnotation(business)
@@ -151,7 +151,7 @@ var locationManager = CLLocationManager()
 
     }
     
-    func remove(geotification: AddBusiness) {
+    func remove(geotification: LocalBusinessMapObject) {
        
         ///SWITCH TO GO TO 
         
@@ -460,7 +460,7 @@ extension GeoticationsViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "myGeotifications"
-        if annotation is AddBusiness {
+        if annotation is LocalBusinessMapObject {
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
             
             for b in BusinessLocations{
@@ -545,7 +545,7 @@ extension GeoticationsViewController: MKMapViewDelegate {
     }
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         // Delete geotification
-        let business = view.annotation as! AddBusiness
+        let business = view.annotation as! LocalBusinessMapObject
         
         
         Profile.ProfilePage.profileName = business.businessName

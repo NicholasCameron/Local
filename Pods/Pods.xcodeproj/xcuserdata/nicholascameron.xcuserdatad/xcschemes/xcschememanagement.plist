@@ -19,6 +19,26 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FBSDKCoreKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FBSDKLoginKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FBSDKShareKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Yard Sale 00.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,6 +62,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>44CAD6CE523055ED339E87154473A254</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5E6853E3C31446BD93DD9D1D8A0DA306</key>
 		<dict>
 			<key>primary</key>
@@ -57,12 +82,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8A125AD2FA1A4DA4ADA304195BDE0A9C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A902B905D2952D2F8606491806240B1F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E0A83D46224AC43876B6DF530B27AED7</key>
+		<key>BC5000D645EEAF961C85907CDC796FE1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BEF7E6E85DB5CDE5D7A18F4F2EB8494B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD1F15A05F62E2C20BC860F6DA62FC5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

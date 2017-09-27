@@ -12,7 +12,7 @@ import CoreLocation
 
 
 
-class AddBusiness: NSObject,MKAnnotation {
+class LocalBusinessMapObject: NSObject,MKAnnotation {
    
     public func encode(with aCoder: NSCoder) {
         print("beep")

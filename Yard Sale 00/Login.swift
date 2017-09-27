@@ -152,7 +152,7 @@ class Login: UIViewController{
             DispatchQueue.main.async {
                 self.view.endEditing(true)
                 
-                self.view.lock(headingText:"Air Canada mobile+",loadingText:"Signing in...")
+                self.view.lock(headingText:"Air Canada mobile+",loadingText:"Signing in...", lowerLoadingText: nil)
                 // self.view.unlock()
             }
         }

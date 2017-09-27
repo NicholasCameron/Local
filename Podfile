@@ -20,6 +20,9 @@ target 'Yard Sale 00' do
 #add pods below
 pod 'AWSAuthCore', '~> 2.6.1'
 pod 'AWSDynamoDB', '~> 2.6.1'
+pod 'FBSDKCoreKit' 
+pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
 
 
 end

@@ -2,7 +2,7 @@ import CoreData
 import UIKit
 import Foundation
 
-class RecommendationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+class RecommendationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,RecommendationProtocol  {
 
     
     
@@ -16,9 +16,8 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
     var previousRowSelected = -1
     var cellSelected = false
     var previousRow = false
-    var previousCell = RecommendationTableViewCell()
-
-    
+    var previousCell:RecommendationTableViewCell?
+    var cellIndex = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +35,6 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
 //        self.navigationItem.titleView = titleView
 //        
         
-
         
 
         
@@ -85,12 +83,13 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
         
         let cellIdentifier = "recommendationCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RecommendationTableViewCell
-        let headerImage = UIImage(data: BusinessProperties.properties.externalBusinesses[indexPath.row].image as Data)
+        let headerImage = UIImage(data: BusinessProperties.properties.externalBusinesses[indexPath.row]._businessImage!)
         cell.imageInCell.image = headerImage
-        cell.lblBuinessTitle.text = BusinessProperties.properties.externalBusinesses[indexPath.row].businessName.capitalized
-        cell.lblBusinessDescription.text = BusinessProperties.properties.externalBusinesses[indexPath.row].businessDescription
+        cell.lblBuinessTitle.text = BusinessProperties.properties.externalBusinesses[indexPath.row]._businessName?.capitalized
+        cell.lblBusinessDescription.text = BusinessProperties.properties.externalBusinesses[indexPath.row]._businessDescription
         cell.lblBusinessDescription.sizeToFit()
-        
+        cell.itemIndex = indexPath.row
+        cell.delegate = self
         //  configureCell(cell, indexPath: indexPath)
         
         return cell
@@ -104,16 +103,14 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
+    cellIndex = indexPath.row
         if cellSelected == false{
-            
             cellSelected = true
         }else{
             
-            if(previousCell.cellSeperatorView.isHidden == true && previousCell != tableView.cellForRow(at: indexPath) as! RecommendationTableViewCell ){
-                previousCell.cellSeperatorView.isHidden = false
-                previousCell.imageCollapseExpande.image  = UIImage(named: "downArrow")
+            if(previousCell?.cellSeperatorView.isHidden == true && previousCell != tableView.cellForRow(at: indexPath) as? RecommendationTableViewCell ){
+                previousCell?.cellSeperatorView.isHidden = false
+                previousCell?.imageCollapseExpande.image  = UIImage(named: "downArrow")
             }
             
             
@@ -178,7 +175,19 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     
-    
+    func didTapOnItem() {
+        
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
+        
+    let businessName = BusinessProperties.properties.externalBusinesses[cellIndex]._businessName
+        
+     let businessEmail = BusinessProperties.properties.externalBusinesses[cellIndex]._businessEmail
+        
+        myVC.business =  BusinessProperties.properties.externalBusinesses[cellIndex]
+    //    navigationController?.pushViewController(myVC, animated: true)
+        self.showDetailViewController(myVC, sender: nil)
+        
+    }
     
     /*
      // MARK: - Navigation

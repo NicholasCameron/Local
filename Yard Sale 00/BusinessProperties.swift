@@ -15,7 +15,8 @@ class BusinessProperties: NSObject {
     
     static let properties = BusinessProperties()
     
-    var externalBusinesses = [AddBusiness]()
+    var externalBusinesses = [Businesses]()
+    var externalBusinessMapObjects = [LocalBusinessMapObject]()
     var businessCoordinates = CLLocationCoordinate2D();
     var businessAddress = String();
     var usersLocation = CLLocationCoordinate2D();

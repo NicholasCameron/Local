@@ -14,11 +14,11 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //Get all the external data needed
-        
+        self.view.lock(headingText: "loading", loadingText: "test", lowerLoadingText: nil)
         NoSqlManager.getAllBusinesses { (status,  externalBusinesses) in
-            
+            self.view.unlock(statusCode: 200)
             if status == 200 && externalBusinesses != nil{
-            BusinessProperties.properties.externalBusinesses = externalBusinesses!
+            BusinessProperties.properties.externalBusinessMapObjects = externalBusinesses!
             }
         }
         

@@ -270,6 +270,7 @@
                     <tabBarItem key="tabBarItem" title="Recommendations" image="recommen" id="sVl-6n-CQ5"/>
                     <connections>
                         <outlet property="recommendationTableView" destination="lQD-Ni-nZL" id="EDU-8Q-bW5"/>
+                        <segue destination="gbF-mi-axb" kind="presentation" identifier="profileSegue" id="oBL-ir-aqW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RCU-Cm-xoV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -880,7 +881,7 @@
         <image name="tableviewTest" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cCx-Vp-bQX"/>
-        <segue reference="XmL-QS-s8o"/>
+        <segue reference="ASB-cB-94U"/>
+        <segue reference="oBL-ir-aqW"/>
     </inferredMetricsTieBreakers>
 </document>

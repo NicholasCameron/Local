@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
    
         
+                
         
         let didFinishLaunching = AWSSignInManager.sharedInstance().interceptApplication(
             application, didFinishLaunchingWithOptions: launchOptions)

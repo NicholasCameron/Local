@@ -42,8 +42,6 @@
 		9F31DBE41DC025740092BD7A /* DataManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31DBE21DC025730092BD7A /* DataManagerViewController.swift */; };
 		9F31DBE51DC025740092BD7A /* DataManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F31DBE31DC025730092BD7A /* DataManagerViewController.xib */; };
 		9F31DBE81DC02B690092BD7A /* Register01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31DBE71DC02B690092BD7A /* Register01.swift */; };
-		9F4614741EB68855009949C3 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F4614731EB68855009949C3 /* LoadingView.xib */; };
-		9F4614761EB68862009949C3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4614751EB68862009949C3 /* LoadingView.swift */; };
 		9F844D661F76BB0500B20DEE /* UIView+LockScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F844D651F76BB0500B20DEE /* UIView+LockScreen.swift */; };
 		9F844D691F76BB4900B20DEE /* LoadingGearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F844D681F76BB4900B20DEE /* LoadingGearView.swift */; };
 		9F844D6B1F76BB5800B20DEE /* LoadingGearView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F844D6A1F76BB5800B20DEE /* LoadingGearView.xib */; };
@@ -134,8 +132,6 @@
 		9F31DBE21DC025730092BD7A /* DataManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerViewController.swift; sourceTree = "<group>"; };
 		9F31DBE31DC025730092BD7A /* DataManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataManagerViewController.xib; sourceTree = "<group>"; };
 		9F31DBE71DC02B690092BD7A /* Register01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register01.swift; sourceTree = "<group>"; };
-		9F4614731EB68855009949C3 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
-		9F4614751EB68862009949C3 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = ../LoadingView.swift; sourceTree = "<group>"; };
 		9F844D651F76BB0500B20DEE /* UIView+LockScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LockScreen.swift"; sourceTree = "<group>"; };
 		9F844D681F76BB4900B20DEE /* LoadingGearView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingGearView.swift; sourceTree = "<group>"; };
 		9F844D6A1F76BB5800B20DEE /* LoadingGearView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingGearView.xib; sourceTree = "<group>"; };
@@ -290,7 +286,6 @@
 				9F844D631F76BAAE00B20DEE /* Extensions */,
 				9F8519401F747691004E14B0 /* AWSNoSQLManager */,
 				9F85193E1F71D37B004E14B0 /* Login */,
-				9F4614721EB68845009949C3 /* CustomViews */,
 				6D2C0BF81E8F400700FA0FA2 /* Commons */,
 				6D9DDE3F1D6E61AB0089C7E8 /* ViewController.swift */,
 				6D9DDE3D1D6E61AB0089C7E8 /* AppDelegate.swift */,
@@ -386,15 +381,6 @@
 				6D8F53441DB5A4BD004FA4FD /* Login.swift */,
 			);
 			name = Login;
-			sourceTree = "<group>";
-		};
-		9F4614721EB68845009949C3 /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-				9F4614751EB68862009949C3 /* LoadingView.swift */,
-				9F4614731EB68855009949C3 /* LoadingView.xib */,
-			);
-			name = CustomViews;
 			sourceTree = "<group>";
 		};
 		9F844D631F76BAAE00B20DEE /* Extensions */ = {
@@ -567,7 +553,6 @@
 				6DDD8BD01E95BC0F0039844B /* collectionViewCellRecommendation.xib in Resources */,
 				9F844D6B1F76BB5800B20DEE /* LoadingGearView.xib in Resources */,
 				6D9DDE481D6E61AB0089C7E8 /* Assets.xcassets in Resources */,
-				9F4614741EB68855009949C3 /* LoadingView.xib in Resources */,
 				6D5296DA1F3A81C4006FF803 /* AppStoryBoard.storyboard in Resources */,
 				9F31DBE51DC025740092BD7A /* DataManagerViewController.xib in Resources */,
 				6D19F0CA1DDD124800D3CA10 /* Main.storyboard in Resources */,
@@ -738,7 +723,6 @@
 				6D9DDE401D6E61AB0089C7E8 /* ViewController.swift in Sources */,
 				6DC7228A1EA41F8C00D05CCD /* BusinessProperties.swift in Sources */,
 				9F31DBE81DC02B690092BD7A /* Register01.swift in Sources */,
-				9F4614761EB68862009949C3 /* LoadingView.swift in Sources */,
 				6D2C0BFA1E8F401C00FA0FA2 /* Profile.swift in Sources */,
 				6D4812311DD9300F00EAB50D /* ViewBackground.swift in Sources */,
 				9F844D691F76BB4900B20DEE /* LoadingGearView.swift in Sources */,

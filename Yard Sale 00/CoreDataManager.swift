@@ -19,9 +19,9 @@ var Users = [NSManagedObject]()
 class CoreDataManager: NSObject{
     
     
-    func getUsers()->[AddBusiness]{
+    func getUsers()->[LocalBusinessMapObject]{
         
-        var businesses = [AddBusiness]()
+        var businesses = [LocalBusinessMapObject]()
         
         //1
         guard let appDelegate =
@@ -73,7 +73,7 @@ class CoreDataManager: NSObject{
                 
                 
                 
-                businesses.append(AddBusiness(coordinate: coordinate, businessName: n, businessDescription: businessD, pinColor: pinC,type:type,image:image as Data,emailAddress: emailAddress, hours: hours))
+                businesses.append(LocalBusinessMapObject(coordinate: coordinate, businessName: n, businessDescription: businessD, pinColor: pinC,type:type,image:image as Data,emailAddress: emailAddress, hours: hours))
                 
             }
     

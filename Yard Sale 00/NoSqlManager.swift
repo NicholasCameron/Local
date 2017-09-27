@@ -60,9 +60,9 @@ class NoSqlManager: NSObject {
     
     
     
-    class func getAllBusinesses(completion: @escaping (_ statusCode: Int,_ businesses:[AddBusiness]?) -> Void){
+    class func getAllBusinesses(completion: @escaping (_ statusCode: Int,_ businesses:[LocalBusinessMapObject]?) -> Void){
         
-        var businessDetailsArray = [AddBusiness]()
+        var businessDetailsArray = [LocalBusinessMapObject]()
         
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
         
@@ -74,7 +74,7 @@ class NoSqlManager: NSObject {
         let scanExpression = AWSDynamoDBScanExpression()
         scanExpression.limit = 20
         
-        var t = AWSDynamoDBObjectMapperConfiguration()
+        let t = AWSDynamoDBObjectMapperConfiguration()
         
             dynamoDbObjectMapper.scan(Businesses.self, expression: scanExpression, configuration: t) { (businessPager, error) in
                 if businessPager?.items != nil{
@@ -92,9 +92,10 @@ class NoSqlManager: NSObject {
                             hours.append(pulledBusiness._saturdayHours!)
                             hours.append(pulledBusiness._sundayHours!)
 
+                        
+                            BusinessProperties.properties.externalBusinesses.append(pulledBusiness)
                             
-                            
-                            let b = AddBusiness(coordinate: location, businessName: pulledBusiness._businessName!, businessDescription: pulledBusiness._businessDescription!, pinColor: "red", type: pulledBusiness._businessCategory!, image: pulledBusiness._businessImage!, emailAddress: pulledBusiness._businessEmail!, hours: hours)
+                            let b = LocalBusinessMapObject(coordinate: location, businessName: pulledBusiness._businessName!, businessDescription: pulledBusiness._businessDescription!, pinColor: "red", type: pulledBusiness._businessCategory!, image: pulledBusiness._businessImage!, emailAddress: pulledBusiness._businessEmail!, hours: hours)
                                 
                             
                             businessDetailsArray.append(b)
