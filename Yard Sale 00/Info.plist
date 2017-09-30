@@ -2,6 +2,58 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AWS</key>
+	<dict>
+		<key>CredentialsProvider</key>
+		<dict>
+			<key>CognitoIdentity</key>
+			<dict>
+				<key>Default</key>
+				<dict>
+					<key>PoolId</key>
+					<string>us-east-1:e715b226-5551-4825-8f09-01dce7c4b27c</string>
+					<key>Region</key>
+					<string>us-east-1</string>
+				</dict>
+			</dict>
+		</dict>
+		<key>DynamoDBObjectMapper</key>
+		<dict>
+			<key>Default</key>
+			<dict>
+				<key>Region</key>
+				<string>us-east-1</string>
+			</dict>
+		</dict>
+		<key>IdentityManager</key>
+		<dict>
+			<key>Default</key>
+			<dict/>
+		</dict>
+		<key>MobileHub</key>
+		<dict>
+			<key>ProjectClientId</key>
+			<string>MobileHub 5ebfd081-862e-42cd-867c-a1e7e4c47519 aws-my-sample-app-ios-swift-v0.19</string>
+		</dict>
+		<key>PinpointAnalytics</key>
+		<dict>
+			<key>Default</key>
+			<dict>
+				<key>AppId</key>
+				<string>4eedb8d0cac24e1890f24e00609a2f96</string>
+				<key>Region</key>
+				<string>us-east-1</string>
+			</dict>
+		</dict>
+		<key>PinpointTargeting</key>
+		<dict>
+			<key>Default</key>
+			<dict>
+				<key>Region</key>
+				<string>us-east-1</string>
+			</dict>
+		</dict>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -46,57 +98,24 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>AWS</key>
-    <dict>
-        <key>PinpointAnalytics</key>
+    
+    <key>CFBundleURLTypes</key>
+    <array>
         <dict>
-            <key>Default</key>
-            <dict>
-                <key>AppId</key>
-                <string>4eedb8d0cac24e1890f24e00609a2f96</string>
-                <key>Region</key>
-                <string>us-east-1</string>
-            </dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb1544113458944978</string>
+            </array>
         </dict>
-        <key>PinpointTargeting</key>
-        <dict>
-            <key>Default</key>
-            <dict>
-                <key>Region</key>
-                <string>us-east-1</string>
-            </dict>
-        </dict>
-        <key>IdentityManager</key>
-        <dict>
-            <key>Default</key>
-            <dict/>
-        </dict>
-        <key>DynamoDBObjectMapper</key>
-        <dict>
-            <key>Default</key>
-            <dict>
-                <key>Region</key>
-                <string>us-east-1</string>
-            </dict>
-        </dict>
-        <key>CredentialsProvider</key>
-        <dict>
-            <key>CognitoIdentity</key>
-            <dict>
-                <key>Default</key>
-                <dict>
-                    <key>PoolId</key>
-                    <string>us-east-1:e715b226-5551-4825-8f09-01dce7c4b27c</string>
-                    <key>Region</key>
-                    <string>us-east-1</string>
-                </dict>
-            </dict>
-        </dict>
-        <key>MobileHub</key>
-        <dict>
-            <key>ProjectClientId</key>
-            <string>MobileHub 5ebfd081-862e-42cd-867c-a1e7e4c47519 aws-my-sample-app-ios-swift-v0.19</string>
-        </dict>
-    </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>1544113458944978</string>
+    <key>FacebookDisplayName</key>
+    <string>RNAppsGoLo</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbauth2</string>
+    </array>
+
 </dict>
 </plist>

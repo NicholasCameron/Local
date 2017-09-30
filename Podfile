@@ -23,6 +23,7 @@ pod 'AWSDynamoDB', '~> 2.6.1'
 pod 'FBSDKCoreKit' 
 pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
-
+pod 'AWSUserPoolsSignIn', '~> 2.6.1'
+pod 'AWSAuthUI', '~> 2.6.1'
 
 end

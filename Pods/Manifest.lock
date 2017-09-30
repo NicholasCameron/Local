@@ -1,9 +1,17 @@
 PODS:
   - AWSAuthCore (2.6.2):
     - AWSCore (= 2.6.2)
+  - AWSAuthUI (2.6.2):
+    - AWSAuthCore (= 2.6.2)
+    - AWSCore (= 2.6.2)
+  - AWSCognitoIdentityProvider (2.6.2):
+    - AWSCore (= 2.6.2)
   - AWSCore (2.6.2)
   - AWSDynamoDB (2.6.2):
     - AWSCore (= 2.6.2)
+  - AWSUserPoolsSignIn (2.6.2):
+    - AWSAuthCore (= 2.6.2)
+    - AWSCognitoIdentityProvider (= 2.6.2)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -19,20 +27,25 @@ PODS:
 
 DEPENDENCIES:
   - AWSAuthCore (~> 2.6.1)
+  - AWSAuthUI (~> 2.6.1)
   - AWSDynamoDB (~> 2.6.1)
+  - AWSUserPoolsSignIn (~> 2.6.1)
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
 
 SPEC CHECKSUMS:
   AWSAuthCore: 41155990fc5b10d84667c237a8757799edbf6267
+  AWSAuthUI: 771c3aa17b9a83c8c39c7813a09b9916d1456225
+  AWSCognitoIdentityProvider: 8d2e86a00ca828ceaf6513b96ee3a45b70518631
   AWSCore: 8f458961a4967be219162108f5be7df1c935639a
   AWSDynamoDB: 29e1d8775b13a18033b6064e1563e5769fdfe024
+  AWSUserPoolsSignIn: 2d27dbcde0d1287a19784ea33a27b4df1eb7891c
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FBSDKCoreKit: ebc6c5f5b3f0e72396041050e2266781a38ac587
   FBSDKLoginKit: 887be4b7452e1c5a3cc4485ce152529965a0c41e
   FBSDKShareKit: 4f83956d4ca2960730fe7588a168eb8d535c06dc
 
-PODFILE CHECKSUM: e7dd531e0985a7eafb0c8895319bf11f444faaef
+PODFILE CHECKSUM: dddfe9630b54c8d87cb3dbce13ddb839c0f8547c
 
 COCOAPODS: 1.2.0

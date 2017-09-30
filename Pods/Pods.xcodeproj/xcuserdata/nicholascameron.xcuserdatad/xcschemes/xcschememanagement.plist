@@ -9,12 +9,37 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AWSAuthUI-AWSAuthUI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSAuthUI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSCognitoIdentityProvider.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>AWSCore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>AWSDynamoDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSUserPoolsSignIn-AWSUserPoolsSignIn.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSUserPoolsSignIn.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -57,12 +82,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>162CAD95CC0F402AED98F345659DC633</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1646CBD253AEDE4D9D17CE05B758F781</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>303AB6194DF279C6770DDC20E5A2DB0A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3606383327010CF49940F6137ADC5CB0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>44CAD6CE523055ED339E87154473A254</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4AD64748DAF85E98E81A966D0637455C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +127,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8A125AD2FA1A4DA4ADA304195BDE0A9C</key>
+		<key>84F599742223DB4DCDEBA9C78FD3E9B8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -103,6 +148,11 @@
 			<true/>
 		</dict>
 		<key>DD1F15A05F62E2C20BC860F6DA62FC5E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2867C49D313792BCCB62BF15CCB0FCD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -40,6 +40,13 @@ class ViewController: UIViewController {
 
     }
 
+    @IBAction func signInWithFacebookTapped(_ sender: Any) {
+        
+               LoginManager.facebookLogin(viewController: self) { 
+                print("gpda")
+        }
+        
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         

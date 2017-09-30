@@ -42,6 +42,7 @@
 		9F31DBE41DC025740092BD7A /* DataManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31DBE21DC025730092BD7A /* DataManagerViewController.swift */; };
 		9F31DBE51DC025740092BD7A /* DataManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F31DBE31DC025730092BD7A /* DataManagerViewController.xib */; };
 		9F31DBE81DC02B690092BD7A /* Register01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31DBE71DC02B690092BD7A /* Register01.swift */; };
+		9F47C10E1F7C58460068B2CD /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F47C10D1F7C58460068B2CD /* LoginManager.swift */; };
 		9F844D661F76BB0500B20DEE /* UIView+LockScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F844D651F76BB0500B20DEE /* UIView+LockScreen.swift */; };
 		9F844D691F76BB4900B20DEE /* LoadingGearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F844D681F76BB4900B20DEE /* LoadingGearView.swift */; };
 		9F844D6B1F76BB5800B20DEE /* LoadingGearView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F844D6A1F76BB5800B20DEE /* LoadingGearView.xib */; };
@@ -132,6 +133,7 @@
 		9F31DBE21DC025730092BD7A /* DataManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerViewController.swift; sourceTree = "<group>"; };
 		9F31DBE31DC025730092BD7A /* DataManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataManagerViewController.xib; sourceTree = "<group>"; };
 		9F31DBE71DC02B690092BD7A /* Register01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register01.swift; sourceTree = "<group>"; };
+		9F47C10D1F7C58460068B2CD /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		9F844D651F76BB0500B20DEE /* UIView+LockScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LockScreen.swift"; sourceTree = "<group>"; };
 		9F844D681F76BB4900B20DEE /* LoadingGearView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingGearView.swift; sourceTree = "<group>"; };
 		9F844D6A1F76BB5800B20DEE /* LoadingGearView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingGearView.xib; sourceTree = "<group>"; };
@@ -383,6 +385,14 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		9F47C10C1F7C58320068B2CD /* LoginManager */ = {
+			isa = PBXGroup;
+			children = (
+				9F47C10D1F7C58460068B2CD /* LoginManager.swift */,
+			);
+			name = LoginManager;
+			sourceTree = "<group>";
+		};
 		9F844D631F76BAAE00B20DEE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +421,7 @@
 		9F85193E1F71D37B004E14B0 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				9F47C10C1F7C58320068B2CD /* LoginManager */,
 				9F4614711EB685AB009949C3 /* Login */,
 			);
 			name = Login;
@@ -719,6 +730,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DB4148B1EB4EFA700067EE7 /* GetLocation.swift in Sources */,
+				9F47C10E1F7C58460068B2CD /* LoginManager.swift in Sources */,
 				6D85C6411DF0F4B7009632EE /* AddGeotification.swift in Sources */,
 				6D9DDE401D6E61AB0089C7E8 /* ViewController.swift in Sources */,
 				6DC7228A1EA41F8C00D05CCD /* BusinessProperties.swift in Sources */,
@@ -898,7 +910,7 @@
 				INFOPLIST_FILE = "Yard Sale 00/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rnapps.samplek;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rnapps.LoGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -919,7 +931,7 @@
 				INFOPLIST_FILE = "Yard Sale 00/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rnapps.samplek;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rnapps.LoGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
