@@ -68,7 +68,7 @@ class DescriptionViewController: UIViewController,UITextViewDelegate {
      public func textViewShouldEndEditing(_ textView: UITextView) -> Bool
     {
         performSegue(withIdentifier: "hoursSegue", sender: nil)
-        BusinessProperties.properties.businessDescription = descriptionTextField.text
+        AppController.shared.usersBusiness?._businessDescription = descriptionTextField.text
         descriptionTextField.resignFirstResponder()
 
         return true

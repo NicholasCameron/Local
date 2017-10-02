@@ -71,7 +71,7 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
         
-        return BusinessProperties.properties.externalBusinesses.count
+        return AppController.shared.externalBusinesses.count
     }
     
     
@@ -83,10 +83,10 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
         
         let cellIdentifier = "recommendationCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RecommendationTableViewCell
-        let headerImage = UIImage(data: BusinessProperties.properties.externalBusinesses[indexPath.row]._businessImage!)
+        let headerImage = UIImage(data: AppController.shared.externalBusinesses[indexPath.row]._businessImage!)
         cell.imageInCell.image = headerImage
-        cell.lblBuinessTitle.text = BusinessProperties.properties.externalBusinesses[indexPath.row]._businessName?.capitalized
-        cell.lblBusinessDescription.text = BusinessProperties.properties.externalBusinesses[indexPath.row]._businessDescription
+        cell.lblBuinessTitle.text = AppController.shared.externalBusinesses[indexPath.row]._businessName?.capitalized
+        cell.lblBusinessDescription.text = AppController.shared.externalBusinesses[indexPath.row]._businessDescription
         cell.lblBusinessDescription.sizeToFit()
         cell.itemIndex = indexPath.row
         cell.delegate = self
@@ -179,11 +179,11 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
         
         let myVC = storyboard?.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
         
-    let businessName = BusinessProperties.properties.externalBusinesses[cellIndex]._businessName
+    _ = AppController.shared.externalBusinesses[cellIndex]._businessName
         
-     let businessEmail = BusinessProperties.properties.externalBusinesses[cellIndex]._businessEmail
+     _ = AppController.shared.externalBusinesses[cellIndex]._businessEmail
         
-        myVC.business =  BusinessProperties.properties.externalBusinesses[cellIndex]
+        myVC.business =  AppController.shared.externalBusinesses[cellIndex]
     //    navigationController?.pushViewController(myVC, animated: true)
         self.showDetailViewController(myVC, sender: nil)
         

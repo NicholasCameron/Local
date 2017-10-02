@@ -280,7 +280,7 @@
         <!--Home-->
         <scene sceneID="IVp-BR-gmy">
             <objects>
-                <viewController id="A0L-WV-Fug" customClass="HomeViewController" customModule="Yard_Sale_00" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="A0L-WV-Fug" customClass="HomeViewController" customModule="Yard_Sale_00" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qIh-6o-58D"/>
                         <viewControllerLayoutGuide type="bottom" id="vdm-n6-kZt"/>
@@ -334,7 +334,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="gbF-mi-axb" kind="modal" id="XmL-QS-s8o"/>
+                                    <action selector="btnMyBusinessTapped:" destination="A0L-WV-Fug" eventType="touchUpInside" id="VeZ-ZK-Uau"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local Points 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxx-Ct-O97">
@@ -388,6 +388,9 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="HrY-cg-T4b"/>
+                    <connections>
+                        <segue destination="gbF-mi-axb" kind="presentation" identifier="profileSegue" id="kNd-bc-cAd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XV5-wI-vpX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -521,7 +524,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H6d-eC-wlS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2959.1999999999998" y="205.54722638680661"/>
+            <point key="canvasLocation" x="-2959.5" y="205.5"/>
         </scene>
         <!--Restaurant-->
         <scene sceneID="KsL-eM-6DX">
@@ -882,6 +885,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ASB-cB-94U"/>
-        <segue reference="oBL-ir-aqW"/>
+        <segue reference="kNd-bc-cAd"/>
     </inferredMetricsTieBreakers>
 </document>

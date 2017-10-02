@@ -47,11 +47,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="XvM-Qd-j1W" kind="custom" customClass="PushSegueWithRootReplacement" customModule="Yard_Sale_00" customModuleProvider="target" id="4PI-3o-8OI"/>
+                                    <action selector="btnRegisterClicked:" destination="FyH-Nb-5hk" eventType="touchUpInside" id="iTZ-sx-R7d"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rnP-1q-AJE">
-                                <rect key="frame" x="32" y="453" width="288" height="24"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rnP-1q-AJE">
+                                <rect key="frame" x="32" y="457" width="288" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Wcs-fy-ZOU"/>
                                 </constraints>
@@ -68,20 +68,20 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZjC-Gd-W6U">
-                                <rect key="frame" x="22" y="412" width="335" height="1"/>
+                                <rect key="frame" x="22" y="416" width="335" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="dSn-Zm-31i"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.72000002861022949" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYH-0n-giJ">
-                                <rect key="frame" x="32" y="453" width="323" height="24"/>
+                                <rect key="frame" x="32" y="457" width="323" height="24"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bky-2y-dgK">
-                                <rect key="frame" x="31" y="385" width="324" height="20"/>
+                                <rect key="frame" x="31" y="385" width="324" height="24"/>
                                 <color key="textColor" red="0.0" green="0.1107608194" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
@@ -109,13 +109,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.72000002861022949" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4D-ao-gUI">
-                                <rect key="frame" x="32" y="383" width="323" height="19"/>
+                                <rect key="frame" x="32" y="383" width="323" height="23"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email address required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cT6-HU-RsR">
-                                <rect key="frame" x="32" y="417" width="196" height="21"/>
+                                <rect key="frame" x="32" y="421" width="196" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="196" id="cm1-fP-e54"/>
                                 </constraints>
@@ -139,7 +139,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOB-aH-LLb">
-                                <rect key="frame" x="32" y="429" width="101" height="21"/>
+                                <rect key="frame" x="32" y="433" width="101" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="101" id="zDo-aT-DdZ"/>
                                 </constraints>
@@ -148,7 +148,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvB-Q0-1eu">
-                                <rect key="frame" x="328" y="453" width="30" height="28"/>
+                                <rect key="frame" x="328" y="457" width="30" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="uvt-4H-UsB"/>
                                 </constraints>
@@ -206,7 +206,7 @@
                             <constraint firstItem="ZjC-Gd-W6U" firstAttribute="leading" secondItem="BY6-Bw-32X" secondAttribute="leadingMargin" constant="6" id="bIc-OR-4b4"/>
                             <constraint firstItem="cT6-HU-RsR" firstAttribute="top" secondItem="ZjC-Gd-W6U" secondAttribute="bottom" constant="4" id="bIq-ZQ-CcC"/>
                             <constraint firstItem="bky-2y-dgK" firstAttribute="trailing" secondItem="EYH-0n-giJ" secondAttribute="trailing" id="cV1-Pd-xnL"/>
-                            <constraint firstItem="rbV-jp-p8m" firstAttribute="top" secondItem="rnP-1q-AJE" secondAttribute="bottom" constant="12" id="edb-iG-4uc"/>
+                            <constraint firstItem="rbV-jp-p8m" firstAttribute="top" secondItem="rnP-1q-AJE" secondAttribute="bottom" constant="8" id="edb-iG-4uc"/>
                             <constraint firstItem="HOP-eM-oqI" firstAttribute="top" secondItem="mRa-OF-RTc" secondAttribute="bottom" constant="11" id="ejK-nl-pKe"/>
                             <constraint firstItem="cT6-HU-RsR" firstAttribute="leading" secondItem="rOB-aH-LLb" secondAttribute="leading" id="ffA-pj-sd8"/>
                             <constraint firstItem="Zwj-ts-WmX" firstAttribute="top" secondItem="rbV-jp-p8m" secondAttribute="bottom" constant="3" id="hcH-Ck-dvX"/>
@@ -221,6 +221,7 @@
                             <constraint firstItem="jWT-6f-tUk" firstAttribute="leading" secondItem="mRa-OF-RTc" secondAttribute="leading" id="ujI-1J-AMb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZjC-Gd-W6U" secondAttribute="trailing" constant="2" id="vEL-6f-Gg8"/>
                             <constraint firstItem="rOB-aH-LLb" firstAttribute="leading" secondItem="rnP-1q-AJE" secondAttribute="leading" id="vnL-4Q-v91"/>
+                            <constraint firstItem="ZjC-Gd-W6U" firstAttribute="top" secondItem="H4D-ao-gUI" secondAttribute="bottom" constant="10" id="vps-KR-bYx"/>
                             <constraint firstItem="H4D-ao-gUI" firstAttribute="top" secondItem="ri5-kR-qTm" secondAttribute="bottom" constant="3" id="w4R-B8-suD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EvB-Q0-1eu" secondAttribute="trailing" constant="1" id="z7P-1s-JE8"/>
                             <constraint firstItem="rbV-jp-p8m" firstAttribute="trailing" secondItem="Q4d-nR-kjp" secondAttribute="trailing" id="zPZ-I8-m7S"/>
@@ -246,6 +247,7 @@
                         <outlet property="txtPassword" destination="rnP-1q-AJE" id="PED-hv-2Jb"/>
                         <outlet property="viewEmail" destination="ZjC-Gd-W6U" id="iJl-hX-Xxf"/>
                         <outlet property="viewPassword" destination="rbV-jp-p8m" id="wIh-x5-FTw"/>
+                        <segue destination="731-9Z-982" kind="custom" identifier="homeVCSegue" customClass="PushSegueWithRootReplacement" customModule="Yard_Sale_00" customModuleProvider="target" id="vhS-4G-sl0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iw-P5-Dq5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1123,10 +1125,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9N-yH-jbR">
-                                <rect key="frame" x="96" y="243" width="183" height="40"/>
+                                <rect key="frame" x="86" y="243" width="203" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.24488976883561644" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Register">
+                                <state key="normal" title="Register A Business">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1139,7 +1141,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="XvM-Qd-j1W" kind="custom" customClass="PushSegueWithRootReplacement" customModule="Yard_Sale_00" id="U9c-LS-fFy"/>
+                                    <action selector="registerBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4HC-3q-hX8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLn-hM-qdI">
@@ -1195,20 +1197,21 @@
                             <constraint firstItem="CLn-hM-qdI" firstAttribute="top" secondItem="dlr-x4-ChB" secondAttribute="bottom" constant="88" id="22a-fh-Zi0"/>
                             <constraint firstItem="b3W-8n-dub" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="74" id="957-1h-1Co"/>
                             <constraint firstItem="HFs-rn-668" firstAttribute="top" secondItem="b3W-8n-dub" secondAttribute="bottom" constant="8" symbolic="YES" id="Ckd-AF-SMt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="H9N-yH-jbR" secondAttribute="trailing" constant="80" id="HM5-MI-QHs"/>
                             <constraint firstItem="CLn-hM-qdI" firstAttribute="centerX" secondItem="HFs-rn-668" secondAttribute="centerX" id="JM8-i4-D6S"/>
                             <constraint firstItem="b3W-8n-dub" firstAttribute="trailing" secondItem="HFs-rn-668" secondAttribute="trailing" id="Mlp-D9-FIq"/>
                             <constraint firstItem="H9N-yH-jbR" firstAttribute="top" secondItem="HFs-rn-668" secondAttribute="bottom" constant="88" id="No6-po-O5Z"/>
                             <constraint firstItem="CLn-hM-qdI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="38" id="X0e-eA-S14"/>
                             <constraint firstItem="dlr-x4-ChB" firstAttribute="centerX" secondItem="H9N-yH-jbR" secondAttribute="centerX" constant="1" id="Z44-Z3-znL"/>
                             <constraint firstItem="dlr-x4-ChB" firstAttribute="top" secondItem="H9N-yH-jbR" secondAttribute="bottom" constant="88" id="d8e-0p-AyJ"/>
-                            <constraint firstItem="H9N-yH-jbR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="80" id="fX4-0l-tU2"/>
                             <constraint firstItem="b3W-8n-dub" firstAttribute="leading" secondItem="HFs-rn-668" secondAttribute="leading" id="k78-aV-iBW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="b3W-8n-dub" secondAttribute="trailing" constant="73" id="mLX-vV-c2k"/>
                             <constraint firstItem="H9N-yH-jbR" firstAttribute="centerX" secondItem="b3W-8n-dub" secondAttribute="centerX" id="vhR-Cz-zpr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Mhn-8g-1Ee"/>
+                    <connections>
+                        <segue destination="XvM-Qd-j1W" kind="custom" identifier="registerSegue" customClass="PushSegueWithRootReplacement" customModule="Yard_Sale_00" customModuleProvider="target" id="kLL-ji-MoB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -1832,12 +1835,12 @@
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="U9c-LS-fFy"/>
-        <segue reference="LxN-T0-QB3"/>
-        <segue reference="nAr-QL-KVA"/>
-        <segue reference="Wdb-87-aJa"/>
-        <segue reference="Tbd-k1-aFY"/>
         <segue reference="ntV-oJ-V00"/>
+        <segue reference="Tbd-k1-aFY"/>
+        <segue reference="Wdb-87-aJa"/>
+        <segue reference="kLL-ji-MoB"/>
+        <segue reference="LxN-T0-QB3"/>
+        <segue reference="vhS-4G-sl0"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.37081284813308268" green="0.64544535196379782" blue="0.75491181930693063" alpha="1" colorSpace="calibratedRGB"/>
 </document>

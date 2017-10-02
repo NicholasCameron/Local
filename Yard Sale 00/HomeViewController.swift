@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
         NoSqlManager.getAllBusinesses { (status,  externalBusinesses) in
             self.view.unlock(statusCode: 200)
             if status == 200 && externalBusinesses != nil{
-            BusinessProperties.properties.externalBusinessMapObjects = externalBusinesses!
+            AppController.shared.externalBusinessMapObjects = externalBusinesses!
             }
         }
         
@@ -30,6 +30,17 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func btnMyBusinessTapped(_ sender: Any) {
+        
+        if AppController.shared.isLoggedIn().0 && AppController.shared.usersBusiness?._activeBusiness == true{
+            self.performSegue(withIdentifier: "profileSegue", sender: nil)
+
+        }else{
+            LoginAlerts.genericAlert(viewController: self, title: "Hold up", message: "You must first login and register a business.")
+        }
+        
+        
+    }
 
     /*
     // MARK: - Navigation

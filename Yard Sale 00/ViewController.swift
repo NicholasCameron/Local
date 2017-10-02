@@ -40,6 +40,33 @@ class ViewController: UIViewController {
 
     }
 
+    @IBAction func registerBtnTapped(_ sender: Any) {
+    
+        
+        let isloggedIn = AppController.shared.isLoggedIn()
+        
+        if isloggedIn.0{
+            if isloggedIn.1 == AppController.LoginType.Facebook{
+                //search for the facebook ID Tied ot the business
+                
+                
+                performSegue(withIdentifier: "registerSegue", sender: nil)
+            }else{
+                //seatch for the custom user/pass tied to business
+               
+                
+                performSegue(withIdentifier: "registerSegue", sender: nil)
+            }
+            
+            
+        }else{
+            LoginAlerts.genericAlert(viewController: self, title: "Please Sign In", message: "In order for your business to reach the public you must first register. It will take less than one minute.")
+        }
+    }
+    
+    
+    
+    
     @IBAction func signInWithFacebookTapped(_ sender: Any) {
         
                LoginManager.facebookLogin(viewController: self) { 
@@ -65,40 +92,5 @@ class ViewController: UIViewController {
     deinit {
         print("tet")
     }
-
-
-
     
-}
-@IBDesignable extension UIView {
-    @IBInspectable var borderColor:UIColor? {
-        set {
-            layer.borderColor = newValue!.cgColor
-        }
-        get {
-            if let color = layer.borderColor {
-                return UIColor(cgColor:color)
-            }
-            else {
-                return nil
-            }
-        }
-    }
-    @IBInspectable var borderWidth:CGFloat {
-        set {
-            layer.borderWidth = newValue
-        }
-        get {
-            return layer.borderWidth
-        }
-    }
-    @IBInspectable var cornerRadius:CGFloat {
-        set {
-            layer.cornerRadius = newValue
-            clipsToBounds = newValue > 0
-        }
-        get {
-            return layer.cornerRadius
-        }
-    }
 }

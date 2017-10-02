@@ -57,22 +57,7 @@ class LocoHome: UIViewController, UISearchBarDelegate,UITableViewDelegate,UITabl
         suggestionTable.delegate = self;
         
         
-       let path = Bundle.main.path(forResource: "loco", ofType: "json")
-        let jsonData =
-            NSData(contentsOfMappedFile: path!)
-        
-        do{
-            let object = try JSONSerialization.jsonObject(with: jsonData! as Data, options:  .allowFragments) as? [String:[String:String]]
-        
-    
-          
-                readjson(object:object!)
-
-            
-        }catch{
-            print(error)
-            
-        }
+     
       // configureSearchController()
       //  configureCustomSearchController()
 
@@ -85,35 +70,7 @@ class LocoHome: UIViewController, UISearchBarDelegate,UITableViewDelegate,UITabl
     }
     
 
-    func readjson(object: [String:[String:String]]){
-            
-        
-        
-        var Businesses = object
-        
-        for (names,values) in Businesses{
-            bizName = names;
-                        for x in values {
-                if (x.key == "Description"){
-                    bizDescription = x.value
-                }else if (x.key == "TypeOfOrganization"){
-                    bizType = x.value
-            }
-               
-            }
-            let details =  BusinessDetail(businessName:bizName,businessDescription:bizDescription,businessType:bizType,location: BusinessProperties.properties.businessCoordinates)
-            
-            businessDetailsArray.append(details);
-        }
-    
-}
-    
-    
-    
-    
-    
-    
-      //////////////////  SEARCH BAR   ///////////////////////
+    //////////////////  SEARCH BAR   ///////////////////////
     
     
     
@@ -158,7 +115,7 @@ class LocoHome: UIViewController, UISearchBarDelegate,UITableViewDelegate,UITabl
 
                     if(bizDetails.businessName == names || bizDetails.businessType == types){
                         
-                        businessDetailsFilteredArray = [BusinessDetail(businessName: names,businessDescription: types,businessType: description,location: BusinessProperties.properties.businessCoordinates)];
+                        businessDetailsFilteredArray = [BusinessDetail(businessName: names,businessDescription: types,businessType: description,location: AppController.shared.businessCoordinates)];
 
                         }
                     }

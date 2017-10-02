@@ -1,3 +1,4 @@
+
 //
 //  AppDelegate.swift
 //  Yard Sale 00
@@ -42,13 +43,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             signInProvider: AWSCognitoUserPoolsSignInProvider.sharedInstance())
         
         
-        let didFinishLaunching = AWSSignInManager.sharedInstance().interceptApplication(
+        _ = AWSSignInManager.sharedInstance().interceptApplication(
             application, didFinishLaunchingWithOptions: launchOptions)
         
         if (!isInitialized) {
             AWSSignInManager.sharedInstance().resumeSession(completionHandler: {
                 (result: Any?, error: Error?) in
-                print("Result: \(result) \n Error:\(error)")
+                print("Result: \(String(describing: result)) \n Error:\(String(describing: error))")
             })
             isInitialized = true
         }

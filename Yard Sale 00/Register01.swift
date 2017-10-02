@@ -154,13 +154,13 @@ closeTime = "1:00AM";
         satudayHours = lblSaturday.text!;
         sundayHours = lblSunday.text!;
         
-        BusinessProperties.properties.businessHours.append(mondayHours)
-        BusinessProperties.properties.businessHours.append(tuesdayHours)
-        BusinessProperties.properties.businessHours.append(wednesdayHours)
-        BusinessProperties.properties.businessHours.append(thrusdayHours)
-        BusinessProperties.properties.businessHours.append(fridayHours)
-        BusinessProperties.properties.businessHours.append(satudayHours)
-        BusinessProperties.properties.businessHours.append(sundayHours)
+        AppController.shared.usersBusiness?._mondayHours = mondayHours
+        AppController.shared.usersBusiness?._tuesdayHours = tuesdayHours
+        AppController.shared.usersBusiness?._wednesdayHours = wednesdayHours
+        AppController.shared.usersBusiness?._thursdayHours = thrusdayHours
+        AppController.shared.usersBusiness?._fridayHours = fridayHours
+        AppController.shared.usersBusiness?._saturdayHours = satudayHours
+        AppController.shared.usersBusiness?._sundayHours = sundayHours
 
         
     }

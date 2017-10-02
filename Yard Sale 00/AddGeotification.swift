@@ -73,16 +73,16 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
 
         
         //zoom in on an initial location
-        if BusinessProperties.properties.usersLocation.longitude == 0{
+        if AppController.shared.usersLocation.longitude == 0{
             
             
-            BusinessProperties.properties.usersLocation.latitude = 40.759211000000001
-            BusinessProperties.properties.usersLocation.longitude = -73.984638000000003
+            AppController.shared.usersLocation.latitude = 40.759211000000001
+            AppController.shared.usersLocation.longitude = -73.984638000000003
         }
        
 
-        let span = MKCoordinateSpanMake(BusinessProperties.properties.latDelta, BusinessProperties.properties.lonDelta)
-        let region = MKCoordinateRegionMake(BusinessProperties.properties.usersLocation, span)
+        let span = MKCoordinateSpanMake(AppController.shared.latDelta, AppController.shared.lonDelta)
+        let region = MKCoordinateRegionMake(AppController.shared.usersLocation, span)
         mapKit.setRegion(region, animated: true)
 
         
@@ -189,7 +189,7 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
 
         }
         
-     //  BusinessProperties.properties.pinColor = pinColorValue
+     //  AppController.shared.pinColor = pinColorValue
 
         
         
@@ -207,24 +207,24 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
      func mapView(_ mapView: MKMapView,regionDidChangeAnimated animated: Bool){
             let mapLatitude = mapKit.centerCoordinate.latitude
             let mapLongitude = mapKit.centerCoordinate.longitude
-            BusinessProperties.properties.center = "Latitude: \(mapLatitude) Longitude: \(mapLongitude)"
+            AppController.shared.center = "Latitude: \(mapLatitude) Longitude: \(mapLongitude)"
         lblLocation.text = (reverseGeocoding(latitude: mapLatitude, longitude: mapLongitude))
 
     
     ///SET THE STREET AS WHAT IS CHOSEN
-       // BusinessProperties.properties.businessAddress = lblLocation.text!;
+       // AppController.shared.businessAddress = lblLocation.text!;
     
     }
     
 
     @IBAction func AddLocation(_ sender: AnyObject) {
   
-     BusinessProperties.properties.businessLatitude = String(mapKit.centerCoordinate.latitude)
-        BusinessProperties.properties.businessLongitude = String(mapKit.centerCoordinate.longitude)
-         BusinessProperties.properties.businessCategory = businessType
-          BusinessProperties.properties.businessAddress = lblLocation.text!
-      //   BusinessProperties.properties.pinColor = pinColorValue
-     //   BusinessProperties.properties.businessTypeOfficial = BusinessProperties.properties.businessDescription;
+     AppController.shared.usersBusiness?._businessLatitude = String(mapKit.centerCoordinate.latitude)
+        AppController.shared.usersBusiness?._businessLongitude = String(mapKit.centerCoordinate.longitude)
+         AppController.shared.usersBusiness?._businessCategory = businessType
+          AppController.shared.businessAddress = lblLocation.text!
+      //   AppController.shared.pinColor = pinColorValue
+     //   AppController.shared.businessTypeOfficial = AppController.shared.businessDescription;
        
         ///////////////////////////////////////////////////////////
 
@@ -273,7 +273,7 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
     {
         let request = MKLocalSearchRequest()
         var cityToSearch = MKCoordinateRegion();
-        cityToSearch.center = BusinessProperties.properties.usersLocation;
+        cityToSearch.center = AppController.shared.usersLocation;
         request.naturalLanguageQuery = searchBar.text
         request.region = cityToSearch;
         let search = MKLocalSearch(request: request)
@@ -312,20 +312,20 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
         let mapLatitude = zoomLatitude
         let mapLongitude = zoomLongitude
     
-        BusinessProperties.properties.center = "Latitude: \(mapLatitude) Longitude: \(mapLongitude)"
+        AppController.shared.center = "Latitude: \(mapLatitude) Longitude: \(mapLongitude)"
         lblLocation.text = (reverseGeocoding(latitude: CLLocationDegrees(mapLatitude), longitude: CLLocationDegrees(mapLongitude)))
         
      //   print((reverseGeocoding(latitude: mapLatitude, longitude: mapLongitude)))
         ///SET THE STREET AS WHAT IS CHOSEN
-        BusinessProperties.properties.businessAddress = lblLocation.text!;
+        AppController.shared.businessAddress = lblLocation.text!;
         
-        BusinessProperties.properties.center = "Latitude: \(mapLatitude) Longitude: \(mapLongitude)"
+        AppController.shared.center = "Latitude: \(mapLatitude) Longitude: \(mapLongitude)"
         lblLocation.text = (reverseGeocoding(latitude: CLLocationDegrees(mapLatitude), longitude: CLLocationDegrees(mapLongitude)))
       //  print((reverseGeocoding(latitude: mapLatitude, longitude: mapLongitude)))
 
         
         ///SET THE STREET AS WHAT IS CHOSEN
-        BusinessProperties.properties.businessAddress = lblLocation.text!;
+        AppController.shared.businessAddress = lblLocation.text!;
 
         
         
@@ -394,11 +394,11 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
        
-        BusinessProperties.properties.usersLocation = locations[0].coordinate
+        AppController.shared.usersLocation = locations[0].coordinate
         //MAPP LOAD LOCATION
         if iszoomed == false{
-            let span = MKCoordinateSpanMake(BusinessProperties.properties.latDelta, BusinessProperties.properties.lonDelta)
-            let region = MKCoordinateRegionMake(BusinessProperties.properties.usersLocation, span)
+            let span = MKCoordinateSpanMake(AppController.shared.latDelta, AppController.shared.lonDelta)
+            let region = MKCoordinateRegionMake(AppController.shared.usersLocation, span)
             mapKit.setRegion(region, animated: true)
 
         }

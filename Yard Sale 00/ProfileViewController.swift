@@ -36,11 +36,8 @@ class ProfileViewController: UIViewController {
 
         self.view.backgroundColor = Profile.ProfilePage.bgColor
         }
-        
         loadData()
-        
-        
-        
+        self.view.lock(headingText: nil, loadingText: "Loading profile", lowerLoadingText: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,25 +60,39 @@ class ProfileViewController: UIViewController {
         
       //  queryExpression.keyConditionExpression = ("BusinessId = \(business?._businessId ?? "")")
      
-        
-      
         let objectMapper = AWSDynamoDBObjectMapper.default()
-        let scanExpression = AWSDynamoDBScanExpression()
+        objectMapper.load(Businesses.self, hashKey: AppController.shared.usersBusiness?._businessId, rangeKey: nil) { (response: AWSDynamoDBObjectModel?, error: Error?) in
         
-        scanExpression.filterExpression = "#BusinessName < :BusinessName"
-        scanExpression.expressionAttributeNames = ["#BusinessName": "BusinessName" ,]
-        scanExpression.expressionAttributeValues = [":BusinessName": business?._businessName! ?? ""]
-        
-        objectMapper.scan(Businesses.self, expression: scanExpression) { (response: AWSDynamoDBPaginatedOutput?, error: Error?) in
-            if let error = error as NSError? {
-                print(error)
-            }else{
-                for item in (response?.items)!{
-                    print(item)
+            if let r  = response as? Businesses{
+                self.business = r
+                DispatchQueue.main.async {
+                 setupView()
                 }
             }
         }
-
+        
+        
+        func setupView(){
+            
+          
+            
+            DispatchQueue.main.async {
+                
+                self.navigationItem.title = self.business?._businessCategory
+                self.businessDescription.text = self.business?._businessDescription
+                self.mondayHours.text = self.business?._mondayHours
+                self.tuesdayHours.text = self.business?._tuesdayHours
+                self.wednesdayHours.text = self.business?._wednesdayHours
+                self.thursdayHours.text = self.business?._thursdayHours
+                self.fridayHours.text = self.business?._fridayHours
+                self.saturdayHours.text = self.business?._saturdayHours
+                self.sundayHours.text = self.business?._sundayHours
+                
+                self.view.unlock(statusCode: 200)
+            }
+            
+        }
+        
         
 //        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
 //

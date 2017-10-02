@@ -16,7 +16,7 @@ class NoSqlManager: NSObject {
     
     
     
-    class func saveBusiness(businessName:String,businessCategory:String,businessDescription:String,businessEmail:String,businessImage:Data,businessLatidude:String,businessLongitude:String,businessPhone:String,businessWebsite:String,mondayHours:String,tuesdayHours:String,wednesdayHours:String,thusdayHours:String,fridayHours:String,saturdayHours:String,sundayHours:String,completion: @escaping (_ statusCode: Int) -> Void ) {
+    class func saveBusiness(businessName:String?,businessCategory:String?,businessDescription:String?,businessEmail:String?,businessImage:Data?,businessLatidude:String?,businessLongitude:String?,businessPhone:String?,businessWebsite:String?,mondayHours:String?,tuesdayHours:String?,wednesdayHours:String?,thusdayHours:String?,fridayHours:String?,saturdayHours:String?,sundayHours:String?,isBusinessActive:Bool,firstName:String?,lastName:String?,password:String?,completion: @escaping (_ statusCode: Int) -> Void ) {
         
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
     
@@ -24,8 +24,24 @@ class NoSqlManager: NSObject {
         let businessItem: Businesses = Businesses();
         
         // Use AWSIdentityManager.default().identityId here to get the user identity id.
-        let id = businessName + businessEmail
+        var id = businessEmail
+        
+        if AppController.shared.isLoggedIn().0{
+            if AppController.shared.isLoggedIn().1 == AppController.LoginType.Facebook{
+                id = (AppController.shared.usersBusiness?._facebookUserID)!
+                businessItem._facebookUserID = id
+            }else{
+                id = AppController.shared.usersBusiness?._businessEmail
+
+            }
+            
+        
+        }else{
+            
+        }
+        
         businessItem._businessId = id
+    
         businessItem._businessCategory = businessCategory
         businessItem._businessDescription = businessDescription
         businessItem._businessEmail = businessEmail
@@ -42,7 +58,10 @@ class NoSqlManager: NSObject {
         businessItem._thursdayHours = thusdayHours
         businessItem._tuesdayHours = tuesdayHours
         businessItem._wednesdayHours = wednesdayHours
-        
+        businessItem._activeBusiness = isBusinessActive as NSNumber
+        businessItem._firstName = firstName
+        businessItem._lastName = lastName
+        businessItem._password = AppController.shared.usersBusiness?._password
         
         //Save a new item
         dynamoDbObjectMapper.save(businessItem, completionHandler: {
@@ -67,12 +86,18 @@ class NoSqlManager: NSObject {
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
         
         //Create data object using data models you downloaded from Mobile Hub
-        var businessItem: Businesses = Businesses();
+        var _: Businesses = Businesses();
         
         
         
         let scanExpression = AWSDynamoDBScanExpression()
         scanExpression.limit = 20
+        
+        scanExpression.filterExpression = "#activeBusiness = :activeBusiness"
+        scanExpression.expressionAttributeNames = ["#activeBusiness": "activeBusiness"]
+        scanExpression.expressionAttributeValues = [":activeBusiness": true, ]
+        
+        
         
         let t = AWSDynamoDBObjectMapperConfiguration()
         
@@ -93,7 +118,7 @@ class NoSqlManager: NSObject {
                             hours.append(pulledBusiness._sundayHours!)
 
                         
-                            BusinessProperties.properties.externalBusinesses.append(pulledBusiness)
+                            AppController.shared.externalBusinesses.append(pulledBusiness)
                             
                             let b = LocalBusinessMapObject(coordinate: location, businessName: pulledBusiness._businessName!, businessDescription: pulledBusiness._businessDescription!, pinColor: "red", type: pulledBusiness._businessCategory!, image: pulledBusiness._businessImage!, emailAddress: pulledBusiness._businessEmail!, hours: hours)
                                 

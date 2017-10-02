@@ -21,14 +21,13 @@ class Register00: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var txtData: UITextField!
     //wait until the user put in their name then display the welcome
     @IBOutlet weak var lblWelcome: UILabel!
-
-    
+   
     
     var middleLabel = CGPoint();
     let screenSize: CGRect = UIScreen.main.bounds
     var inOrOut = 0;
     var businessName = "";
-    var businessEmail = "";
+    var firstName = "";
     var password = String();
     var confirmPassword = String();
    //this is the counter to see when to switch to the next view
@@ -56,7 +55,7 @@ class Register00: UIViewController,UITextFieldDelegate {
         /////////////
         self.txtData.delegate = self;
         lblError.isHidden = true;
-        lblBusiessName.text = "Organization Name"
+        lblBusiessName.text = "Contact's First Name"
         self.txtData.becomeFirstResponder();
         
         //hide until get users name
@@ -105,14 +104,14 @@ class Register00: UIViewController,UITextFieldDelegate {
               
                 //data in text = var business name
                 businessName = txtData.text!;
-                BusinessProperties.properties.businessName = businessName;
+                AppController.shared.usersBusiness?._firstName = businessName;
                 
                 //Take name and welcome them
                 lblWelcome.text = "Welcome " + businessName
                 lblWelcome.isHidden = false;
 
                 //slide the business ownser/full name out of there
-                slideLabel(labelOne: lblBusiessName,textForLabel: "Email Address",leftOrRight:"left");
+                slideLabel(labelOne: lblBusiessName,textForLabel: "Contact's Last Name",leftOrRight:"left");
               
                 //no error so error stays hiden
                 lblError.isHidden = true;
@@ -132,14 +131,14 @@ class Register00: UIViewController,UITextFieldDelegate {
                 
                 
                 //data in text = var business name
-                businessEmail = txtData.text!;
-                 BusinessProperties.properties.businessEmail = businessEmail;
+                firstName = txtData.text!;
+                 AppController.shared.usersBusiness?._lastName = firstName;
                 
                 //Take name and welcome them
                 lblWelcome.text = "Welcome " + businessName
                 
                 //slide the business ownser/full name out of there
-                slideLabel(labelOne: lblBusiessName,textForLabel: "Password",leftOrRight:"right");
+                slideLabel(labelOne: lblBusiessName,textForLabel: "Organization Name",leftOrRight:"right");
                 
                 //no error so error stays hiden
                 lblError.isHidden = true;
@@ -159,12 +158,12 @@ class Register00: UIViewController,UITextFieldDelegate {
 
                 
                 
-                password = txtData.text!;
+                AppController.shared.usersBusiness?._businessName = txtData.text!;
                 
                 
                             
                 //slide the business ownser/full name out of there
-                slideLabel(labelOne: lblBusiessName,textForLabel: "Confirm Password",leftOrRight:"right");
+                slideLabel(labelOne: lblBusiessName,textForLabel: "Phone Number (Recommended)",leftOrRight:"right");
                 
                 //no error so error stays hiden
                 lblError.isHidden = true;
@@ -175,43 +174,38 @@ class Register00: UIViewController,UITextFieldDelegate {
                 //add to the counter because were on email now
                 self.counter += 1;
                 self.txtData.becomeFirstResponder();
-            }
-            
-            
-            
-            
-            else{
-            
-            if(password.isEqual(txtData.text)){
-
-                Registration?.registrationData.append(businessName);
-                Registration?.registrationData.append(businessEmail);
-                
-                self.performSegue(withIdentifier: "description", sender: self)
-                self.removeFromParentViewController()
-
             }else{
                 
-                lblWelcome.text = "Welcome " + businessName
+                                self.performSegue(withIdentifier: "description", sender: self)
+                                self.removeFromParentViewController()
+//            if(password.isEqual(txtData.text)){
+//
+//                Registration?.registrationData.append(businessName);
+//                Registration?.registrationData.append(firstName);
+//
+//
+//            }else{
+//                
+//                lblWelcome.text = "Welcome " + businessName
+//                
+//                //slide the business ownser/full name out of there
+//                self.counter = 1;
+//
+//                slideLabel(labelOne: lblBusiessName,textForLabel: "Password",leftOrRight:"right");
+//                
+//                //no error so error stays hiden
+//                lblError.text = "Passwords Do Not Match";
+//                lblError.isHidden = false;
+//                
+//                //reset text field to nothing
+//                txtData.text = "";
+//                self.counter = self.counter + 1
+//                
+//                //add to the counter because were on email now
+//                self.txtData.becomeFirstResponder();
+//
+//                }
                 
-                //slide the business ownser/full name out of there
-                self.counter = 1;
-
-                slideLabel(labelOne: lblBusiessName,textForLabel: "Password",leftOrRight:"right");
-                
-                //no error so error stays hiden
-                lblError.text = "Passwords Do Not Match";
-                lblError.isHidden = false;
-                
-                //reset text field to nothing
-                txtData.text = "";
-                self.counter = self.counter + 1
-                
-                //add to the counter because were on email now
-                self.txtData.becomeFirstResponder();
-
-                }
-                                
                 
                 
             }

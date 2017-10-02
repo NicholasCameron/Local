@@ -55,10 +55,10 @@ class BusinessInformationViewController: UIViewController,UIImagePickerControlle
         imagePicker.delegate = self
         
 
-        lblBusinessType.text = BusinessProperties.properties.businessCategory;
-        lblOwnersName.text = BusinessProperties.properties.businessName;
-        lblEmail.text = BusinessProperties.properties.businessEmail;
-        lblAddress.text = BusinessProperties.properties.businessAddress;
+        lblBusinessType.text = AppController.shared.usersBusiness?._businessCategory;
+        lblOwnersName.text = AppController.shared.usersBusiness?._businessName;
+        lblEmail.text = AppController.shared.usersBusiness?._businessEmail;
+        lblAddress.text = AppController.shared.usersBusiness?._businessAddress;
         
         x1 = lblBusinessType.center.y;
         x2 = lblOwnersName.center.y;
@@ -178,24 +178,24 @@ class BusinessInformationViewController: UIViewController,UIImagePickerControlle
     @IBAction func Register(_ sender: Any) {
     
    // let coordinate = mapKit.centerCoordinate
-    _ = BusinessProperties.properties.businessName
-        let coordinate = CLLocationCoordinate2D(latitude: Double(BusinessProperties.properties.businessLatitude)!, longitude: Double(BusinessProperties.properties.businessLongitude)!)
+    _ = AppController.shared.usersBusiness?._businessName
+        let coordinate = CLLocationCoordinate2D(latitude: Double((AppController.shared.usersBusiness?._businessLatitude)!)!, longitude: Double((AppController.shared.usersBusiness?._businessLongitude)!)!)
   
     
     
     
     
-    BusinessProperties.properties.businessCoordinates = coordinate;
+    AppController.shared.businessCoordinates = coordinate;
   
         
         
         let i = UIImageJPEGRepresentation(imageHeader.image!, 0.1)
        // let imageData = UIImagePNGRepresentation(imageHeader.image!) as Data?
-        BusinessProperties.properties.businessImage = i!
+        AppController.shared.usersBusiness?._businessImage = i!
 
         
         
-        NoSqlManager.saveBusiness(businessName: BusinessProperties.properties.businessName, businessCategory: BusinessProperties.properties.businessCategory, businessDescription: BusinessProperties.properties.businessDescription, businessEmail: BusinessProperties.properties.businessEmail, businessImage: BusinessProperties.properties.businessImage, businessLatidude: BusinessProperties.properties.businessLatitude, businessLongitude: BusinessProperties.properties.businessLongitude, businessPhone: BusinessProperties.properties.businessPhone, businessWebsite: BusinessProperties.properties.businessWebsite, mondayHours: BusinessProperties.properties.businessHours[0], tuesdayHours: BusinessProperties.properties.businessHours[1], wednesdayHours: BusinessProperties.properties.businessHours[2], thusdayHours: BusinessProperties.properties.businessHours[3], fridayHours: BusinessProperties.properties.businessHours[4], saturdayHours: BusinessProperties.properties.businessHours[5], sundayHours: BusinessProperties.properties.businessHours[6]) { (status) in
+        NoSqlManager.saveBusiness(businessName: AppController.shared.usersBusiness?._businessName, businessCategory: AppController.shared.usersBusiness?._businessCategory, businessDescription: AppController.shared.usersBusiness?._businessDescription, businessEmail: AppController.shared.usersBusiness?._businessEmail, businessImage: AppController.shared.usersBusiness?._businessImage, businessLatidude: AppController.shared.usersBusiness?._businessLatitude, businessLongitude: AppController.shared.usersBusiness?._businessLongitude, businessPhone: AppController.shared.usersBusiness?._businessPhone, businessWebsite: AppController.shared.usersBusiness?._businessWebsite, mondayHours: AppController.shared.usersBusiness?._mondayHours, tuesdayHours: AppController.shared.usersBusiness?._tuesdayHours, wednesdayHours: AppController.shared.usersBusiness?._wednesdayHours, thusdayHours: AppController.shared.usersBusiness?._thursdayHours, fridayHours: AppController.shared.usersBusiness?._fridayHours, saturdayHours: AppController.shared.usersBusiness?._saturdayHours, sundayHours: AppController.shared.usersBusiness?._sundayHours, isBusinessActive: true,firstName:AppController.shared.usersBusiness?._firstName,lastName:AppController.shared.usersBusiness?._lastName,password:nil) { (status) in
             if status == 200{
                 
                 self.performSegue(withIdentifier: "registeredSegue", sender: self)
@@ -203,7 +203,7 @@ class BusinessInformationViewController: UIViewController,UIImagePickerControlle
             }
         }
         
-       // BusinessProperties.properties.DataManager.save(organizationName: BusinessProperties.properties.ownerName, details:  BusinessProperties.properties.businessDescription, emailAddress: BusinessProperties.properties.emailAddress, hours:  BusinessProperties.properties.businessHours, coordinate: coordinate, password: BusinessProperties.properties.password,  typeOfBusiness: BusinessProperties.properties.businessTypeOfficial,pinColor:  BusinessProperties.properties.pinColor,image:imageData)
+       // AppController.shared.DataManager.save(organizationName: AppController.shared.ownerName, details:  AppController.shared.businessDescription, emailAddress: AppController.shared.emailAddress, hours:  AppController.shared.businessHours, coordinate: coordinate, password: AppController.shared.password,  typeOfBusiness: AppController.shared.businessTypeOfficial,pinColor:  AppController.shared.pinColor,image:imageData)
         
         
         ///////////////////////////////////////////////////////////

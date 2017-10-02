@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CoreData
+import AWSDynamoDB
 class Login: UIViewController{
     
     @IBOutlet weak var btnSignUp: UIButton!
@@ -58,6 +58,9 @@ class Login: UIViewController{
     @IBAction func txtPasswordClicked(_ sender: Any) {
         lblPasswordPlaceholder.isHidden = true
         lblPasswordHeading.isHidden = false
+        viewPassword.backgroundColor = UIColor.white
+        //lblPasswordRequired.isHidden = true
+
         
         
     }
@@ -65,13 +68,15 @@ class Login: UIViewController{
         
         lblPasswordPlaceholder.isHidden = true
         lblPasswordHeading.isHidden = false
-        
-        if txtPassword.text == "" {
-            lblPasswordHeading.isHidden = true
-            
-            lblPasswordPlaceholder.isHidden = false
-            
-        }
+        viewPassword.backgroundColor = UIColor.white
+        lblPasswordRequired.isHidden = true
+//
+//        if txtPassword.text == "" {
+//            lblPasswordHeading.isHidden = true
+//            
+//            lblPasswordPlaceholder.isHidden = false
+//            
+//        }
         
         
     }
@@ -142,25 +147,89 @@ class Login: UIViewController{
             lblEmailRequired.isHidden = false
         }
             
-        else if txtPassword.text?.isValidPassword() == false{
+        else if (txtPassword.text?.characters.count)! <= 8{
             
-            
-        }
-            
-        else{
+            viewPassword.backgroundColor = UIColor(red: 216, green: 41, blue: 47)
+            lblPasswordRequired.isHidden = false
+        }else{
             //   if "call is going through" {
             DispatchQueue.main.async {
                 self.view.endEditing(true)
                 
                 self.view.lock(headingText:"Air Canada mobile+",loadingText:"Signing in...", lowerLoadingText: nil)
                 // self.view.unlock()
+                
+                let objectMapper = AWSDynamoDBObjectMapper.default()
+                let scanExpression = AWSDynamoDBScanExpression()
+                
+                scanExpression.filterExpression = "#BusinessEmail = :BusinessEmail AND #password = :password"
+                scanExpression.expressionAttributeNames = ["#BusinessEmail": "BusinessEmail","#password": "password"]
+                scanExpression.expressionAttributeValues = [":BusinessEmail": self.txtEmail.text! ,":password": self.txtPassword.text!, ]
+                
+                objectMapper.scan(Businesses.self, expression: scanExpression) { (response: AWSDynamoDBPaginatedOutput?, error: Error?) in
+                    DispatchQueue.main.async(execute: {
+                        if response != nil{
+                            self.view.unlock(statusCode: 200)
+                            if response?.items.count == 1{
+                               AppController.shared.isCustomLogin = true
+                               AppController.shared.usersBusiness?._password = self.txtPassword.text!
+
+                                
+                                for item in (response?.items)!{
+                                  if let pulledBusiness = item as? Businesses{
+                                        AppController.shared.usersBusiness = pulledBusiness
+                                    
+                                    }
+                                }
+                                self.performSegue(withIdentifier: "homeVCSegue", sender: nil)
+                            }else{
+                                self.view.unlock(statusCode: 500)
+                                LoginAlerts.genericAlert(viewController: self, title: "Invalid Email or Password", message: "We could not find an account linked to that email and password.")
+                            }
+
+                        }else{
+                            self.view.unlock(statusCode: 500)
+                            print(error)
+                            LoginAlerts.genericAlert(viewController: self, title: "Invalid Email or Password", message: "We could not find an account linked to that email and password.")
+                        }
+                    })
+                }
+                
+                
             }
         }
-        //DO THE Logic, use a closure in the http call and when it returns unlock the screen
+    }
+
+    //MARK REGISTERING
+    @IBAction func btnRegisterClicked(_ sender: Any) {
         
-        //        DispatchQueue.main.async {
-        //            self.view.unlock()
-        //        }
+        if  (txtEmail.text?.isEmail() == false){
+            
+            viewEmail.backgroundColor = UIColor(red: 216, green: 41, blue: 47)
+            lblEmailRequired.isHidden = false
+        }
+            
+        else if (txtPassword.text?.characters.count)! <= 8{
+            viewPassword.backgroundColor = UIColor(red: 216, green: 41, blue: 47)
+            lblPasswordRequired.isHidden = false
+        }else{
+            self.view.lock(headingText: nil, loadingText: "Registering", lowerLoadingText: nil)
+       
+            AppController.shared.usersBusiness?._password = self.txtPassword.text!
+            AppController.shared.usersBusiness?._businessEmail = self.txtEmail.text!
+            
+            NoSqlManager.saveBusiness(businessName:nil, businessCategory: nil, businessDescription: nil, businessEmail: txtEmail.text, businessImage: nil, businessLatidude: nil, businessLongitude: nil, businessPhone: nil, businessWebsite: nil, mondayHours: nil, tuesdayHours: nil, wednesdayHours: nil, thusdayHours: nil, fridayHours: nil, saturdayHours: nil, sundayHours: nil, isBusinessActive: false, firstName: AppController.shared.usersBusiness?._firstName,lastName:AppController.shared.usersBusiness?._lastName,password:txtPassword.text, completion: { (status) in
+                DispatchQueue.main.async {
+                    AppController.shared.usersBusiness?._activeBusiness = true
+                    AppController.shared.isCustomLogin = true
+    
+                self.view.unlock(statusCode: 200)
+                }
+                LoginAlerts.genericAlert(viewController: self, title: "Congradulations", message: "You are registered")
+
+                print(status)
+            })
+        }
         
         
         
@@ -175,91 +244,6 @@ class Login: UIViewController{
     
     
 }
-
-extension String {
-    
-    /**
-     Funtion to determine if a given string is a valid email address.
-     
-     - Returns: true indicating valid email address or false for invalid email address.
-     */
-    func isEmail() -> Bool {
-        
-        let emailRegex = "[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?"
-        
-        let matchPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
-        
-        return matchPredicate.evaluate(with: self) == true ? true : false
-    }
-    
-    /**
-     Funtion to determine if a given string is a valid Canadian Postal Code.
-     
-     - Returns: true indicating valid Canadian Postal Code or false for invalid Canadian Postal Code.
-     */
-    func isPostalCode() -> Bool {
-        
-        let postalCodeRegex = "^[ABCEGHJKLMNPRSTVXY]{1}\\d{1}[A-Z]{1} *\\d{1}[A-Z]{1}\\d{1}$"
-        
-        let matchPredicate = NSPredicate(format: "SELF MATCHES %@", postalCodeRegex)
-        
-        return matchPredicate.evaluate(with: self) == true ? true : false
-    }
-    
-    /**
-     Funtion to determine if a given string is a valid US Zip Code.
-     
-     - Returns: true indicating valid US Zip Code or false for invalid US Zip Code.
-     */
-    func isZipCode() -> Bool {
-        
-        let zipCodeRegex = "^\\d{5}(-\\d{4})?$"
-        
-        let matchPredicate = NSPredicate(format: "SELF MATCHES %@", zipCodeRegex)
-        
-        return matchPredicate.evaluate(with: self) == true ? true : false
-    }
-    
-    /**
-     Funtion to determine if a given string is a valid password.
-     
-     - Returns: true indicating valid password or false for invalid password.
-     */
-    func isValidPassword() -> Bool {
-        
-        let passcodeRegex = "^(?=.*?[A-Z])(?=.*?[a-z]).{8,}$"
-        
-        let matchPredicate = NSPredicate(format: "SELF MATCHES %@", passcodeRegex)
-        
-        return matchPredicate.evaluate(with: self) == true ? true : false
-    }
-    
-    func isCity() -> Bool {
-        
-        let cityRegex = "^([A-Za-z'._#& -])+"
-        
-        let matchPredicate = NSPredicate(format: "SELF MATCHES %@", cityRegex)
-        
-        return matchPredicate.evaluate(with: self) == true ? true : false
-    }
-    
-    func isAddress() -> Bool {
-        if (!isEmpty) {
-            let accentedCharacters = "àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ"
-            let addressRegex = "^([A-Za-z0-9"+accentedCharacters+"'._#& -])+"
-            
-            let matchPredicate = NSPredicate(format: "SELF MATCHES %@", addressRegex)
-            
-            return matchPredicate.evaluate(with: self) == true ? true : false
-        } else {
-            return true
-        }
-        
-    }
-    
-    
-}
-
 
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {

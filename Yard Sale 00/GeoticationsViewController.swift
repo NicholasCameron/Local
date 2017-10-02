@@ -68,13 +68,13 @@ var locationManager = CLLocationManager()
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
-        if BusinessProperties.properties.usersLocation.longitude == 0{
+        if AppController.shared.usersLocation.longitude == 0{
             
-           BusinessProperties.properties.usersLocation.latitude = 40.759211000000001
-            BusinessProperties.properties.usersLocation.longitude = -73.984638000000003
+           AppController.shared.usersLocation.latitude = 40.759211000000001
+            AppController.shared.usersLocation.longitude = -73.984638000000003
         }
-        let span = MKCoordinateSpanMake(BusinessProperties.properties.latDelta, BusinessProperties.properties.lonDelta)
-        let region = MKCoordinateRegionMake(BusinessProperties.properties.usersLocation, span)
+        let span = MKCoordinateSpanMake(AppController.shared.latDelta, AppController.shared.lonDelta)
+        let region = MKCoordinateRegionMake(AppController.shared.usersLocation, span)
         mapKit.setRegion(region, animated: true)
 
         
@@ -124,7 +124,7 @@ var locationManager = CLLocationManager()
         
         
         
-//         let users =  BusinessProperties.properties.DataManager.getUsers();
+//         let users =  AppController.shared.DataManager.getUsers();
 //
 //        
 //        for u in users{
@@ -171,7 +171,7 @@ var locationManager = CLLocationManager()
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addGeotification" {
             let navigationController = segue.destination as! UINavigationController
-            let vc = navigationController.viewControllers.first as! AddGeotification
+            _ = navigationController.viewControllers.first as! AddGeotification
            // vc.delegate = self
             
         }
@@ -267,7 +267,7 @@ var locationManager = CLLocationManager()
                         
                         if(bizDetails.businessName == names || bizDetails.businessType == types){
                             
-                            var t = [BusinessDetail(businessName: names,businessDescription: types,businessType: description,location: BusinessProperties.properties.businessCoordinates)];
+                            var t = [BusinessDetail(businessName: names,businessDescription: types,businessType: description,location: AppController.shared.businessCoordinates)];
                             businessDetailsFilteredArray.append(t[0])
                         }
                     }
@@ -382,7 +382,7 @@ var locationManager = CLLocationManager()
         if shouldShowSearchResults && businessDetailsFilteredArray.count > 0 {
             cell.businessTitle?.text = businessDetailsFilteredArray[indexPath.row].businessName
 
-            let yourPoint = CLLocation(latitude: BusinessProperties.properties.usersLocation.latitude, longitude: BusinessProperties.properties.usersLocation.longitude)
+            let yourPoint = CLLocation(latitude: AppController.shared.usersLocation.latitude, longitude: AppController.shared.usersLocation.longitude)
             
             let bizPoint = CLLocation(latitude: businessDetailsFilteredArray[indexPath.row].location.latitude, longitude: businessDetailsFilteredArray[indexPath.row].location.longitude)
             
@@ -400,7 +400,7 @@ var locationManager = CLLocationManager()
             cell.businessTitle?.text = businessDetailsArray[indexPath.row].businessName
          //   cell.detailTextLabel?.text = businessDetailsArray[indexPath.row].businessDescription
             
-            let yourPoint = CLLocation(latitude: BusinessProperties.properties.usersLocation.latitude, longitude: BusinessProperties.properties.usersLocation.longitude)
+            let yourPoint = CLLocation(latitude: AppController.shared.usersLocation.latitude, longitude: AppController.shared.usersLocation.longitude)
             
             let bizPoint = CLLocation(latitude: businessDetailsArray[indexPath.row].location.latitude, longitude: businessDetailsArray[indexPath.row].location.longitude)
             
@@ -668,13 +668,13 @@ extension GeoticationsViewController: MKMapViewDelegate {
     private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
             locationManager.startUpdatingLocation()
-            BusinessProperties.properties.usersLocation = (manager.location?.coordinate)!
+            AppController.shared.usersLocation = (manager.location?.coordinate)!
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        BusinessProperties.properties.usersLocation = locations[0].coordinate
+        AppController.shared.usersLocation = locations[0].coordinate
         //MAPP LOAD LOCATION
         
         suggestionTable.reloadData()
