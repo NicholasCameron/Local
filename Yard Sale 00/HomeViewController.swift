@@ -38,10 +38,12 @@ class HomeViewController: UIViewController {
         }else{
             LoginAlerts.genericAlert(viewController: self, title: "Hold up", message: "You must first login and register a business.")
         }
-        
-        
     }
 
+    @IBAction func logoutTapped(_ sender: Any) {
+        
+        AppController.shared.signOut()
+        }
     /*
     // MARK: - Navigation
 

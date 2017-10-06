@@ -36,29 +36,29 @@ class ViewController: UIViewController {
                 }
             }
         }
-        
-
     }
 
-    @IBAction func registerBtnTapped(_ sender: Any) {
+    @IBAction func homeBtnTapped(_ sender: Any) {
+        
+        if AppController.shared.isLoggedIn().0 {
+            self.performSegue(withIdentifier: "homeVC", sender: nil)
+            
+        }else{
+            LoginAlerts.genericAlert(viewController: self, title: "Hold up", message: "Login or register..it only takes a second and you'll stay logged in.")
+        }
+    }
     
-        
+    @IBAction func registerBtnTapped(_ sender: Any) {
         let isloggedIn = AppController.shared.isLoggedIn()
-        
         if isloggedIn.0{
             if isloggedIn.1 == AppController.LoginType.Facebook{
                 //search for the facebook ID Tied ot the business
-                
-                
                 performSegue(withIdentifier: "registerSegue", sender: nil)
             }else{
                 //seatch for the custom user/pass tied to business
-               
                 
                 performSegue(withIdentifier: "registerSegue", sender: nil)
             }
-            
-            
         }else{
             LoginAlerts.genericAlert(viewController: self, title: "Please Sign In", message: "In order for your business to reach the public you must first register. It will take less than one minute.")
         }
@@ -69,10 +69,16 @@ class ViewController: UIViewController {
     
     @IBAction func signInWithFacebookTapped(_ sender: Any) {
         
-               LoginManager.facebookLogin(viewController: self) { 
-                print("gpda")
+               LoginManager.facebookLogin(viewController: self) { (status) in
+                if status == 200{
+                    AppController.shared.isloggedInWithFacebook = true
+                    //HAVE TO GET FB ID AND STORE IT.
+                    
+                    self.performSegue(withIdentifier: "homeVC", sender: nil)
+                }else{
+                    LoginAlerts.genericAlert(viewController: self, title: "Login Error", message: "Something went wrong..FUCK")
+                }
         }
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

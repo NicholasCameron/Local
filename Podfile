@@ -25,5 +25,6 @@ pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
 pod 'AWSUserPoolsSignIn', '~> 2.6.1'
 pod 'AWSAuthUI', '~> 2.6.1'
+pod 'KeychainSwift', '~> 9.0'
 
 end

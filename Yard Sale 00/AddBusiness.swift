@@ -21,13 +21,7 @@ class LocalBusinessMapObject: NSObject,MKAnnotation {
     
     var coordinate : CLLocationCoordinate2D
     var businessName : String
-    var businessDescription : String
-    var pinColor : String
-    var type: String
-    var image : Data
-    var emailAddress : String
-    var hours : [String]
-    
+    var businessCategory : String
     
     
     
@@ -40,24 +34,19 @@ class LocalBusinessMapObject: NSObject,MKAnnotation {
     }
     
     var subtitle: String? {
-        if businessDescription.isEmpty{
+        if businessCategory.isEmpty{
             return "None"
         }else{
-            return businessDescription
+            return businessCategory
         }
     }
 
     
     ///Constructor
-    init(coordinate: CLLocationCoordinate2D, businessName: String, businessDescription: String, pinColor:String,type: String,image: Data, emailAddress: String, hours : [String]) {
+    init(coordinate: CLLocationCoordinate2D, businessName: String, businessCategory: String) {
         self.coordinate = coordinate
         self.businessName = businessName
-        self.businessDescription = businessDescription
-        self.pinColor = pinColor
-        self.type = type
-        self.image = image
-        self.emailAddress = emailAddress
-        self.hours = hours
+        self.businessCategory = businessCategory
     }
     
   

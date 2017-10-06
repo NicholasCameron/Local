@@ -16,7 +16,6 @@ import CoreLocation
 struct BusinessDetail{
     let businessName: String
     let businessDescription: String
-    let businessType: String
     let location :  CLLocationCoordinate2D
 }
 

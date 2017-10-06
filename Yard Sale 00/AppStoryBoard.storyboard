@@ -338,7 +338,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local Points 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxx-Ct-O97">
-                                <rect key="frame" x="239" y="52" width="120" height="21"/>
+                                <rect key="frame" x="209" y="52" width="120" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="bhe-oL-fD1"/>
                                 </constraints>
@@ -346,14 +346,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQQ-aE-egN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQQ-aE-egN">
                                 <rect key="frame" x="7" y="52" width="88" height="21"/>
-                                <color key="backgroundColor" red="0.037050828340000001" green="0.1033871844" blue="0.04326120764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.037050828340000001" green="0.1033871844" blue="0.04326120764" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="HbO-Vi-Sol"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="16"/>
-                                <state key="normal" title="SIGN IN"/>
+                                <state key="normal" title="SIGN OUT">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.20344606164383561" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -361,13 +363,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="MLK-Lt-3LB" kind="presentation" id="EIb-aI-bqP"/>
+                                    <action selector="logoutTapped:" destination="A0L-WV-Fug" eventType="touchUpInside" id="FYX-Lt-9J6"/>
+                                    <segue destination="cH3-Na-ZWp" kind="presentation" id="vqr-oL-9Qe"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.44928175209999999" green="0.91735714670000001" blue="0.30285379289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="nxx-Ct-O97" firstAttribute="trailing" secondItem="Y4D-7h-xin" secondAttribute="trailingMargin" id="0Ar-S8-FTY"/>
+                            <constraint firstItem="nxx-Ct-O97" firstAttribute="trailing" secondItem="Y4D-7h-xin" secondAttribute="trailingMargin" constant="-30" id="0Ar-S8-FTY"/>
                             <constraint firstItem="CQQ-aE-egN" firstAttribute="leading" secondItem="Y4D-7h-xin" secondAttribute="leadingMargin" constant="-9" id="Aak-wP-orO"/>
                             <constraint firstItem="CQQ-aE-egN" firstAttribute="top" secondItem="nxx-Ct-O97" secondAttribute="top" id="BPt-6L-oVa"/>
                             <constraint firstItem="Ji9-J7-6wg" firstAttribute="leading" secondItem="Y4D-7h-xin" secondAttribute="leading" constant="-1" id="Cka-yZ-qUS"/>
@@ -886,5 +889,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="ASB-cB-94U"/>
         <segue reference="kNd-bc-cAd"/>
+        <segue reference="LkU-Dp-sfq"/>
     </inferredMetricsTieBreakers>
 </document>

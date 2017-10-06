@@ -108,45 +108,32 @@ var locationManager = CLLocationManager()
 
     
     func loadAllGeotifications() {
-      
-        NoSqlManager.getAllBusinesses { (status, businesses) in
-            if status == 200{
-                
-                for u in businesses!{
-                    self.add(business: u)
-                  self.businessDetailsArray.append(BusinessDetail(businessName: u.businessName, businessDescription: u.description, businessType:u.type, location: u.coordinate))
+        self.view.lock(headingText: nil, loadingText: nil, lowerLoadingText: nil)
+        DispatchQueue.main.async {
+            if AppController.shared.externalBusinesses != nil{
+                    for u in AppController.shared.externalBusinesses{
+                        var location =  CLLocationCoordinate2D()
+                        location.latitude = Double(u._businessLatitude!)!
+                        location.longitude = Double(u._businessLongitude!)!
+                       let t = LocalBusinessMapObject(coordinate: location, businessName: u._businessName!, businessCategory: u._businessCategory!)
+                        self.add(business: t)
+                        self.businessDetailsArray.append(BusinessDetail(businessName: u._businessName!, businessDescription: u.description, location: location))
+                        self.view.unlock(statusCode: 200)
+                        
                 }
-                
-            }else{
-                
             }
         }
-        
-        
-        
-//         let users =  AppController.shared.DataManager.getUsers();
-//
-//        
-//        for u in users{
-//            
-//            add(business: u)
-//            let details = BusinessDetail(businessName:u.businessName,businessDescription:u.businessDescription,businessType:u.type,location: u.coordinate)
-//            
-//            businessDetailsArray.append(details);
-//        
-//
-//        }
-
     }
     
     
+    public func mapViewDidFinishLoadingMap(_ mapView: MKMapView){
+        
+    }
+
+    
     func add(business: LocalBusinessMapObject) {
         BusinessLocations.append(business)
-        
         mapKit.addAnnotation(business)
-        
-        
-        // addRadiusOverlay(forGeotification: business)
         updateGeotificationsCount()
 
     }
@@ -219,7 +206,7 @@ var locationManager = CLLocationManager()
         businessDetailsFilteredArray = [BusinessDetail]()
         for name in businessDetailsArray{
             businessNameArray.append(name.businessName)
-            businessTypeArray.append(name.businessType)
+            businessTypeArray.append(name.businessDescription)
             businessDescriptionArray.append(name.businessDescription)
             location.append(name.location)
         }
@@ -245,7 +232,7 @@ var locationManager = CLLocationManager()
                 
                 if n.businessName == innerN{
                    // BusinessDetail(businessName: <#T##String#>, businessDescription: <#T##String#>, businessType: <#T##String#>, location: //)
-                    businessDetailsFilteredArray.append(BusinessDetail(businessName: n.businessName,businessDescription: n.businessType,businessType: n.businessDescription,location: n.location))
+                    businessDetailsFilteredArray.append(BusinessDetail(businessName: n.businessName,businessDescription: n.businessDescription,location: n.location))
                     
                 }
 
@@ -265,9 +252,9 @@ var locationManager = CLLocationManager()
                 for types in filteredTypeArray{
                     for description in businessDescriptionArray{
                         
-                        if(bizDetails.businessName == names || bizDetails.businessType == types){
+                        if(bizDetails.businessName == names || bizDetails.businessDescription == types){
                             
-                            var t = [BusinessDetail(businessName: names,businessDescription: types,businessType: description,location: AppController.shared.businessCoordinates)];
+                            var t = [BusinessDetail(businessName: names,businessDescription: types,location: AppController.shared.businessCoordinates)];
                             businessDetailsFilteredArray.append(t[0])
                         }
                     }
@@ -469,7 +456,7 @@ extension GeoticationsViewController: MKMapViewDelegate {
                 if b.coordinate.latitude == annotation.coordinate.latitude && b.coordinate.longitude == annotation.coordinate.longitude{
                  
                     
-                    annotationView?.pinTintColor = UIColorFromRGB(color: b.pinColor)
+                    annotationView?.pinTintColor = UIColor.blue
 
                     
                 }
@@ -488,7 +475,7 @@ extension GeoticationsViewController: MKMapViewDelegate {
                     if b.coordinate.latitude == annotation.coordinate.latitude && b.coordinate.longitude == annotation.coordinate.longitude{
                         
                         
-                        annotationView?.pinTintColor = UIColorFromRGB(color: b.pinColor)
+                        annotationView?.pinTintColor = UIColor.purple
                         
                         
                     }
@@ -549,9 +536,9 @@ extension GeoticationsViewController: MKMapViewDelegate {
         
         
         Profile.ProfilePage.profileName = business.businessName
-        Profile.ProfilePage.profileType = business.businessDescription
+        Profile.ProfilePage.profileType = business.businessCategory
    
-        let color = business.pinColor
+        let color = "purple"
         if(color == "red"){
 
             Profile.ProfilePage.bgColor = UIColor(

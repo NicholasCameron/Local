@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/GeoticationsViewController.swift"
-            timestampString = "527736343.916682"
+            timestampString = "528941197.842508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "554"
-            endingLineNumber = "554"
+            startingLineNumber = "541"
+            endingLineNumber = "541"
             landmarkName = "mapView(_:annotationView:calloutAccessoryControlTapped:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/GeoticationsViewController.swift"
-            timestampString = "527736343.916682"
+            timestampString = "528941197.842508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "472"
-            endingLineNumber = "472"
+            startingLineNumber = "459"
+            endingLineNumber = "459"
             landmarkName = "mapView(_:viewFor:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/GeoticationsViewController.swift"
-            timestampString = "527736343.916682"
+            timestampString = "528941197.842508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "466"
-            endingLineNumber = "466"
+            startingLineNumber = "453"
+            endingLineNumber = "453"
             landmarkName = "mapView(_:viewFor:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/GeoticationsViewController.swift"
-            timestampString = "527736343.916682"
+            timestampString = "528941197.842508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "463"
-            endingLineNumber = "463"
+            startingLineNumber = "450"
+            endingLineNumber = "450"
             landmarkName = "mapView(_:viewFor:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -298,12 +298,12 @@
                   moduleName = "Yard Sale 00"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/BusinessInformationViewController.swift"
-                  timestampString = "528588380.446653"
+                  timestampString = "528979987.340885"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "198"
                   endingLineNumber = "198"
-                  offsetFromSymbolStart = "2228">
+                  offsetFromSymbolStart = "2240">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -313,7 +313,7 @@
                   moduleName = "Yard Sale 00"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/BusinessInformationViewController.swift"
-                  timestampString = "528588380.448597"
+                  timestampString = "528979987.343658"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "199"
@@ -330,59 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/GeoticationsViewController.swift"
-            timestampString = "527869666.230149"
+            timestampString = "528941197.842508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "loadAllGeotifications()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Yard_Sale_00.GeoticationsViewController.loadAllGeotifications () -&gt; ()"
-                  moduleName = "Yard Sale 00"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/GeoticationsViewController.swift"
-                  timestampString = "527986686.105119"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Yard_Sale_00.GeoticationsViewController.(loadAllGeotifications () -&gt; ()).(closure #1)"
-                  moduleName = "Yard Sale 00"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/GeoticationsViewController.swift"
-                  timestampString = "527986686.107275"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "113"
-                  endingLineNumber = "113"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Yard Sale 00/GeoticationsViewController.swift"
-            timestampString = "527869855.650879"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "467"
-            endingLineNumber = "467"
+            startingLineNumber = "454"
+            endingLineNumber = "454"
             landmarkName = "mapView(_:viewFor:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -490,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/ProfileViewController.swift"
-            timestampString = "528588277.217834"
+            timestampString = "528678711.315754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "loadData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -570,11 +522,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/ProfileViewController.swift"
-            timestampString = "528588277.217834"
+            timestampString = "528678711.315754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "ProfileViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -586,11 +538,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/ProfileViewController.swift"
-            timestampString = "528588277.217834"
+            timestampString = "528678711.315754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "btnContactClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -602,11 +554,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/ProfileViewController.swift"
-            timestampString = "528588277.217834"
+            timestampString = "528678711.315754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "loadData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -614,31 +566,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Yard Sale 00/ViewController.swift"
-            timestampString = "528564862.621557"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "signInWithFacebookTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/LoginManager.swift"
-            timestampString = "528479533.561285"
+            timestampString = "528679806.048384"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "facebookLogin(viewController:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -650,12 +586,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/LoginManager.swift"
-            timestampString = "528476455.294104"
+            timestampString = "528679806.048384"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "facebookLogin(viewController:completion:)"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "getFBUserData(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -666,44 +602,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/LoginManager.swift"
-            timestampString = "528479724.210861"
+            timestampString = "528679806.048384"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "getFBUserData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Yard Sale 00/LoginManager.swift"
-            timestampString = "528481654.931459"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "facebookLogin(viewController:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Yard Sale 00/LoginManager.swift"
-            timestampString = "528481660.40216"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "getFBUserData()"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "getFBUserData(completion:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -746,12 +650,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/LoginManager.swift"
-            timestampString = "528481661.653245"
+            timestampString = "528679806.048384"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "getFBUserData()"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "getFBUserData(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -762,27 +666,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/LoginManager.swift"
-            timestampString = "528481765.070253"
+            timestampString = "528679806.048384"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "getFBUserData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Yard Sale 00/LoginManager.swift"
-            timestampString = "528482713.703632"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "LoginManager"
             landmarkType = "3">
          </BreakpointContent>
@@ -794,11 +682,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/ViewController.swift"
-            timestampString = "528561729.162645"
+            timestampString = "528941738.714815"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "registerBtnTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -918,7 +806,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/Login.swift"
@@ -1014,7 +902,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/NoSqlManager.swift"
@@ -1030,7 +918,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/NoSqlManager.swift"
@@ -1082,13 +970,173 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/ProfileViewController.swift"
-            timestampString = "528588298.894527"
+            timestampString = "528678711.315754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "setupView()"
             landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yard Sale 00/LoginManager.swift"
+            timestampString = "528679750.217479"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "getFBUserData(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Yard_Sale_00.LoginManager.(getFBUserData (completion : (Swift.Int) -&gt; ()) -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "Yard Sale 00"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/LoginManager.swift"
+                  timestampString = "528979987.354739"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "615">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Yard_Sale_00.LoginManager.(getFBUserData (completion : (Swift.Int) -&gt; ()) -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "Yard Sale 00"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/LoginManager.swift"
+                  timestampString = "528979987.357627"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "5580">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yard Sale 00/CustomLaunchViewController.swift"
+            timestampString = "528945038.70874"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "setupApp()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Yard_Sale_00.CustomLaunchViewController.setupApp () -&gt; ()"
+                  moduleName = "Yard Sale 00"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/CustomLaunchViewController.swift"
+                  timestampString = "528944985.669377"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Yard_Sale_00.CustomLaunchViewController.setupApp () -&gt; ()"
+                  moduleName = "Yard Sale 00"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/CustomLaunchViewController.swift"
+                  timestampString = "528944985.672219"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "325">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yard Sale 00/CustomLaunchViewController.swift"
+            timestampString = "528945038.70874"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "setupApp()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yard Sale 00/CustomLaunchViewController.swift"
+            timestampString = "528979977.570999"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "setupApp()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Yard_Sale_00.CustomLaunchViewController.setupApp () -&gt; ()"
+                  moduleName = "Yard Sale 00"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/CustomLaunchViewController.swift"
+                  timestampString = "528979987.368751"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Yard_Sale_00.CustomLaunchViewController.setupApp () -&gt; ()"
+                  moduleName = "Yard Sale 00"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/CustomLaunchViewController.swift"
+                  timestampString = "528979987.371709"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "325">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

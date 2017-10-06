@@ -24,6 +24,7 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.27.0):
     - FBSDKCoreKit
+  - KeychainSwift (9.0.2)
 
 DEPENDENCIES:
   - AWSAuthCore (~> 2.6.1)
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
+  - KeychainSwift (~> 9.0)
 
 SPEC CHECKSUMS:
   AWSAuthCore: 41155990fc5b10d84667c237a8757799edbf6267
@@ -45,7 +47,8 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: ebc6c5f5b3f0e72396041050e2266781a38ac587
   FBSDKLoginKit: 887be4b7452e1c5a3cc4485ce152529965a0c41e
   FBSDKShareKit: 4f83956d4ca2960730fe7588a168eb8d535c06dc
+  KeychainSwift: 3ab1d428d0dbff59cd056f1d0bfc640b36c2b081
 
-PODFILE CHECKSUM: dddfe9630b54c8d87cb3dbce13ddb839c0f8547c
+PODFILE CHECKSUM: 573ef37409143795bae46fec6443ebbd28dd8e12
 
 COCOAPODS: 1.2.0

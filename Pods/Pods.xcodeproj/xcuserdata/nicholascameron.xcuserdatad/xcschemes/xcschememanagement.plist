@@ -64,6 +64,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>KeychainSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Yard Sale 00.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -92,12 +97,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>303AB6194DF279C6770DDC20E5A2DB0A</key>
+		<key>3606383327010CF49940F6137ADC5CB0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3606383327010CF49940F6137ADC5CB0</key>
+		<key>38ACA430605AFB4229712A18BDDF5086</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -108,6 +113,11 @@
 			<true/>
 		</dict>
 		<key>4AD64748DAF85E98E81A966D0637455C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>53E69B2EFC35DD6183003754040E6A87</key>
 		<dict>
 			<key>primary</key>
 			<true/>

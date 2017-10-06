@@ -8,13 +8,15 @@
 
 import UIKit
 import CoreLocation
-
+import KeychainSwift
 class AppController: NSObject {
     
     enum LoginType {
         case Custom
         case Facebook
     }
+    
+    var keychain = KeychainSwift()
     
     static let shared = AppController()
     
@@ -34,21 +36,6 @@ class AppController: NSObject {
     var center = "";
     var DataManager = CoreDataManager()
     
-    
-//    var businessName = String()
-//    var businessEmail = "NA"
-//    var password = String()
-//    var businessLongitude = String()
-//    var businessLatitude = String()
-//    var businessCategory = String()
-//    var businessImage = Data()
-//    var businessPhone = "NA"
-//    var businessWebsite = "NA"
-//    var other = String()
-//    var businessDescription = String()
-//    var businessHours = [String]()
-//    var firstName = String()
-//    var lastName = String()
     func isLoggedIn()->(Bool,LoginType?){
         
         if isloggedInWithFacebook || isCustomLogin{
@@ -60,6 +47,20 @@ class AppController: NSObject {
         }
         return (false,nil)
     }
+    
+    
+    func signOut(){
+        
+        keychain.delete(Constants.EMAILKEY)
+        keychain.delete(Constants.PASSWORDKEY)
+        self.isloggedInWithFacebook = false
+        self.isCustomLogin  = false
+        self.usersBusiness = nil
+        
+        
+        
+    }
+    
     
     
 }

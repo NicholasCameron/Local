@@ -90,8 +90,8 @@ class LocoHome: UIViewController, UISearchBarDelegate,UITableViewDelegate,UITabl
 
         for name in businessDetailsArray{
             businessNameArray.append(name.businessName)
-            businessTypeArray.append(name.businessType)
-            businessDescriptionArray.append(name.businessDescription)
+            businessTypeArray.append(name.businessDescription)
+          //  businessDescriptionArray.append(name.businessDescription)
 
         }
         
@@ -111,14 +111,14 @@ class LocoHome: UIViewController, UISearchBarDelegate,UITableViewDelegate,UITabl
         for bizDetails in businessDetailsArray{
             for names in filteredNameArray!{
                 for types in filteredTypeArray!{
-                    for description in businessDescriptionArray{
-
-                    if(bizDetails.businessName == names || bizDetails.businessType == types){
-                        
-                        businessDetailsFilteredArray = [BusinessDetail(businessName: names,businessDescription: types,businessType: description,location: AppController.shared.businessCoordinates)];
-
-                        }
-                    }
+//                    for description in businessDescriptionArray{
+//
+//                    if(bizDetails.businessName == names || bizDetails.businessDescription == types){
+//                        
+//                        businessDetailsFilteredArray = [BusinessDetail(businessName: names,businessDescription: types,businessType: description,location: AppController.shared.businessCoordinates)];
+//
+//                        }
+//                    }
                 }
             }
         }

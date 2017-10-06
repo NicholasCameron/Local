@@ -201,39 +201,39 @@ class Login: UIViewController{
     }
 
     //MARK REGISTERING
-    @IBAction func btnRegisterClicked(_ sender: Any) {
+   // @IBAction func btnRegisterClicked(_ sender: Any) {
         
-        if  (txtEmail.text?.isEmail() == false){
-            
-            viewEmail.backgroundColor = UIColor(red: 216, green: 41, blue: 47)
-            lblEmailRequired.isHidden = false
-        }
-            
-        else if (txtPassword.text?.characters.count)! <= 8{
-            viewPassword.backgroundColor = UIColor(red: 216, green: 41, blue: 47)
-            lblPasswordRequired.isHidden = false
-        }else{
-            self.view.lock(headingText: nil, loadingText: "Registering", lowerLoadingText: nil)
-       
-            AppController.shared.usersBusiness?._password = self.txtPassword.text!
-            AppController.shared.usersBusiness?._businessEmail = self.txtEmail.text!
-            
-            NoSqlManager.saveBusiness(businessName:nil, businessCategory: nil, businessDescription: nil, businessEmail: txtEmail.text, businessImage: nil, businessLatidude: nil, businessLongitude: nil, businessPhone: nil, businessWebsite: nil, mondayHours: nil, tuesdayHours: nil, wednesdayHours: nil, thusdayHours: nil, fridayHours: nil, saturdayHours: nil, sundayHours: nil, isBusinessActive: false, firstName: AppController.shared.usersBusiness?._firstName,lastName:AppController.shared.usersBusiness?._lastName,password:txtPassword.text, completion: { (status) in
-                DispatchQueue.main.async {
-                    AppController.shared.usersBusiness?._activeBusiness = true
-                    AppController.shared.isCustomLogin = true
-    
-                self.view.unlock(statusCode: 200)
-                }
-                LoginAlerts.genericAlert(viewController: self, title: "Congradulations", message: "You are registered")
-
-                print(status)
-            })
-        }
+//        if  (txtEmail.text?.isEmail() == false){
+//            
+//            viewEmail.backgroundColor = UIColor(red: 216, green: 41, blue: 47)
+//            lblEmailRequired.isHidden = false
+//        }
+//            
+//        else if (txtPassword.text?.characters.count)! <= 8{
+//            viewPassword.backgroundColor = UIColor(red: 216, green: 41, blue: 47)
+//            lblPasswordRequired.isHidden = false
+//        }else{
+//            self.view.lock(headingText: nil, loadingText: "Registering", lowerLoadingText: nil)
+//       
+//            AppController.shared.usersBusiness?._password = self.txtPassword.text!
+//            AppController.shared.usersBusiness?._businessEmail = self.txtEmail.text!
+//            
+//            NoSqlManager.saveBusiness(businessName:nil, businessCategory: nil, businessDescription: nil, businessEmail: txtEmail.text, businessImage: nil, businessLatidude: nil, businessLongitude: nil, businessPhone: nil, businessWebsite: nil, mondayHours: nil, tuesdayHours: nil, wednesdayHours: nil, thusdayHours: nil, fridayHours: nil, saturdayHours: nil, sundayHours: nil, isBusinessActive: false, firstName: AppController.shared.usersBusiness?._firstName,lastName:AppController.shared.usersBusiness?._lastName,password:txtPassword.text, completion: { (status) in
+//                DispatchQueue.main.async {
+//                    AppController.shared.usersBusiness?._activeBusiness = true
+//                    AppController.shared.isCustomLogin = true
+//    
+//                self.view.unlock(statusCode: 200)
+//                }
+//                LoginAlerts.genericAlert(viewController: self, title: "Congradulations", message: "You are registered")
+//
+//                print(status)
+//            })
+//        }
+//        
         
         
-        
-    }
+//    }
     
     
     

@@ -61,7 +61,7 @@ class NoSqlManager: NSObject {
         businessItem._activeBusiness = isBusinessActive as NSNumber
         businessItem._firstName = firstName
         businessItem._lastName = lastName
-        businessItem._password = AppController.shared.usersBusiness?._password
+        businessItem._password = password
         
         //Save a new item
         dynamoDbObjectMapper.save(businessItem, completionHandler: {
@@ -120,7 +120,7 @@ class NoSqlManager: NSObject {
                         
                             AppController.shared.externalBusinesses.append(pulledBusiness)
                             
-                            let b = LocalBusinessMapObject(coordinate: location, businessName: pulledBusiness._businessName!, businessDescription: pulledBusiness._businessDescription!, pinColor: "red", type: pulledBusiness._businessCategory!, image: pulledBusiness._businessImage!, emailAddress: pulledBusiness._businessEmail!, hours: hours)
+                            let b = LocalBusinessMapObject(coordinate: location, businessName: pulledBusiness._businessName!, businessCategory: pulledBusiness._businessCategory!)
                                 
                             
                             businessDetailsArray.append(b)

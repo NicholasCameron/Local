@@ -71,10 +71,10 @@ class CoreDataManager: NSObject{
                 
                 
                 
-                
-                
-                businesses.append(LocalBusinessMapObject(coordinate: coordinate, businessName: n, businessDescription: businessD, pinColor: pinC,type:type,image:image as Data,emailAddress: emailAddress, hours: hours))
-                
+//                
+//                
+//                businesses.append(LocalBusinessMapObject(coordinate: coordinate, businessName: n, businessDescription: businessD, pinColor: pinC,type:type,image:image as Data,emailAddress: emailAddress, hours: hours))
+//                
             }
     
             

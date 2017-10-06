@@ -73,11 +73,7 @@ class ProfileViewController: UIViewController {
         
         
         func setupView(){
-            
-          
-            
             DispatchQueue.main.async {
-                
                 self.navigationItem.title = self.business?._businessCategory
                 self.businessDescription.text = self.business?._businessDescription
                 self.mondayHours.text = self.business?._mondayHours
@@ -87,7 +83,6 @@ class ProfileViewController: UIViewController {
                 self.fridayHours.text = self.business?._fridayHours
                 self.saturdayHours.text = self.business?._saturdayHours
                 self.sundayHours.text = self.business?._sundayHours
-                
                 self.view.unlock(statusCode: 200)
             }
             
