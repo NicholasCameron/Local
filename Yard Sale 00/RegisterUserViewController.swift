@@ -111,6 +111,7 @@ class RegisterUserViewController: UIViewController,UITextFieldDelegate {
                     DispatchQueue.main.async {
                     self.view.unlock(statusCode: 200)
                     self.loginError()
+                    self.counterLabel = 0
                     }
                    
                 }
@@ -145,7 +146,8 @@ class RegisterUserViewController: UIViewController,UITextFieldDelegate {
      */
     func slideLabel(labelOne: UILabel,textForLabel: String,leftOrRight: String){
         // lblRegistrationInfo.text = textForLabel;
-        labelOne.textColor = UIColor.black
+        labelOne.textColor = lblChangingHeader.textColor
+        labelOne.font = lblChangingHeader.font
         let yPosition = labelOne.center;
         UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseIn, animations: {
             
@@ -166,9 +168,7 @@ class RegisterUserViewController: UIViewController,UITextFieldDelegate {
         labelTwo.text = textForLabel;
         
         UIView.animate(withDuration: 0.4, delay: 0.0,options: .curveEaseIn, animations: {
-            
-            // if(self.inOrOut == 0){
-            //}
+ 
             labelTwo.center = yPosition;
             
         }, completion:nil)

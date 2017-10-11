@@ -278,54 +278,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Yard Sale 00/BusinessInformationViewController.swift"
-            timestampString = "527871702.719703"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
-            landmarkName = "Register(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Yard_Sale_00.BusinessInformationViewController.Register (Any) -&gt; ()"
-                  moduleName = "Yard Sale 00"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/BusinessInformationViewController.swift"
-                  timestampString = "528979987.340885"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "198"
-                  endingLineNumber = "198"
-                  offsetFromSymbolStart = "2240">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Yard_Sale_00.BusinessInformationViewController.(Register (Any) -&gt; ()).(closure #1)"
-                  moduleName = "Yard Sale 00"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/BusinessInformationViewController.swift"
-                  timestampString = "528979987.343658"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "199"
-                  endingLineNumber = "199"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -838,7 +790,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/HomeViewController.swift"
@@ -849,54 +801,6 @@
             endingLineNumber = "35"
             landmarkName = "btnMyBusinessTapped(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Yard Sale 00/BusinessInformationViewController.swift"
-            timestampString = "528584352.590662"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
-            landmarkName = "Register(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Yard_Sale_00.BusinessInformationViewController.Register (Any) -&gt; ()"
-                  moduleName = "Yard Sale 00"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/BusinessInformationViewController.swift"
-                  timestampString = "528584352.595481"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "198"
-                  endingLineNumber = "198"
-                  offsetFromSymbolStart = "1293">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Yard_Sale_00.BusinessInformationViewController.(Register (Any) -&gt; ()).(closure #1)"
-                  moduleName = "Yard Sale 00"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/BusinessInformationViewController.swift"
-                  timestampString = "528584352.598592"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "199"
-                  endingLineNumber = "199"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1002,7 +906,7 @@
                   moduleName = "Yard Sale 00"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/LoginManager.swift"
-                  timestampString = "528979987.354739"
+                  timestampString = "529373722.193515"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "72"
@@ -1017,7 +921,7 @@
                   moduleName = "Yard Sale 00"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/LoginManager.swift"
-                  timestampString = "528979987.357627"
+                  timestampString = "529373722.196887"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "72"
@@ -1082,11 +986,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/CustomLaunchViewController.swift"
-            timestampString = "528945038.70874"
+            timestampString = "529373115.153393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "setupApp()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1094,7 +998,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yard Sale 00/CustomLaunchViewController.swift"
@@ -1107,14 +1011,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Yard_Sale_00.CustomLaunchViewController.setupApp () -&gt; ()"
                   moduleName = "Yard Sale 00"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/CustomLaunchViewController.swift"
-                  timestampString = "528979987.368751"
+                  timestampString = "529370361.533878"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "35"
@@ -1122,14 +1026,14 @@
                   offsetFromSymbolStart = "20">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Yard_Sale_00.CustomLaunchViewController.setupApp () -&gt; ()"
                   moduleName = "Yard Sale 00"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/CustomLaunchViewController.swift"
-                  timestampString = "528979987.371709"
+                  timestampString = "529370361.537177"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "35"
@@ -1137,6 +1041,150 @@
                   offsetFromSymbolStart = "325">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yard Sale 00/AppDelegate.swift"
+            timestampString = "529372486.239863"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Yard_Sale_00.AppDelegate.application (__ObjC.UIApplication, didFinishLaunchingWithOptions : Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; Swift.Bool"
+                  moduleName = "Yard Sale 00"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/AppDelegate.swift"
+                  timestampString = "529372805.717993"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "1532">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Yard_Sale_00.AppDelegate.application (__ObjC.UIApplication, didFinishLaunchingWithOptions : Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; Swift.Bool"
+                  moduleName = "Yard Sale 00"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/AppDelegate.swift"
+                  timestampString = "529372805.720088"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "1637">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yard Sale 00/AppDelegate.swift"
+            timestampString = "529372486.922467"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Yard_Sale_00.AppDelegate.application (__ObjC.UIApplication, didFinishLaunchingWithOptions : Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; Swift.Bool"
+                  moduleName = "Yard Sale 00"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/AppDelegate.swift"
+                  timestampString = "529372503.804292"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "1445">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Yard_Sale_00.AppDelegate.application (__ObjC.UIApplication, didFinishLaunchingWithOptions : Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; Swift.Bool"
+                  moduleName = "Yard Sale 00"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nicholascameron/Documents/Local/Yard%20Sale%2000/AppDelegate.swift"
+                  timestampString = "529372503.806585"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "1550">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yard Sale 00/AppDelegate.swift"
+            timestampString = "529372564.92205"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yard Sale 00/CustomLaunchViewController.swift"
+            timestampString = "529372904.702592"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "setupApp()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yard Sale 00/CustomLaunchViewController.swift"
+            timestampString = "529373122.525465"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "setupApp()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

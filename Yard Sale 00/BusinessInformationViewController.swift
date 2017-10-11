@@ -192,12 +192,11 @@ class BusinessInformationViewController: UIViewController,UIImagePickerControlle
         let i = UIImageJPEGRepresentation(imageHeader.image!, 0.1)
        // let imageData = UIImagePNGRepresentation(imageHeader.image!) as Data?
         AppController.shared.usersBusiness?._businessImage = i!
-
+        AppController.shared.usersBusiness?._activeBusiness = true
         
         
         NoSqlManager.saveBusiness(businessName: AppController.shared.usersBusiness?._businessName, businessCategory: AppController.shared.usersBusiness?._businessCategory, businessDescription: AppController.shared.usersBusiness?._businessDescription, businessEmail: AppController.shared.usersBusiness?._businessEmail, businessImage: AppController.shared.usersBusiness?._businessImage, businessLatidude: AppController.shared.usersBusiness?._businessLatitude, businessLongitude: AppController.shared.usersBusiness?._businessLongitude, businessPhone: AppController.shared.usersBusiness?._businessPhone, businessWebsite: AppController.shared.usersBusiness?._businessWebsite, mondayHours: AppController.shared.usersBusiness?._mondayHours, tuesdayHours: AppController.shared.usersBusiness?._tuesdayHours, wednesdayHours: AppController.shared.usersBusiness?._wednesdayHours, thusdayHours: AppController.shared.usersBusiness?._thursdayHours, fridayHours: AppController.shared.usersBusiness?._fridayHours, saturdayHours: AppController.shared.usersBusiness?._saturdayHours, sundayHours: AppController.shared.usersBusiness?._sundayHours, isBusinessActive: true,firstName:AppController.shared.usersBusiness?._firstName,lastName:AppController.shared.usersBusiness?._lastName,password:nil) { (status) in
             if status == 200{
-                
                 self.performSegue(withIdentifier: "registeredSegue", sender: self)
 
             }

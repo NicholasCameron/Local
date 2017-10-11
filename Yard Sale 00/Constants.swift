@@ -13,6 +13,6 @@ class Constants: NSObject {
     
     static var PASSWORDKEY = "password"
     static var EMAILKEY = "password"
-
+    static var FACEBOOKID = "facebookId"
     
 }

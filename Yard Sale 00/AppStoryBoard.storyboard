@@ -319,7 +319,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="cH3-Na-ZWp" kind="presentation" id="LkU-Dp-sfq"/>
+                                    <segue destination="szI-kt-7PU" kind="presentation" id="ry6-X5-Ura"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWz-gZ-kz5">
@@ -848,6 +848,14 @@
             </objects>
             <point key="canvasLocation" x="-4106" y="-629"/>
         </scene>
+        <!--registerVC-->
+        <scene sceneID="9Fx-IQ-TZz">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="registerVC" storyboardName="Main" referencedIdentifier="registerVC" id="szI-kt-7PU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4dz-ch-Y7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4089" y="-551"/>
+        </scene>
         <!--signInStoryBoard-->
         <scene sceneID="uA1-Cu-IdN">
             <objects>
@@ -887,8 +895,7 @@
         <image name="tableviewTest" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ASB-cB-94U"/>
         <segue reference="kNd-bc-cAd"/>
-        <segue reference="LkU-Dp-sfq"/>
+        <segue reference="ASB-cB-94U"/>
     </inferredMetricsTieBreakers>
 </document>

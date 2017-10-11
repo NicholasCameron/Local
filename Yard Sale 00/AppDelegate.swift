@@ -58,6 +58,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let accessToken = FBSDKAccessToken.current() {
             print(accessToken)
+            AppController.shared.isloggedInWithFacebook = true
+            AppController.shared.keychain.set(accessToken.userID, forKey: Constants.FACEBOOKID)
+            AppController.shared.usersBusiness?._facebookUserID = accessToken.userID
         }
         
         

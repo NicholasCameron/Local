@@ -32,22 +32,26 @@ class CustomLaunchViewController: UIViewController {
 //        AppController.shared.keychain.delete(Constants.EMAILKEY)
 
         
-        if let pass = AppController.shared.keychain.get(Constants.PASSWORDKEY),
-            let email = AppController.shared.keychain.get(Constants.EMAILKEY){
-            
+        if ((AppController.shared.keychain.get(Constants.PASSWORDKEY) != nil &&
+AppController.shared.keychain.get(Constants.EMAILKEY) != nil) || AppController.shared.keychain.get(Constants.FACEBOOKID) != nil){
+            let email = AppController.shared.keychain.get(Constants.PASSWORDKEY)
+            let pass = AppController.shared.keychain.get(Constants.EMAILKEY)
             DispatchQueue.main.async {
                 self.view.endEditing(true)
                 
                 self.view.lock(headingText:"Air Canada mobile+",loadingText:"Signing in...", lowerLoadingText: nil)
                 // self.view.unlock()
-                
                 let objectMapper = AWSDynamoDBObjectMapper.default()
                 let scanExpression = AWSDynamoDBScanExpression()
-                
-                scanExpression.filterExpression = "#BusinessEmail = :BusinessEmail AND #password = :password"
-                scanExpression.expressionAttributeNames = ["#BusinessEmail": "BusinessEmail","#password": "password"]
-                scanExpression.expressionAttributeValues = [":BusinessEmail": email ,":password": pass, ]
-                
+                if email == nil || pass == nil{
+                    scanExpression.filterExpression = "#FacebookUserID = :FacebookUserID"
+                    scanExpression.expressionAttributeNames = ["#FacebookUserID": "FacebookUserID"]
+                    scanExpression.expressionAttributeValues = [":FacebookUserID": AppController.shared.keychain.get(Constants.FACEBOOKID) ?? ""]
+                }else{
+                    scanExpression.filterExpression = "#BusinessEmail = :BusinessEmail AND #password = :password"
+                    scanExpression.expressionAttributeNames = ["#BusinessEmail": "BusinessEmail","#password": "password"]
+                    scanExpression.expressionAttributeValues = [":BusinessEmail": email ?? "" ,":password": pass ?? "", ]
+                }
                 objectMapper.scan(Businesses.self, expression: scanExpression) { (response: AWSDynamoDBPaginatedOutput?, error: Error?) in
                     DispatchQueue.main.async(execute: {
                         if response != nil{

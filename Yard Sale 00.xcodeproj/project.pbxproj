@@ -143,7 +143,7 @@
 		9F844D6A1F76BB5800B20DEE /* LoadingGearView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingGearView.xib; sourceTree = "<group>"; };
 		9F85193C1F71D2C0004E14B0 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = awsconfiguration.json; path = ../../../Downloads/awsconfiguration.json; sourceTree = "<group>"; };
 		9F8519411F7476B0004E14B0 /* NoSqlManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSqlManager.swift; sourceTree = "<group>"; };
-		9F8519431F74797A004E14B0 /* Businesses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Businesses.swift; path = "../../../Downloads/RNApps-integration-lib-aws-my-sample-app-ios-swift-2/AmazonAws/Models/NoSQL/Businesses.swift"; sourceTree = "<group>"; };
+		9F8519431F74797A004E14B0 /* Businesses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Businesses.swift; sourceTree = "<group>"; };
 		9F8D6D66C8259729720689D6 /* Pods_Yard_Sale_00Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yard_Sale_00Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FB2A7391F7FE0EC0020933A /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		9FB2A73B1F7FE6EE0020933A /* LoginAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAlerts.swift; sourceTree = "<group>"; };

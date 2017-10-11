@@ -232,7 +232,9 @@ class Register00: UIViewController,UITextFieldDelegate {
     */
     func slideLabel(labelOne: UILabel,textForLabel: String,leftOrRight: String){
         // lblRegistrationInfo.text = textForLabel;
-        labelOne.textColor = UIColor.black
+        labelOne.textColor = lblBusiessName.textColor
+        labelOne.font = lblBusiessName.font
+
         let yPosition = labelOne.center;
         UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseIn, animations: {
             
