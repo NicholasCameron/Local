@@ -70,13 +70,13 @@ AppController.shared.keychain.get(Constants.EMAILKEY) != nil) || AppController.s
                                 self.performSegue(withIdentifier: "homeVCSegue", sender: nil)
                             }else{
                                 self.view.unlock(statusCode: 500)
-                                LoginAlerts.genericAlert(viewController: self, title: "Invalid Email or Password", message: "We could not find an account linked to that email and password.")
+                                GenericAlerts.genericAlert(viewController: self, title: "Invalid Email or Password", message: "We could not find an account linked to that email and password.")
                             }
                             
                         }else{
                             self.view.unlock(statusCode: 500)
                             print(error)
-                            LoginAlerts.genericAlert(viewController: self, title: "Invalid Email or Password", message: "We could not find an account linked to that email and password.")
+                            GenericAlerts.genericAlert(viewController: self, title: "Invalid Email or Password", message: "We could not find an account linked to that email and password.")
                         }
                     })
                 }

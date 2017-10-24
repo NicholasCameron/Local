@@ -7,21 +7,34 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class HomeViewController: UIViewController {
-
+   
+    
+    @IBOutlet weak var btnMyBusiness: UIButton!
+    @IBOutlet weak var btnRegisterBusiness: UIButton!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //Get all the external data needed
-        self.view.lock(headingText: "loading", loadingText: "test", lowerLoadingText: nil)
-        NoSqlManager.getAllBusinesses { (status,  externalBusinesses) in
-            self.view.unlock(statusCode: 200)
-            if status == 200 && externalBusinesses != nil{
-            AppController.shared.externalBusinessMapObjects = externalBusinesses!
+        //Get all the external data needed if its not already loaded
+        
+        if AppController.shared.externalBusinesses.count == 0 {
+            self.view.lock(headingText: "loading", loadingText: "test", lowerLoadingText: nil)
+            NoSqlManager.getAllBusinesses { (status,  externalBusinesses) in
+                self.view.unlock(statusCode: 200)
+                if status == 200 && externalBusinesses != nil{
+                AppController.shared.externalBusinessMapObjects = externalBusinesses!
+                }
             }
         }
         
+        if AppController.shared.usersBusiness?._activeBusiness == true{
+            btnRegisterBusiness.isHidden = true
+        }else{
+            btnMyBusiness.isHidden = true
+        }
         
     }
 
@@ -36,12 +49,15 @@ class HomeViewController: UIViewController {
             self.performSegue(withIdentifier: "profileSegue", sender: nil)
 
         }else{
-            LoginAlerts.genericAlert(viewController: self, title: "Hold up", message: "You must first login and register a business.")
+            GenericAlerts.genericAlert(viewController: self, title: "Hold up", message: "You must first login and register a business.")
         }
     }
 
     @IBAction func logoutTapped(_ sender: Any) {
-        
+      // var fbManager = FBSDKLoginManager()
+       // fbManager.logOut()
+        AppController.shared.signOut()
+        LoginManager.facebookLogout()
         AppController.shared.signOut()
         }
     /*

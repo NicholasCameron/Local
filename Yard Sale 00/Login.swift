@@ -8,7 +8,10 @@
 
 import UIKit
 import AWSDynamoDB
-class Login: UIViewController{
+import FBSDKLoginKit
+
+
+class Login: UIViewController,FBSDKLoginButtonDelegate{
     
     @IBOutlet weak var btnSignUp: UIButton!
     @IBOutlet weak var lblEmailRequired: UILabel!
@@ -184,13 +187,12 @@ class Login: UIViewController{
                                 self.performSegue(withIdentifier: "homeVCSegue", sender: nil)
                             }else{
                                 self.view.unlock(statusCode: 500)
-                                LoginAlerts.genericAlert(viewController: self, title: "Invalid Email or Password", message: "We could not find an account linked to that email and password.")
+                                GenericAlerts.genericAlert(viewController: self, title: "Invalid Email or Password", message: "We could not find an account linked to that email and password.")
                             }
 
                         }else{
                             self.view.unlock(statusCode: 500)
-                            print(error)
-                            LoginAlerts.genericAlert(viewController: self, title: "Invalid Email or Password", message: "We could not find an account linked to that email and password.")
+                            GenericAlerts.genericAlert(viewController: self, title: "Invalid Email or Password", message: "We could not find an account linked to that email and password.")
                         }
                     })
                 }
@@ -200,42 +202,32 @@ class Login: UIViewController{
         }
     }
 
-    //MARK REGISTERING
-   // @IBAction func btnRegisterClicked(_ sender: Any) {
-        
-//        if  (txtEmail.text?.isEmail() == false){
-//            
-//            viewEmail.backgroundColor = UIColor(red: 216, green: 41, blue: 47)
-//            lblEmailRequired.isHidden = false
-//        }
-//            
-//        else if (txtPassword.text?.characters.count)! <= 8{
-//            viewPassword.backgroundColor = UIColor(red: 216, green: 41, blue: 47)
-//            lblPasswordRequired.isHidden = false
-//        }else{
-//            self.view.lock(headingText: nil, loadingText: "Registering", lowerLoadingText: nil)
-//       
-//            AppController.shared.usersBusiness?._password = self.txtPassword.text!
-//            AppController.shared.usersBusiness?._businessEmail = self.txtEmail.text!
-//            
-//            NoSqlManager.saveBusiness(businessName:nil, businessCategory: nil, businessDescription: nil, businessEmail: txtEmail.text, businessImage: nil, businessLatidude: nil, businessLongitude: nil, businessPhone: nil, businessWebsite: nil, mondayHours: nil, tuesdayHours: nil, wednesdayHours: nil, thusdayHours: nil, fridayHours: nil, saturdayHours: nil, sundayHours: nil, isBusinessActive: false, firstName: AppController.shared.usersBusiness?._firstName,lastName:AppController.shared.usersBusiness?._lastName,password:txtPassword.text, completion: { (status) in
-//                DispatchQueue.main.async {
-//                    AppController.shared.usersBusiness?._activeBusiness = true
-//                    AppController.shared.isCustomLogin = true
-//    
-//                self.view.unlock(statusCode: 200)
-//                }
-//                LoginAlerts.genericAlert(viewController: self, title: "Congradulations", message: "You are registered")
-//
-//                print(status)
-//            })
-//        }
-//        
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         
         
-//    }
+    }
     
     
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        
+        if result.token.userID != nil{
+            AppController.shared.facebookID = (result?.token.userID!)!
+            LoginManager.getFBUserData { (status) in
+                if status == 200{
+                    AppController.shared.isloggedInWithFacebook = true
+                    //HAVE TO GET FB ID AND STORE IT.
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "homeVCSegue", sender: nil)
+                    }
+                }else{
+                    GenericAlerts.genericAlert(viewController: self, title: "Login Error", message: "Something went wrong..FUCK")
+                }
+
+            }
+        }
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

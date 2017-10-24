@@ -31,7 +31,6 @@
 		6D9DDE561D6E61AB0089C7E8 /* Yard_Sale_00Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DDE551D6E61AB0089C7E8 /* Yard_Sale_00Tests.swift */; };
 		6D9DDE611D6E61AB0089C7E8 /* Yard_Sale_00UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DDE601D6E61AB0089C7E8 /* Yard_Sale_00UITests.swift */; };
 		6DB4148B1EB4EFA700067EE7 /* GetLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB4148A1EB4EFA700067EE7 /* GetLocation.swift */; };
-		6DB4148D1EB4EFF700067EE7 /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB4148C1EB4EFF700067EE7 /* MapTableViewCell.swift */; };
 		6DDD8BD01E95BC0F0039844B /* collectionViewCellRecommendation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDD8BCF1E95BC0F0039844B /* collectionViewCellRecommendation.xib */; };
 		6DDD8BD21E95BC7C0039844B /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDD8BD11E95BC7C0039844B /* RecommendCollectionViewCell.swift */; };
 		6DDD8BD41E991BDA0039844B /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDD8BD31E991BDA0039844B /* DescriptionViewController.swift */; };
@@ -54,6 +53,12 @@
 		9FB2A7411F830B0E0020933A /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2A7401F830B0E0020933A /* RegisterUserViewController.swift */; };
 		9FB2A7441F8704390020933A /* CustomLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2A7431F8704390020933A /* CustomLaunchViewController.swift */; };
 		9FB2A7461F870C560020933A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2A7451F870C560020933A /* Constants.swift */; };
+		9FB2A74C1F92B42F0020933A /* EditBasicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2A74B1F92B42F0020933A /* EditBasicInfoViewController.swift */; };
+		9FB2A74E1F92B4400020933A /* EditLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2A74D1F92B4400020933A /* EditLocationViewController.swift */; };
+		9FB2A7501F92B44D0020933A /* EditHoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2A74F1F92B44D0020933A /* EditHoursViewController.swift */; };
+		9FB2A7521F93CDCE0020933A /* GenericAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2A7511F93CDCE0020933A /* GenericAlerts.swift */; };
+		9FC254651F9E9F0C00C6D362 /* MapCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC254641F9E9F0C00C6D362 /* MapCellTableViewCell.swift */; };
+		9FC254671F9E9F1700C6D362 /* MapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FC254661F9E9F1700C6D362 /* MapCell.xib */; };
 		B7BDF9E8C89DC8160BC48B39 /* Pods_Yard_Sale_00.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDBEB7C1DE9A0AFCB3A26E6 /* Pods_Yard_Sale_00.framework */; };
 		C082F1DDA8B32C7604BCB18D /* Pods_Yard_Sale_00Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8D6D66C8259729720689D6 /* Pods_Yard_Sale_00Tests.framework */; };
 		D1BFFBCDD6A3929CD4463A90 /* Pods_Yard_Sale_00UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733B50F5EFF00FB0ADEE7CA7 /* Pods_Yard_Sale_00UITests.framework */; };
@@ -122,7 +127,6 @@
 		6D9DDE601D6E61AB0089C7E8 /* Yard_Sale_00UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yard_Sale_00UITests.swift; sourceTree = "<group>"; };
 		6D9DDE621D6E61AB0089C7E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DB4148A1EB4EFA700067EE7 /* GetLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetLocation.swift; sourceTree = "<group>"; };
-		6DB4148C1EB4EFF700067EE7 /* MapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
 		6DDD8BCF1E95BC0F0039844B /* collectionViewCellRecommendation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = collectionViewCellRecommendation.xib; sourceTree = "<group>"; };
 		6DDD8BD11E95BC7C0039844B /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 		6DDD8BD31E991BDA0039844B /* DescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +155,12 @@
 		9FB2A7401F830B0E0020933A /* RegisterUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
 		9FB2A7431F8704390020933A /* CustomLaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLaunchViewController.swift; sourceTree = "<group>"; };
 		9FB2A7451F870C560020933A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9FB2A74B1F92B42F0020933A /* EditBasicInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBasicInfoViewController.swift; sourceTree = "<group>"; };
+		9FB2A74D1F92B4400020933A /* EditLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditLocationViewController.swift; sourceTree = "<group>"; };
+		9FB2A74F1F92B44D0020933A /* EditHoursViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHoursViewController.swift; sourceTree = "<group>"; };
+		9FB2A7511F93CDCE0020933A /* GenericAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericAlerts.swift; sourceTree = "<group>"; };
+		9FC254641F9E9F0C00C6D362 /* MapCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCellTableViewCell.swift; sourceTree = "<group>"; };
+		9FC254661F9E9F1700C6D362 /* MapCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapCell.xib; sourceTree = "<group>"; };
 		FA51ED14BF35366F42310635 /* Pods-Yard Sale 00.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yard Sale 00.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yard Sale 00/Pods-Yard Sale 00.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -236,8 +246,8 @@
 		6D82C9971E5B515D001ED334 /* MapHomeSearch */ = {
 			isa = PBXGroup;
 			children = (
+				9FC254631F9E9EF300C6D362 /* CustomCell */,
 				6D85C63F1DF0F4B7009632EE /* GeoticationsViewController.swift */,
-				6DB4148C1EB4EFF700067EE7 /* MapTableViewCell.swift */,
 			);
 			name = MapHomeSearch;
 			sourceTree = "<group>";
@@ -254,7 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				6DDD8BCE1E95BBF00039844B /* RecommendationPlaces */,
-				6DCAD2141E8B204900DF9282 /* profile */,
+				6DCAD2141E8B204900DF9282 /* Profile */,
 				6D82C9971E5B515D001ED334 /* MapHomeSearch */,
 				6D85C6431DF63C9A009632EE /* LocoHome.swift */,
 				6D82C99E1E6381BE001ED334 /* HomeViewController.swift */,
@@ -341,12 +351,13 @@
 			path = "Yard Sale 00UITests";
 			sourceTree = "<group>";
 		};
-		6DCAD2141E8B204900DF9282 /* profile */ = {
+		6DCAD2141E8B204900DF9282 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				9FB2A7471F92B3F70020933A /* EditProfile */,
 				6D9AC13B1E7224D200C749B8 /* ProfileViewController.swift */,
 			);
-			name = profile;
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		6DDD8BCE1E95BBF00039844B /* RecommendationPlaces */ = {
@@ -420,6 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				9FB2A73B1F7FE6EE0020933A /* LoginAlerts.swift */,
+				9FB2A7511F93CDCE0020933A /* GenericAlerts.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -464,6 +476,49 @@
 				9FB2A7431F8704390020933A /* CustomLaunchViewController.swift */,
 			);
 			name = CustomLaunchScreen;
+			sourceTree = "<group>";
+		};
+		9FB2A7471F92B3F70020933A /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				9FB2A74A1F92B40D0020933A /* Basic Info */,
+				9FB2A7491F92B4060020933A /* Location */,
+				9FB2A7481F92B3FF0020933A /* Hours */,
+			);
+			name = EditProfile;
+			sourceTree = "<group>";
+		};
+		9FB2A7481F92B3FF0020933A /* Hours */ = {
+			isa = PBXGroup;
+			children = (
+				9FB2A74F1F92B44D0020933A /* EditHoursViewController.swift */,
+			);
+			name = Hours;
+			sourceTree = "<group>";
+		};
+		9FB2A7491F92B4060020933A /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				9FB2A74D1F92B4400020933A /* EditLocationViewController.swift */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+		9FB2A74A1F92B40D0020933A /* Basic Info */ = {
+			isa = PBXGroup;
+			children = (
+				9FB2A74B1F92B42F0020933A /* EditBasicInfoViewController.swift */,
+			);
+			name = "Basic Info";
+			sourceTree = "<group>";
+		};
+		9FC254631F9E9EF300C6D362 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				9FC254641F9E9F0C00C6D362 /* MapCellTableViewCell.swift */,
+				9FC254661F9E9F1700C6D362 /* MapCell.xib */,
+			);
+			name = CustomCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -598,6 +653,7 @@
 				6D5296DA1F3A81C4006FF803 /* AppStoryBoard.storyboard in Resources */,
 				9F31DBE51DC025740092BD7A /* DataManagerViewController.xib in Resources */,
 				6D19F0CA1DDD124800D3CA10 /* Main.storyboard in Resources */,
+				9FC254671F9E9F1700C6D362 /* MapCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,6 +821,8 @@
 				6D85C6411DF0F4B7009632EE /* AddGeotification.swift in Sources */,
 				6D9DDE401D6E61AB0089C7E8 /* ViewController.swift in Sources */,
 				9F31DBE81DC02B690092BD7A /* Register01.swift in Sources */,
+				9FB2A74C1F92B42F0020933A /* EditBasicInfoViewController.swift in Sources */,
+				9FB2A74E1F92B4400020933A /* EditLocationViewController.swift in Sources */,
 				6D2C0BFA1E8F401C00FA0FA2 /* Profile.swift in Sources */,
 				6D4812311DD9300F00EAB50D /* ViewBackground.swift in Sources */,
 				9F844D691F76BB4900B20DEE /* LoadingGearView.swift in Sources */,
@@ -780,6 +838,7 @@
 				6DE19F801E51382700A3E815 /* RecommendationViewController.swift in Sources */,
 				9FB2A73E1F8138560020933A /* StringExtensions.swift in Sources */,
 				6D8F53451DB5A4BD004FA4FD /* Login.swift in Sources */,
+				9FB2A7501F92B44D0020933A /* EditHoursViewController.swift in Sources */,
 				9F8519421F7476B0004E14B0 /* NoSqlManager.swift in Sources */,
 				6D9DDE461D6E61AB0089C7E8 /* Yard_Sale_00.xcdatamodeld in Sources */,
 				9FB2A73A1F7FE0EC0020933A /* AppController.swift in Sources */,
@@ -787,12 +846,13 @@
 				6D85C6441DF63C9A009632EE /* LocoHome.swift in Sources */,
 				9F31DBE41DC025740092BD7A /* DataManagerViewController.swift in Sources */,
 				6D9DDE3E1D6E61AB0089C7E8 /* AppDelegate.swift in Sources */,
-				6DB4148D1EB4EFF700067EE7 /* MapTableViewCell.swift in Sources */,
 				9F8519441F74797A004E14B0 /* Businesses.swift in Sources */,
 				6DE19F821E51383500A3E815 /* RecommendationTableViewCell.swift in Sources */,
 				6D3DC70E1DE254CA00714F0B /* BusinessInformationViewController.swift in Sources */,
 				6D8ACC661E49435200475ED8 /* CoreDataManager.swift in Sources */,
 				6D8ACC631E38291600475ED8 /* QuickLocoViewController.swift in Sources */,
+				9FC254651F9E9F0C00C6D362 /* MapCellTableViewCell.swift in Sources */,
+				9FB2A7521F93CDCE0020933A /* GenericAlerts.swift in Sources */,
 				9FB2A73C1F7FE6EE0020933A /* LoginAlerts.swift in Sources */,
 				6DE19F851E53D4B700A3E815 /* NavigationBar.swift in Sources */,
 				9FB2A7461F870C560020933A /* Constants.swift in Sources */,

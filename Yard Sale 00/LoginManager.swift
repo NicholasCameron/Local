@@ -64,7 +64,7 @@ class LoginManager: NSObject {
                     
                     scanExpression.filterExpression = "#FacebookUserID = :FacebookUserID"
                     scanExpression.expressionAttributeNames = ["#FacebookUserID": "FacebookUserID"]
-                    scanExpression.expressionAttributeValues = [":FacebookUserID": AppController.shared.usersBusiness?._facebookUserID ?? "", ]
+                    scanExpression.expressionAttributeValues = [":FacebookUserID": AppController.shared.facebookID , ]
                     
                     objectMapper.scan(Businesses.self, expression: scanExpression) { (response: AWSDynamoDBPaginatedOutput?, error: Error?) in
                     
@@ -77,8 +77,6 @@ class LoginManager: NSObject {
 
                                 }
                             }
-                            
-                            
                         }else{
                            
                            //If there isn't an account then login if there is an account get it
@@ -98,17 +96,12 @@ class LoginManager: NSObject {
                         }
                         
                     }
-                    
-                        
-                   
-                    
-                    
                 }
             })
         }
     }
         
-    func facebookLogout(){
+   class func facebookLogout(){
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         fbLoginManager.logOut()
     }

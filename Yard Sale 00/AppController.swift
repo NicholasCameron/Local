@@ -34,6 +34,8 @@ class AppController: NSObject {
     let lonDelta:CLLocationDegrees = 5.05
     var onOrOff = Bool()
     var center = "";
+    var facebookID = String()
+    
     var DataManager = CoreDataManager()
     
     func isLoggedIn()->(Bool,LoginType?){
@@ -53,6 +55,7 @@ class AppController: NSObject {
         
         keychain.delete(Constants.EMAILKEY)
         keychain.delete(Constants.PASSWORDKEY)
+        keychain.delete(Constants.FACEBOOKID)
         self.isloggedInWithFacebook = false
         self.isCustomLogin  = false
         self.usersBusiness = nil

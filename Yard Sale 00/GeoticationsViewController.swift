@@ -92,6 +92,8 @@ var locationManager = CLLocationManager()
         suggestionTable.dataSource = self
         suggestionTable.delegate = self
         
+        let nib = UINib(nibName: "MapCell", bundle: nil)
+        suggestionTable.register(nib, forCellReuseIdentifier: "MapCellTableViewCell")
         
     
         
@@ -117,7 +119,7 @@ var locationManager = CLLocationManager()
                         location.longitude = Double(u._businessLongitude!)!
                        let t = LocalBusinessMapObject(coordinate: location, businessName: u._businessName!, businessCategory: u._businessCategory!)
                         self.add(business: t)
-                        self.businessDetailsArray.append(BusinessDetail(businessName: u._businessName!, businessDescription: u.description, location: location))
+                        self.businessDetailsArray.append(BusinessDetail(businessName: u._businessName!, businessDescription: u._businessCategory!, location: location))
                         self.view.unlock(statusCode: 200)
                         
                 }
@@ -189,8 +191,11 @@ var locationManager = CLLocationManager()
 
     }
     @IBAction func searchBtnClicked(_ sender: Any) {
-      checkIfSearchIsActive()
-        
+    checkIfSearchIsActive()
+    searchBar.becomeFirstResponder()
+    shouldShowSearchResults = false
+    suggestionTable.reloadData()
+
         
     }
     
@@ -349,25 +354,24 @@ var locationManager = CLLocationManager()
             return businessDetailsFilteredArray.count
         }
         else {
-            
             return businessDetailsArray.count
         }
     }
     
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65
+    }
     
     @available(iOS 2.0, *)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = suggestionTable.dequeueReusableCell(withIdentifier: "mapCell")! as! MapTableViewCell
+        let cell = suggestionTable.dequeueReusableCell(withIdentifier: "MapCellTableViewCell")! as! MapCellTableViewCell
         cell.sizeToFit();
         
-        
-
-        
         if shouldShowSearchResults && businessDetailsFilteredArray.count > 0 {
-            cell.businessTitle?.text = businessDetailsFilteredArray[indexPath.row].businessName
+            cell.lblTitle.text = businessDetailsFilteredArray[indexPath.row].businessName
+            cell.lblDescription.text = businessDetailsArray[indexPath.row].businessDescription
 
             let yourPoint = CLLocation(latitude: AppController.shared.usersLocation.latitude, longitude: AppController.shared.usersLocation.longitude)
             
@@ -384,7 +388,8 @@ var locationManager = CLLocationManager()
         }else {
             
         
-            cell.businessTitle?.text = businessDetailsArray[indexPath.row].businessName
+            cell.lblTitle?.text = businessDetailsArray[indexPath.row].businessName
+            cell.lblDescription.text = businessDetailsArray[indexPath.row].businessDescription
          //   cell.detailTextLabel?.text = businessDetailsArray[indexPath.row].businessDescription
             
             let yourPoint = CLLocation(latitude: AppController.shared.usersLocation.latitude, longitude: AppController.shared.usersLocation.longitude)
@@ -411,6 +416,24 @@ var locationManager = CLLocationManager()
     {
         return 1;
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var arrayOfBusinesses = [BusinessDetail]()
+        if shouldShowSearchResults{
+            arrayOfBusinesses = businessDetailsFilteredArray
+        }else{
+            arrayOfBusinesses = businessDetailsArray
+        }
+        let category = arrayOfBusinesses[indexPath.row].businessDescription
+        print(category)
+
+    //filter
+    
+    
+    }
+    
+    //MARK: FILTER
+    
     
     
 

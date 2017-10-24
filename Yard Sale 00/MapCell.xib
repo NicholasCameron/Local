@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+        </array>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Thin</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MapCellTableViewCell" rowHeight="86" id="ZCW-uI-1Rp" customClass="MapCellTableViewCell" customModule="Yard_Sale_00" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="497" height="65"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZCW-uI-1Rp" id="8ad-Nk-wpg">
+                <rect key="frame" x="0.0" y="0.0" width="497" height="64.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gf3-aN-BUS">
+                        <rect key="frame" x="8" y="8" width="355" height="21"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5g-ny-ZzR">
+                        <rect key="frame" x="8" y="37" width="355" height="18"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16KM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67B-aP-1MQ">
+                        <rect key="frame" x="389" y="22" width="100" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="3rs-IG-Gif"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="gf3-aN-BUS" firstAttribute="leading" secondItem="o5g-ny-ZzR" secondAttribute="leading" id="20t-jc-TOq"/>
+                    <constraint firstItem="67B-aP-1MQ" firstAttribute="trailing" secondItem="8ad-Nk-wpg" secondAttribute="trailingMargin" id="G73-FF-NwQ"/>
+                    <constraint firstItem="gf3-aN-BUS" firstAttribute="top" secondItem="8ad-Nk-wpg" secondAttribute="topMargin" id="I69-FR-164"/>
+                    <constraint firstItem="67B-aP-1MQ" firstAttribute="top" secondItem="8ad-Nk-wpg" secondAttribute="topMargin" constant="14" id="SR8-7M-Sde"/>
+                    <constraint firstItem="67B-aP-1MQ" firstAttribute="leading" secondItem="gf3-aN-BUS" secondAttribute="trailing" constant="26" id="WUn-nY-9tA"/>
+                    <constraint firstItem="o5g-ny-ZzR" firstAttribute="top" secondItem="gf3-aN-BUS" secondAttribute="bottom" constant="8" symbolic="YES" id="am5-kh-rqw"/>
+                    <constraint firstItem="gf3-aN-BUS" firstAttribute="trailing" secondItem="o5g-ny-ZzR" secondAttribute="trailing" id="bSo-Zx-YIK"/>
+                    <constraint firstItem="gf3-aN-BUS" firstAttribute="leading" secondItem="8ad-Nk-wpg" secondAttribute="leadingMargin" id="e1f-4z-YXp"/>
+                    <constraint firstItem="67B-aP-1MQ" firstAttribute="centerY" secondItem="8ad-Nk-wpg" secondAttribute="centerY" id="j95-i3-yai"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lblDescription" destination="o5g-ny-ZzR" id="1Nu-pB-s2r"/>
+                <outlet property="lblDistance" destination="67B-aP-1MQ" id="g2i-7Q-LBa"/>
+                <outlet property="lblTitle" destination="gf3-aN-BUS" id="chv-98-bQm"/>
+            </connections>
+            <point key="canvasLocation" x="7.5" y="-47.5"/>
+        </tableViewCell>
+    </objects>
+</document>

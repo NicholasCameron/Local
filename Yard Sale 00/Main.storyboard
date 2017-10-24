@@ -20,7 +20,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Sign In-->
+        <!--Delegate-->
         <scene sceneID="sA4-cg-Urb">
             <objects>
                 <viewController restorationIdentifier="signInStoryBoard" storyboardIdentifier="signInStoryBoard" id="FyH-Nb-5hk" customClass="Login" customModule="Yard_Sale_00" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,6 +46,9 @@
                                         <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="FyH-Nb-5hk" id="QuK-hx-YRM"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rnP-1q-AJE">
                                 <rect key="frame" x="32" y="457" width="288" height="24"/>
@@ -81,7 +84,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bky-2y-dgK">
-                                <rect key="frame" x="31" y="385" width="324" height="24"/>
+                                <rect key="frame" x="31" y="341" width="324" height="68"/>
                                 <color key="textColor" red="0.0" green="0.1107608194" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
@@ -109,7 +112,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.72000002861022949" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4D-ao-gUI">
-                                <rect key="frame" x="32" y="383" width="323" height="23"/>
+                                <rect key="frame" x="32" y="339" width="323" height="67"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -130,7 +133,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ri5-kR-qTm">
-                                <rect key="frame" x="32" y="359" width="196" height="21"/>
+                                <rect key="frame" x="32" y="315" width="196" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="DF8-Zn-ETQ"/>
                                 </constraints>
@@ -1926,7 +1929,6 @@
         <!--Register-->
         <scene sceneID="5nj-QP-Erb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YKn-bn-SOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ExL-19-TtL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Register" id="YM1-Hw-5Q2"/>
@@ -1939,6 +1941,7 @@
                         <segue destination="tfY-0V-5gC" kind="relationship" relationship="rootViewController" id="gqv-yW-Kfc"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YKn-bn-SOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="381.5" y="579.5"/>
         </scene>
@@ -1956,12 +1959,12 @@
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="oxI-Wr-iui"/>
-        <segue reference="kLL-ji-MoB"/>
         <segue reference="Wdb-87-aJa"/>
-        <segue reference="03r-Q6-Tqh"/>
-        <segue reference="ntV-oJ-V00"/>
+        <segue reference="kLL-ji-MoB"/>
+        <segue reference="LxN-T0-QB3"/>
+        <segue reference="vhS-4G-sl0"/>
         <segue reference="Tbd-k1-aFY"/>
+        <segue reference="ntV-oJ-V00"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.37081284813308268" green="0.64544535196379782" blue="0.75491181930693063" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -14,7 +14,24 @@ import CoreLocation
 class NoSqlManager: NSObject {
 
     
-    
+    class func updateBusiness(business:Businesses,completion: @escaping (_ statusCode: Int) -> Void ) {
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        
+        
+              //Save a new item
+        dynamoDbObjectMapper.save(business, completionHandler: {
+            (error: Error?) -> Void in
+            
+            if let error = error {
+                print("Amazon DynamoDB Save Error: \(error)")
+                completion(500)
+                return
+            }
+            completion(200)
+            return
+        })
+    }
+
     
     class func saveBusiness(businessName:String?,businessCategory:String?,businessDescription:String?,businessEmail:String?,businessImage:Data?,businessLatidude:String?,businessLongitude:String?,businessPhone:String?,businessWebsite:String?,mondayHours:String?,tuesdayHours:String?,wednesdayHours:String?,thusdayHours:String?,fridayHours:String?,saturdayHours:String?,sundayHours:String?,isBusinessActive:Bool,firstName:String?,lastName:String?,password:String?,completion: @escaping (_ statusCode: Int) -> Void ) {
         
@@ -133,12 +150,48 @@ class NoSqlManager: NSObject {
 
                 }
         }
-        
-
-        
-        
     }
     
+    
+    class func filterByCategory(category:String,completion: @escaping (_ statusCode: Int,_ businesses:[Businesses]?) -> Void){
+        
+        var businessDetailsArray = [LocalBusinessMapObject]()
+        
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        
+        //Create data object using data models you downloaded from Mobile Hub
+        var _: Businesses = Businesses();
+        
+        
+        
+        let scanExpression = AWSDynamoDBScanExpression()
+        scanExpression.limit = 20
+        
+        scanExpression.filterExpression = "#BusinessCategory = :BusinessCategory"
+        scanExpression.expressionAttributeNames = ["#BusinessCategory": "BusinessCategory"]
+        scanExpression.expressionAttributeValues = [":BusinessCategory": category, ]
+        
+        
+        
+        let t = AWSDynamoDBObjectMapperConfiguration()
+        
+        dynamoDbObjectMapper.scan(Businesses.self, expression: scanExpression, configuration: t) { (businessPager, error) in
+      
+        var businesses = [Businesses]()
+        if businessPager?.items != nil{
+            for pulledBusiness in (businessPager?.items)!{
+                if let pulledBusiness = pulledBusiness as? Businesses{
+                    businesses.append(pulledBusiness)
+                }
+            }
+        completion(200,businesses)
+        return
+        }else{
+        completion(500,nil)
+        
+        }
+        }
+    }
     
     
 }

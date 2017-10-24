@@ -1,18 +1,18 @@
 //
-//  MapTableViewCell.swift
+//  MapCellTableViewCell.swift
 //  Yard Sale 00
 //
-//  Created by Nick J Cameron on 2017-02-20.
+//  Created by Nicholas Cameron on 2017-10-23.
 //  Copyright © 2017 Nick J Cameron. All rights reserved.
 //
 
 import UIKit
 
-class MapTableViewCell: UITableViewCell {
+class MapCellTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblDescription: UILabel!
     @IBOutlet weak var lblDistance: UILabel!
-    @IBOutlet weak var businessTitle: UILabel!
-    @IBOutlet weak var typeImage: UIImageView!
     
     
     override func awakeFromNib() {

@@ -11,21 +11,21 @@ import UIKit
 class LoginAlerts: NSObject {
 
     
-    class func genericAlert(viewController:UIViewController,title:String, message:String){
-        
-        let refreshAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        
-        
-        
-        refreshAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
-            //  print("Handle Ok logic here")
-            
-        }))
-        
-        DispatchQueue.main.async {
-            viewController.present(refreshAlert, animated: true, completion: nil)
-        }
-    }
+//    class func genericAlert(viewController:UIViewController,title:String, message:String){
+//        
+//        let refreshAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+//        
+//        
+//        
+//        refreshAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+//            //  print("Handle Ok logic here")
+//            
+//        }))
+//        
+//        DispatchQueue.main.async {
+//            viewController.present(refreshAlert, animated: true, completion: nil)
+//        }
+//    }
 
     
     

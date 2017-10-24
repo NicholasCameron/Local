@@ -261,10 +261,7 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
     {
         //search table
         addressSearchBar.text = ""
-        
         btnAddressFiltered.isHidden = false;
-        
-        
     }
     
     
@@ -296,18 +293,11 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
                     self.zoomLongitude = long
 
                 }
-                
-                
             }
-
         }
-        
     }
     
     @IBAction func btnZoomLocationClicked(_ sender: Any) {
-  
-    
-        
         
         let mapLatitude = zoomLatitude
         let mapLongitude = zoomLongitude
@@ -370,8 +360,6 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
         })
         return locations
     }
-    
-    
     
     @available(iOS 2.0, *)
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) // called when cancel button pressed

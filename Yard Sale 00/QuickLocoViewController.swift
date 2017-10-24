@@ -24,7 +24,7 @@ struct BusinessDetail{
 
 class QuickLocoViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var imageNames = ["coffee","yoga","restaurant","pizza","hiking","beer"]
+    var imageNames = ["CoffeeShop","yoga","restaurant","pizza","hiking","beer"]
 
     @IBOutlet weak var collectionImage: UIImageView!
 
@@ -83,6 +83,32 @@ class QuickLocoViewController: UIViewController,UICollectionViewDelegate, UIColl
         return imageNames.count
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.view.lock(headingText: "test", loadingText: "test", lowerLoadingText: "test")
+        NoSqlManager.filterByCategory(category: imageNames[indexPath.row]) { (status, filteredBusinesses) in
+            DispatchQueue.main.async {
+                if status == 200{
+           
+                    self.view.unlock(statusCode: 500)
+  
+                    for view in (self.tabBarController?.viewControllers)!{
+                        if let view = view as? RecommendationViewController{
+                            view.filteredBusinesses =  filteredBusinesses
+                            view.isFiltered = true
+                            self.tabBarController?.selectedIndex = 3
+                        }
+                    }
+                    
+               
+
+                }else{
+                    self.view.unlock(statusCode: 500)
+                }
+            }
+        }
+    
+    }
+    
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     @available(iOS 6.0, *)
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
@@ -91,7 +117,6 @@ class QuickLocoViewController: UIViewController,UICollectionViewDelegate, UIColl
     
         
         cell.recommendImage.image = UIImage(named:imageNames[indexPath.row])
-        
         
         return cell
         

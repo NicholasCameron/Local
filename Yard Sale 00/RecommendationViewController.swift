@@ -18,30 +18,16 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
     var previousRow = false
     var previousCell:RecommendationTableViewCell?
     var cellIndex = Int()
-    
+    var filteredBusinesses:[Businesses]?
+    var isFiltered = Bool()
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        //Add BEVER HEADING
-        
-//        let frame = CGRect(x: 0, y: 0, width: 60, height: 60)
-//        print("frame \(frame)")
-//        let beaverImage = UIImageView(frame: frame)
-//        beaverImage.image = UIImage(named: "beaver")
-//        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
-//        titleView.addSubview(beaverImage)
-//        
-//        self.navigationItem.titleView = titleView
-//        
-        
-        
-
-        
-        // Do any additional setup after loading the view.
-        
         recommendationTableView.delegate = self
         recommendationTableView.dataSource = self
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,40 +39,42 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
    
     
     
+   override func viewWillAppear(_ animated: Bool) {
+    if filteredBusinesses != nil{
+        isFiltered = true
+        recommendationTableView.reloadData()
+    }
+    }
     
-    
-    /////////////   TABLE VIEW DELEGATES     ////////////////
-    
-    //MARK: -Table View Delegates
-    
-    
-    
-    
-    /////////////   TABLE VIEW DELEGATES     ////////////////
-    
-    //MARK: -Table View Delegates
-    
-    
+    //MARK:table view
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        
+        if !isFiltered{
         return AppController.shared.externalBusinesses.count
+        }else{
+            return (filteredBusinesses?.count)!
+        }
     }
     
     
     
     @available(iOS 2.0, *)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        
-        
+        var businesses = [Businesses]()
+        if !isFiltered{
+            businesses = AppController.shared.externalBusinesses
+        }else{
+            businesses = filteredBusinesses!
+        }
+
         
         let cellIdentifier = "recommendationCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RecommendationTableViewCell
-        let headerImage = UIImage(data: AppController.shared.externalBusinesses[indexPath.row]._businessImage!)
+        let headerImage = UIImage(data: businesses[indexPath.row]._businessImage!)
         cell.imageInCell.image = headerImage
-        cell.lblBuinessTitle.text = AppController.shared.externalBusinesses[indexPath.row]._businessName?.capitalized
-        cell.lblBusinessDescription.text = AppController.shared.externalBusinesses[indexPath.row]._businessDescription
+        cell.lblBuinessTitle.text = businesses[indexPath.row]._businessName?.capitalized
+        cell.lblBusinessDescription.text = businesses[indexPath.row]._businessDescription
         cell.lblBusinessDescription.sizeToFit()
         cell.itemIndex = indexPath.row
         cell.delegate = self
@@ -103,7 +91,7 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    cellIndex = indexPath.row
+        cellIndex = indexPath.row
         if cellSelected == false{
             cellSelected = true
         }else{
@@ -115,7 +103,6 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
             
             
             if  previousRowSelected == currentRowSelected{
-                
                 previousRow = true
             }
             
@@ -177,15 +164,19 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
     
     func didTapOnItem() {
         
+        var businesses = [Businesses]()
+        if !isFiltered{
+            businesses = AppController.shared.externalBusinesses
+        }else{
+            businesses = filteredBusinesses!
+        }
+        
         let myVC = storyboard?.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
-        
-    _ = AppController.shared.externalBusinesses[cellIndex]._businessName
-        
-     _ = AppController.shared.externalBusinesses[cellIndex]._businessEmail
-        
-        myVC.business =  AppController.shared.externalBusinesses[cellIndex]
-    //    navigationController?.pushViewController(myVC, animated: true)
-        self.showDetailViewController(myVC, sender: nil)
+
+        myVC.business =  businesses[cellIndex]
+
+        self.navigationController?.pushViewController(myVC, animated: true)
+
         
     }
     
