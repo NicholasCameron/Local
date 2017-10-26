@@ -47,6 +47,7 @@
 		9F85193D1F71D2C0004E14B0 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F85193C1F71D2C0004E14B0 /* awsconfiguration.json */; };
 		9F8519421F7476B0004E14B0 /* NoSqlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8519411F7476B0004E14B0 /* NoSqlManager.swift */; };
 		9F8519441F74797A004E14B0 /* Businesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8519431F74797A004E14B0 /* Businesses.swift */; };
+		9F9964F51FA2909F001BEEEF /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9964F41FA2909F001BEEEF /* LocalAuthentication.framework */; };
 		9FB2A73A1F7FE0EC0020933A /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2A7391F7FE0EC0020933A /* AppController.swift */; };
 		9FB2A73C1F7FE6EE0020933A /* LoginAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2A73B1F7FE6EE0020933A /* LoginAlerts.swift */; };
 		9FB2A73E1F8138560020933A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2A73D1F8138560020933A /* StringExtensions.swift */; };
@@ -149,6 +150,7 @@
 		9F8519411F7476B0004E14B0 /* NoSqlManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSqlManager.swift; sourceTree = "<group>"; };
 		9F8519431F74797A004E14B0 /* Businesses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Businesses.swift; sourceTree = "<group>"; };
 		9F8D6D66C8259729720689D6 /* Pods_Yard_Sale_00Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yard_Sale_00Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F9964F41FA2909F001BEEEF /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		9FB2A7391F7FE0EC0020933A /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		9FB2A73B1F7FE6EE0020933A /* LoginAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAlerts.swift; sourceTree = "<group>"; };
 		9FB2A73D1F8138560020933A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F9964F51FA2909F001BEEEF /* LocalAuthentication.framework in Frameworks */,
 				B7BDF9E8C89DC8160BC48B39 /* Pods_Yard_Sale_00.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +198,7 @@
 		2F7FD92BEABD0C601AA14D77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F9964F41FA2909F001BEEEF /* LocalAuthentication.framework */,
 				6EDBEB7C1DE9A0AFCB3A26E6 /* Pods_Yard_Sale_00.framework */,
 				9F8D6D66C8259729720689D6 /* Pods_Yard_Sale_00Tests.framework */,
 				733B50F5EFF00FB0ADEE7CA7 /* Pods_Yard_Sale_00UITests.framework */,

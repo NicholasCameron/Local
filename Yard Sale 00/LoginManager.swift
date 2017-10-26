@@ -10,7 +10,7 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKShareKit
 import AWSDynamoDB
-
+import LocalAuthentication
 class LoginManager: NSObject {
 
     
@@ -105,4 +105,9 @@ class LoginManager: NSObject {
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         fbLoginManager.logOut()
     }
+    
+    
+    
+ 
+    
 }

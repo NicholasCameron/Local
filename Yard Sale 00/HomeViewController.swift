@@ -12,14 +12,22 @@ import FBSDKLoginKit
 class HomeViewController: UIViewController {
    
     
+    @IBOutlet weak var btnSignOut: UIButton!
     @IBOutlet weak var btnMyBusiness: UIButton!
     @IBOutlet weak var btnRegisterBusiness: UIButton!
    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //Get all the external data needed if its not already loaded
         
+        //set up login/out button
+        if AppController.shared.isLoggedIn().0{
+        }else{
+            btnSignOut.setTitle("Sign In", for: .normal)
+        }
+
+        
+        //Get all the external data needed if its not already loaded
         if AppController.shared.externalBusinesses.count == 0 {
             self.view.lock(headingText: "loading", loadingText: "test", lowerLoadingText: nil)
             NoSqlManager.getAllBusinesses { (status,  externalBusinesses) in
@@ -38,6 +46,11 @@ class HomeViewController: UIViewController {
         
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.topItem?.title = "Home 🍁"
+
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -56,9 +69,16 @@ class HomeViewController: UIViewController {
     @IBAction func logoutTapped(_ sender: Any) {
       // var fbManager = FBSDKLoginManager()
        // fbManager.logOut()
-        AppController.shared.signOut()
-        LoginManager.facebookLogout()
-        AppController.shared.signOut()
+        
+        if AppController.shared.isLoggedIn().0{
+            AppController.shared.signOut()
+            LoginManager.facebookLogout()
+            AppController.shared.signOut()
+        }else{
+            
+        }
+        
+     
         }
     /*
     // MARK: - Navigation

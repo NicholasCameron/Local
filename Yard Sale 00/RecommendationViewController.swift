@@ -41,9 +41,13 @@ class RecommendationViewController: UIViewController, UITableViewDataSource, UIT
     
    override func viewWillAppear(_ animated: Bool) {
     if filteredBusinesses != nil{
+        self.navigationController?.navigationBar.topItem?.title = "Filtered Suggestions"
         isFiltered = true
         recommendationTableView.reloadData()
+    }else{
+    self.navigationController?.navigationBar.topItem?.title = "Suggestions"
     }
+    
     }
     
     //MARK:table view

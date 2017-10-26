@@ -34,8 +34,8 @@ class CustomLaunchViewController: UIViewController {
         
         if ((AppController.shared.keychain.get(Constants.PASSWORDKEY) != nil &&
 AppController.shared.keychain.get(Constants.EMAILKEY) != nil) || AppController.shared.keychain.get(Constants.FACEBOOKID) != nil){
-            let email = AppController.shared.keychain.get(Constants.PASSWORDKEY)
-            let pass = AppController.shared.keychain.get(Constants.EMAILKEY)
+            let pass = AppController.shared.keychain.get(Constants.PASSWORDKEY)
+            let email = AppController.shared.keychain.get(Constants.EMAILKEY)
             DispatchQueue.main.async {
                 self.view.endEditing(true)
                 
@@ -70,13 +70,17 @@ AppController.shared.keychain.get(Constants.EMAILKEY) != nil) || AppController.s
                                 self.performSegue(withIdentifier: "homeVCSegue", sender: nil)
                             }else{
                                 self.view.unlock(statusCode: 500)
-                                GenericAlerts.genericAlert(viewController: self, title: "Invalid Email or Password", message: "We could not find an account linked to that email and password.")
+                                DispatchQueue.main.async {
+                                    self.performSegue(withIdentifier: "customLaunchSegue", sender: nil)
+                                }
                             }
                             
                         }else{
                             self.view.unlock(statusCode: 500)
-                            print(error)
-                            GenericAlerts.genericAlert(viewController: self, title: "Invalid Email or Password", message: "We could not find an account linked to that email and password.")
+                            DispatchQueue.main.async {
+                                self.performSegue(withIdentifier: "customLaunchSegue", sender: nil)
+                            }
+                            
                         }
                     })
                 }

@@ -211,6 +211,7 @@ class Login: UIViewController,FBSDKLoginButtonDelegate{
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         
+        //crash here on cancel
         if result.token.userID != nil{
             AppController.shared.facebookID = (result?.token.userID!)!
             LoginManager.getFBUserData { (status) in

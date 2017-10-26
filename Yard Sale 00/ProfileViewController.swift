@@ -66,12 +66,11 @@ class ProfileViewController: UIViewController {
             if let r  = response as? Businesses{
                 self.business = r
                 DispatchQueue.main.async {
-                 setupView()
+                 self.setupView()
                 }
             }
         }
-        
-        
+    }
         func setupView(){
             DispatchQueue.main.async {
                 self.navigationItem.title = self.business?._businessCategory
@@ -106,7 +105,7 @@ class ProfileViewController: UIViewController {
         
         
         
-    }
+    
     
     
     @IBAction func btnContactClicked(_ sender: Any) {

@@ -24,6 +24,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         self.view.ViewBackground(image:"waterlight")
        // NoSqlManager.saveBusiness()
@@ -40,12 +42,8 @@ class ViewController: UIViewController {
 
     @IBAction func homeBtnTapped(_ sender: Any) {
         
-        if AppController.shared.isLoggedIn().0 {
             self.performSegue(withIdentifier: "homeVC", sender: nil)
-            
-        }else{
-            GenericAlerts.genericAlert(viewController: self, title: "Hold up", message: "Login or register..it only takes a second and you'll stay logged in.")
-        }
+       
     }
     
     @IBAction func registerBtnTapped(_ sender: Any) {

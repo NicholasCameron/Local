@@ -52,6 +52,9 @@ var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         loadAllGeotifications()
 
         searchBar.isHidden = true
@@ -104,7 +107,8 @@ var locationManager = CLLocationManager()
     
     override func viewDidAppear(_ animated: Bool) {
         
-      
+        self.navigationController?.navigationBar.topItem?.title = "Local Map"
+
     }
     
 

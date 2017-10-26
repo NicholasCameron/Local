@@ -102,7 +102,7 @@ class RegisterUserViewController: UIViewController,UITextFieldDelegate {
                     DispatchQueue.main.async {
                     self.view.unlock(statusCode: 200)
                     AppController.shared.keychain.set(self.password, forKey: Constants.PASSWORDKEY)
-                    AppController.shared.keychain.set(self.password, forKey: Constants.EMAILKEY)
+                    AppController.shared.keychain.set(self.emailAddress, forKey: Constants.EMAILKEY)
 
                         
                     self.performSegue(withIdentifier: "homeVC", sender: nil)

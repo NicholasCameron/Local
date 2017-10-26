@@ -34,6 +34,7 @@ class QuickLocoViewController: UIViewController,UICollectionViewDelegate, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         //Define Layout here
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         
@@ -74,7 +75,8 @@ class QuickLocoViewController: UIViewController,UICollectionViewDelegate, UIColl
     
     override func viewDidAppear(_ animated: Bool) {
         
-      
+        self.navigationController?.navigationBar.topItem?.title = "Gardner's Choice"
+
         }
 
     
