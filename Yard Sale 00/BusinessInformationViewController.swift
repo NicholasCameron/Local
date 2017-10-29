@@ -14,10 +14,16 @@ import MapKit
 class BusinessInformationViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
 
     @IBOutlet weak var imageHeader: UIImageView!
+    @IBOutlet weak var stackView: UIStackView!
     
-    @IBOutlet weak var lblBusinessType: UILabel!
-    @IBOutlet weak var lblOwnersName: UILabel!
-    @IBOutlet weak var lblEmail: UILabel!
+    @IBOutlet weak var txtOwnersName: UITextField!
+    @IBOutlet weak var txtPhone: UITextField!
+    @IBOutlet weak var txtAddress: UITextField!
+    @IBOutlet weak var txtCategory: UITextField!
+    @IBOutlet weak var btnDescription: UIButton!
+    @IBOutlet weak var btnEdit: UIBarButtonItem!
+    
+    
     @IBOutlet weak var lblMondayHours: UILabel!
     @IBOutlet weak var lblTuesdayHours: UILabel!
     @IBOutlet weak var lblWednesdayHours: UILabel!
@@ -27,9 +33,8 @@ class BusinessInformationViewController: UIViewController,UIImagePickerControlle
     @IBOutlet weak var lblSundayHours: UILabel!
     
     
-    
-    @IBOutlet weak var lblAddress: UILabel!
-
+    var txtDescriptionView = descriptionView.instanceFromNib()
+var isBeingEdited = Bool()
     
     var x1 = CGFloat()
     var x2 = CGFloat()
@@ -51,24 +56,31 @@ class BusinessInformationViewController: UIViewController,UIImagePickerControlle
         super.viewDidLoad()
 
         
+        //add the view to the stackview but hide it
+        txtDescriptionView.txtView.text = AppController.shared.usersBusiness?._businessDescription
+        self.stackView.addArrangedSubview(txtDescriptionView)
+        txtDescriptionView.txtView.text = AppController.shared.usersBusiness?._businessDescription
+        txtDescriptionView.isHidden = true
+        self.stackView.addArrangedSubview(txtDescriptionView)
+        
         
         imagePicker.delegate = self
         
-
-        lblBusinessType.text = AppController.shared.usersBusiness?._businessCategory;
-        lblOwnersName.text = AppController.shared.usersBusiness?._businessName;
-        lblEmail.text = AppController.shared.usersBusiness?._businessEmail;
-        lblAddress.text = AppController.shared.usersBusiness?._businessAddress;
+        self.navigationController?.navigationBar.topItem?.title = AppController.shared.usersBusiness?._businessName;
+        txtCategory.text = AppController.shared.usersBusiness?._businessCategory;
+        txtOwnersName.text = (AppController.shared.usersBusiness?._firstName)! + " " + (AppController.shared.usersBusiness?._lastName)!
+        btnDescription.setTitle("Edit Description", for: .normal)
+        txtAddress.text = AppController.shared.usersBusiness?._businessAddress;
         
-        x1 = lblBusinessType.center.y;
-        x2 = lblOwnersName.center.y;
-        x3 = lblEmail.center.y;
-        x4 = lblAddress.center.y;
+        x1 = txtCategory.center.y;
+        x2 = txtOwnersName.center.y;
+        x3 = btnDescription.center.y;
+        x4 = txtAddress.center.y;
 
-        lblBusinessType.center.y = 0;
-        lblOwnersName.center.y = 0;
-        lblEmail.center.y = 0;
-        lblAddress.center.y = 0;
+        txtCategory.center.y = 0;
+        txtOwnersName.center.y = 0;
+        btnDescription.center.y = 0;
+        txtAddress.center.y = 0;
         
         
         
@@ -120,6 +132,86 @@ class BusinessInformationViewController: UIViewController,UIImagePickerControlle
 }
     
     
+    func doneBtnTapped(){
+        
+    }
+    
+    
+    //MARK:EDIT MODE
+    
+    
+    @IBAction func btnDescriptionTapped(_ sender: Any) {
+        
+        UIView.animate(withDuration: 0.3) {
+            if !self.isBeingEdited{
+                self.btnDescription.setTitle("Done", for: .normal)
+                self.isBeingEdited = true
+                for view in self.stackView.subviews{
+                    if view == self.txtDescriptionView{
+                        view.isHidden = false
+                        view.alpha = 1
+                    }else{
+                        view.alpha = 0
+                        view.isHidden = true
+                    }
+                }
+           
+                
+            }else{
+                self.btnDescription.setTitle("Edit Description", for: .normal)
+                self.isBeingEdited = false
+                for view in self.stackView.subviews{
+                    if view == self.txtDescriptionView{
+                        view.isHidden = true
+                        view.alpha = 0
+                    }else{
+                        view.alpha = 1
+                        view.isHidden = false
+                    }
+                }
+            }
+       }
+    }
+    
+    
+    @IBAction func editBtnTapped(_ sender: Any) {
+      
+        if btnEdit.title != "Done"{
+            btnEdit.title = "Done"
+            txtOwnersName.borderStyle = .roundedRect
+            txtAddress.borderStyle = .roundedRect
+            btnDescription.backgroundColor = .white
+            txtCategory.borderStyle = .roundedRect
+            txtPhone.borderStyle = .roundedRect
+            txtPhone.isEnabled = true
+            txtAddress.isEnabled = true
+            btnDescription.isEnabled = true
+            txtCategory.isEnabled = true
+            txtOwnersName.isEnabled = true
+        }else{
+            btnEdit.title = "Edit"
+            txtOwnersName.borderStyle = .none
+            txtOwnersName.isEnabled = false
+            txtPhone.isEnabled = false
+            txtAddress.isEnabled = false
+            btnDescription.isEnabled = false
+            txtCategory.isEnabled = false
+            txtOwnersName.isEnabled = false
+            txtAddress.borderStyle = .none
+            btnDescription.backgroundColor = .clear
+            txtCategory.borderStyle = .none
+            txtPhone.borderStyle = .none
+            
+            
+        }
+        
+    
+    }
+    
+    
+    
+    
+    
     
     @available(iOS 2.0, *)
      public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
@@ -143,10 +235,10 @@ class BusinessInformationViewController: UIViewController,UIImagePickerControlle
         
         UIView.animate(withDuration: 2.0, delay:0.1,usingSpringWithDamping:0.3,initialSpringVelocity:0.0,options:.curveEaseIn, animations: {
             
-            self.lblBusinessType.center.y = self.x1;
-          self.lblOwnersName.center.y = self.x2
-         self.lblEmail.center.y = self.x3
-            self.lblAddress.center.y = self.x4
+            self.txtCategory.center.y = self.x1;
+          self.txtOwnersName.center.y = self.x2
+         self.btnDescription.center.y = self.x3
+            self.txtAddress.center.y = self.x4
 
         },completion:nil)
         

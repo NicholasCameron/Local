@@ -44,6 +44,14 @@ class HomeViewController: UIViewController {
             btnMyBusiness.isHidden = true
         }
         
+        if AppController.shared.isLoggedIn().0{
+            btnRegisterBusiness.isHidden = false
+        }else{
+            btnRegisterBusiness.isHidden = true
+        }
+        
+        
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {

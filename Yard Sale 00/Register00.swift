@@ -33,8 +33,8 @@ class Register00: UIViewController,UITextFieldDelegate {
    //this is the counter to see when to switch to the next view
   //to continue registering..
  //when the second input of data is entered and confirmed it will switch aka counter = 2..012
-    
-    var counter = 0;
+   //Change the counter to 0 if you wanna add another field
+    var counter = 1;
     
     @IBOutlet weak var smallCloud: UIImageView!
     var r = CGRect();
@@ -43,9 +43,7 @@ class Register00: UIViewController,UITextFieldDelegate {
         
         
         
-        
-        //WARNING! WARNING! WARNING!
-        //Will need to restrict KEY on LAUNCH
+
         super.viewDidLoad()
         r = self.smallCloud.frame;
         self.smallCloud.frame = r;
@@ -55,7 +53,7 @@ class Register00: UIViewController,UITextFieldDelegate {
         /////////////
         self.txtData.delegate = self;
         lblError.isHidden = true;
-        lblBusiessName.text = "Contact's First Name"
+        lblBusiessName.text = "Contact's Full Name"
         self.txtData.becomeFirstResponder();
         
         //hide until get users name
@@ -131,8 +129,16 @@ class Register00: UIViewController,UITextFieldDelegate {
                 
                 
                 //data in text = var business name
-                firstName = txtData.text!;
-                 AppController.shared.usersBusiness?._lastName = firstName;
+                  firstName = txtData.text!
+                var fullName = firstName.split(separator: " ")
+                
+                if fullName.count > 1{
+                    AppController.shared.usersBusiness?._firstName = String(fullName[0])
+                    AppController.shared.usersBusiness?._lastName = String(fullName[1])
+                }else{
+                    AppController.shared.usersBusiness?._firstName = String(fullName[0])
+                }
+                
                 
                 //Take name and welcome them
                 lblWelcome.text = "Welcome " + businessName

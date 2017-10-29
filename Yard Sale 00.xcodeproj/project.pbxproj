@@ -37,6 +37,7 @@
 		6DE19F801E51382700A3E815 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE19F7F1E51382700A3E815 /* RecommendationViewController.swift */; };
 		6DE19F821E51383500A3E815 /* RecommendationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE19F811E51383500A3E815 /* RecommendationTableViewCell.swift */; };
 		6DE19F851E53D4B700A3E815 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE19F841E53D4B700A3E815 /* NavigationBar.swift */; };
+		9F0B05751FA6264300EE308D /* descriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0B05741FA6264300EE308D /* descriptionView.swift */; };
 		9F31DBE41DC025740092BD7A /* DataManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31DBE21DC025730092BD7A /* DataManagerViewController.swift */; };
 		9F31DBE51DC025740092BD7A /* DataManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F31DBE31DC025730092BD7A /* DataManagerViewController.xib */; };
 		9F31DBE81DC02B690092BD7A /* Register01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31DBE71DC02B690092BD7A /* Register01.swift */; };
@@ -47,6 +48,7 @@
 		9F85193D1F71D2C0004E14B0 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F85193C1F71D2C0004E14B0 /* awsconfiguration.json */; };
 		9F8519421F7476B0004E14B0 /* NoSqlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8519411F7476B0004E14B0 /* NoSqlManager.swift */; };
 		9F8519441F74797A004E14B0 /* Businesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8519431F74797A004E14B0 /* Businesses.swift */; };
+		9F8699351FA623AC00339E00 /* descriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8699341FA623AC00339E00 /* descriptionView.xib */; };
 		9F9964F51FA2909F001BEEEF /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9964F41FA2909F001BEEEF /* LocalAuthentication.framework */; };
 		9FB2A73A1F7FE0EC0020933A /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2A7391F7FE0EC0020933A /* AppController.swift */; };
 		9FB2A73C1F7FE6EE0020933A /* LoginAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2A73B1F7FE6EE0020933A /* LoginAlerts.swift */; };
@@ -139,6 +141,7 @@
 		83AB17052A1233C385DB42F5 /* Pods-Yard Sale 00UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yard Sale 00UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yard Sale 00UITests/Pods-Yard Sale 00UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8495799EDB2DB9657DEE7DEE /* Pods-Yard Sale 00.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yard Sale 00.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yard Sale 00/Pods-Yard Sale 00.debug.xcconfig"; sourceTree = "<group>"; };
 		89C91E784C9A9A1ABAD0F188 /* Pods-Yard Sale 00Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yard Sale 00Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yard Sale 00Tests/Pods-Yard Sale 00Tests.release.xcconfig"; sourceTree = "<group>"; };
+		9F0B05741FA6264300EE308D /* descriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = descriptionView.swift; sourceTree = "<group>"; };
 		9F31DBE21DC025730092BD7A /* DataManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerViewController.swift; sourceTree = "<group>"; };
 		9F31DBE31DC025730092BD7A /* DataManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataManagerViewController.xib; sourceTree = "<group>"; };
 		9F31DBE71DC02B690092BD7A /* Register01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register01.swift; sourceTree = "<group>"; };
@@ -149,6 +152,7 @@
 		9F85193C1F71D2C0004E14B0 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = awsconfiguration.json; path = ../../../Downloads/awsconfiguration.json; sourceTree = "<group>"; };
 		9F8519411F7476B0004E14B0 /* NoSqlManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSqlManager.swift; sourceTree = "<group>"; };
 		9F8519431F74797A004E14B0 /* Businesses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Businesses.swift; sourceTree = "<group>"; };
+		9F8699341FA623AC00339E00 /* descriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = descriptionView.xib; sourceTree = "<group>"; };
 		9F8D6D66C8259729720689D6 /* Pods_Yard_Sale_00Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yard_Sale_00Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9964F41FA2909F001BEEEF /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		9FB2A7391F7FE0EC0020933A /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
@@ -394,6 +398,7 @@
 		9F31DBE61DC026B50092BD7A /* BusinessRegistration */ = {
 			isa = PBXGroup;
 			children = (
+				9F8699331FA6239900339E00 /* customView */,
 				6D8F534A1DB990B3004FA4FD /* Register00.swift */,
 				9F31DBE71DC02B690092BD7A /* Register01.swift */,
 				6D4812321DD93ECF00EAB50D /* Map Folder */,
@@ -464,6 +469,15 @@
 				9F8519411F7476B0004E14B0 /* NoSqlManager.swift */,
 			);
 			name = AWSNoSQLManager;
+			sourceTree = "<group>";
+		};
+		9F8699331FA6239900339E00 /* customView */ = {
+			isa = PBXGroup;
+			children = (
+				9F8699341FA623AC00339E00 /* descriptionView.xib */,
+				9F0B05741FA6264300EE308D /* descriptionView.swift */,
+			);
+			name = customView;
 			sourceTree = "<group>";
 		};
 		9FB2A73F1F830AA60020933A /* UserRegistration */ = {
@@ -656,6 +670,7 @@
 				6D9DDE481D6E61AB0089C7E8 /* Assets.xcassets in Resources */,
 				6D5296DA1F3A81C4006FF803 /* AppStoryBoard.storyboard in Resources */,
 				9F31DBE51DC025740092BD7A /* DataManagerViewController.xib in Resources */,
+				9F8699351FA623AC00339E00 /* descriptionView.xib in Resources */,
 				6D19F0CA1DDD124800D3CA10 /* Main.storyboard in Resources */,
 				9FC254671F9E9F1700C6D362 /* MapCell.xib in Resources */,
 			);
@@ -855,6 +870,7 @@
 				6D3DC70E1DE254CA00714F0B /* BusinessInformationViewController.swift in Sources */,
 				6D8ACC661E49435200475ED8 /* CoreDataManager.swift in Sources */,
 				6D8ACC631E38291600475ED8 /* QuickLocoViewController.swift in Sources */,
+				9F0B05751FA6264300EE308D /* descriptionView.swift in Sources */,
 				9FC254651F9E9F0C00C6D362 /* MapCellTableViewCell.swift in Sources */,
 				9FB2A7521F93CDCE0020933A /* GenericAlerts.swift in Sources */,
 				9FB2A73C1F7FE6EE0020933A /* LoginAlerts.swift in Sources */,

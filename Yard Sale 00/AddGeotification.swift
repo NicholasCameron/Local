@@ -223,7 +223,8 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
         AppController.shared.usersBusiness?._businessLongitude = String(mapKit.centerCoordinate.longitude)
          AppController.shared.usersBusiness?._businessCategory = businessType
           AppController.shared.businessAddress = lblLocation.text!
-      //   AppController.shared.pinColor = pinColorValue
+     AppController.shared.usersBusiness?._businessAddress = lblLocation.text!
+        //   AppController.shared.pinColor = pinColorValue
      //   AppController.shared.businessTypeOfficial = AppController.shared.businessDescription;
        
         ///////////////////////////////////////////////////////////

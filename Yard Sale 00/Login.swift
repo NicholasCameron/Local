@@ -40,6 +40,14 @@ class Login: UIViewController,FBSDKLoginButtonDelegate{
         lblPasswordRequired.isHidden = true
         lblEmailHeading.isHidden = true
         lblPasswordHeading.isHidden = true
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.returnView(_:)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    
+    func returnView(_ sender: UITapGestureRecognizer){
+        self.view.endEditing(true)
     }
     
     
@@ -87,6 +95,7 @@ class Login: UIViewController,FBSDKLoginButtonDelegate{
     @IBAction func txtEmailClicked(_ sender: Any) {
         lblEmailRequired.isHidden = true
         lblEmailPlaceHolder.isHidden = true
+
         lblEmailHeading.isHidden = false
         viewEmail.backgroundColor = UIColor(red: 184, green: 184, blue: 184)
     }
@@ -118,7 +127,7 @@ class Login: UIViewController,FBSDKLoginButtonDelegate{
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0{
                 self.view.frame.origin.y -= keyboardSize.height - btnSignUp.frame.height
                 
@@ -128,7 +137,7 @@ class Login: UIViewController,FBSDKLoginButtonDelegate{
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+        if ((notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue) != nil {
             if self.view.frame.origin.y != 0{
                 self.view.frame.origin.y = 0
                 
@@ -176,7 +185,8 @@ class Login: UIViewController,FBSDKLoginButtonDelegate{
                             if response?.items.count == 1{
                                AppController.shared.isCustomLogin = true
                                AppController.shared.usersBusiness?._password = self.txtPassword.text!
-
+                            AppController.shared.keychain.set(self.txtPassword.text!, forKey: Constants.PASSWORDKEY)
+                                 AppController.shared.keychain.set(self.txtEmail.text!, forKey: Constants.EMAILKEY)
                                 
                                 for item in (response?.items)!{
                                   if let pulledBusiness = item as? Businesses{
