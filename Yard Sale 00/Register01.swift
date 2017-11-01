@@ -39,7 +39,7 @@ class Register01: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate  
     @IBOutlet weak var btnSaturdayClose: UIButton!
     @IBOutlet weak var btnSundayClose: UIButton!
     
-    
+    var isBeingEdited = Bool()
     var openTime = String();
     var closeTime = String();
 
@@ -48,7 +48,8 @@ class Register01: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate  
     
     @IBOutlet weak var PickerView0: UIPickerView!
     
-
+    @IBOutlet weak var btnContinue: UIButton!
+    
     
     @IBOutlet weak var PickerView: UIPickerView!
     
@@ -65,8 +66,8 @@ class Register01: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate  
         PickerView0.tag = 1;
 openTime = "1:00AM";
 closeTime = "1:00AM";
-
-        
+      
+    
         self.view.ViewBackground(image: "halfWater0")
         
         
@@ -76,6 +77,15 @@ closeTime = "1:00AM";
         //dateFormatter.dateStyle = DateFormatter.Style.medium
         //        self.StartDate.text = dateFormatter.string(from: DatePicker.date)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if isBeingEdited{
+            btnContinue.setTitle("Done", for: .normal)
+        }else{
+            btnContinue.setTitle("Continue", for: .normal)
+        }
     }
     
     
@@ -143,27 +153,7 @@ closeTime = "1:00AM";
     
     
     
-    @IBAction func btnHoursContinue(_ sender: Any) {
-        
-        
-        mondayHours = lblMonday.text!;
-        tuesdayHours = lblTuesday.text!;
-        wednesdayHours = lblWednesday.text!;
-        thrusdayHours = lblTuesday.text!;
-        fridayHours = lblFriday.text!;
-        satudayHours = lblSaturday.text!;
-        sundayHours = lblSunday.text!;
-        
-        AppController.shared.usersBusiness?._mondayHours = mondayHours
-        AppController.shared.usersBusiness?._tuesdayHours = tuesdayHours
-        AppController.shared.usersBusiness?._wednesdayHours = wednesdayHours
-        AppController.shared.usersBusiness?._thursdayHours = thrusdayHours
-        AppController.shared.usersBusiness?._fridayHours = fridayHours
-        AppController.shared.usersBusiness?._saturdayHours = satudayHours
-        AppController.shared.usersBusiness?._sundayHours = sundayHours
 
-        
-    }
     @IBAction func sDatePicked(_ sender: Any) {
         if(btnSunday.backgroundColor != UIColor.green){
             btnSunday.backgroundColor = UIColor.green;
@@ -215,6 +205,38 @@ closeTime = "1:00AM";
         btnTohide.isHidden = true
         
     }
+    
+    
+    
+    
+    @IBAction func btnContinueTapped(_ sender: Any) {
+        //locationSegue
+        mondayHours = lblMonday.text!;
+        tuesdayHours = lblTuesday.text!;
+        wednesdayHours = lblWednesday.text!;
+        thrusdayHours = lblTuesday.text!;
+        fridayHours = lblFriday.text!;
+        satudayHours = lblSaturday.text!;
+        sundayHours = lblSunday.text!;
+        
+        AppController.shared.usersBusiness?._mondayHours = mondayHours
+        AppController.shared.usersBusiness?._tuesdayHours = tuesdayHours
+        AppController.shared.usersBusiness?._wednesdayHours = wednesdayHours
+        AppController.shared.usersBusiness?._thursdayHours = thrusdayHours
+        AppController.shared.usersBusiness?._fridayHours = fridayHours
+        AppController.shared.usersBusiness?._saturdayHours = satudayHours
+        AppController.shared.usersBusiness?._sundayHours = sundayHours
+
+        if isBeingEdited{
+            self.navigationController?.popViewController(animated: true)
+        }else{
+            self.performSegue(withIdentifier: "locationSegue", sender: nil)
+
+        }
+        
+        
+    }
+    
     
     
     

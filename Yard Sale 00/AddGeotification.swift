@@ -21,23 +21,28 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
     var iszoomed = Bool()
       
     var matchingItems:[MKMapItem] = []
-    var selectedLocation = CLLocationCoordinate2D();
+    var selectedLocation = CLLocationCoordinate2D()
     var zoomLatitude = CLLocationDegrees()
     var zoomLongitude = CLLocationDegrees()
     var StreetFilter = String()
     
+    @IBOutlet weak var lblBusinessType: UILabel!
     @IBOutlet weak var addPin: UIImageView!
     @IBOutlet weak var btnAddressFiltered: UIButton!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var addressSearchBar: UISearchBar!
+    @IBOutlet weak var lblPlacePin: UILabel!
     @IBOutlet weak var pin: UIImageView!
     
     //This is description
-    var businessType = String();
+    var businessType = String()
+    var isEditingCategory = Bool()
+    var isEditingLocation = Bool()
     //This is name.
    // @IBOutlet weak var raduisTextField: UITextField!
     @IBOutlet weak var mapKit: MKMapView!
     @IBOutlet weak var typePicker: UIPickerView!
+    @IBOutlet weak var btnSetTypeLocation: UIButton!
     
     @IBOutlet weak var lblLocation: UILabel!
     //PICKERVIEW DATA
@@ -73,32 +78,38 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
 
         
         //zoom in on an initial location
+        if !isEditingCategory{
         if AppController.shared.usersLocation.longitude == 0{
-            
-            
             AppController.shared.usersLocation.latitude = 40.759211000000001
             AppController.shared.usersLocation.longitude = -73.984638000000003
         }
-       
-
         let span = MKCoordinateSpanMake(AppController.shared.latDelta, AppController.shared.lonDelta)
         let region = MKCoordinateRegionMake(AppController.shared.usersLocation, span)
         mapKit.setRegion(region, animated: true)
-
-        
         btnAddressFiltered.isHidden = true
         mapKit.delegate = self;
         
-        
-        
+        }else{
+            btnSetTypeLocation.setTitle("Done", for: .normal)
+            self.mapKit.isHidden = true
+            addPin.isHidden = true
+            addressSearchBar.isHidden = true
+            btnAddressFiltered.isHidden = true
+            lblPlacePin.isHidden = true
+        }
+        lblLocation.text = "Place pin on location or search"
+
       
         
-       
-        
-        
-        lblLocation.text = "Place pin on location or search"
+        if isEditingLocation{
+         self.typePicker.isHidden = true
+            pin.isHidden = true
+            lblBusinessType.isHidden = true
+            btnSetTypeLocation.setTitle("Done", for: .normal)
+
+        }else{
         typePicker.dataSource = self
-        
+        }
         addressSearchBar.delegate = self
       
         
@@ -218,26 +229,24 @@ class AddGeotification: UIViewController,UIPickerViewDataSource,UIPickerViewDele
     
 
     @IBAction func AddLocation(_ sender: AnyObject) {
-  
+        if isEditingCategory{
+            AppController.shared.usersBusiness?._businessCategory = businessType
+            self.navigationController?.popViewController(animated: true)
+
+        }else if isEditingLocation{
+            AppController.shared.usersBusiness?._businessLatitude = String(mapKit.centerCoordinate.latitude)
+            AppController.shared.usersBusiness?._businessLongitude = String(mapKit.centerCoordinate.longitude)
+            AppController.shared.businessAddress = lblLocation.text!
+            AppController.shared.usersBusiness?._businessAddress = lblLocation.text!
+            self.navigationController?.popViewController(animated: true)
+        }else{
      AppController.shared.usersBusiness?._businessLatitude = String(mapKit.centerCoordinate.latitude)
         AppController.shared.usersBusiness?._businessLongitude = String(mapKit.centerCoordinate.longitude)
          AppController.shared.usersBusiness?._businessCategory = businessType
           AppController.shared.businessAddress = lblLocation.text!
      AppController.shared.usersBusiness?._businessAddress = lblLocation.text!
-        //   AppController.shared.pinColor = pinColorValue
-     //   AppController.shared.businessTypeOfficial = AppController.shared.businessDescription;
-       
-        ///////////////////////////////////////////////////////////
-
-      //  let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-       // let nextViewController = storyBoard.instantiateViewController(withIdentifier: "businessInformation") as! BusinessInformationViewController
-        
-        //self.present(nextViewController, animated:true, completion:nil)
-    //  self.dismissViewController(AddLocation)
-       // self.dismiss(animated: true, completion: nil)
-     //   performSegue(withIdentifier: "businessInformation", sender: nil)
-   
-      //  self.removeFromParentViewController()
+        self.performSegue(withIdentifier: "registerVC", sender: nil)
+        }
     }
     
     
